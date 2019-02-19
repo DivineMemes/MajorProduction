@@ -1,0 +1,71 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class controler : MonoBehaviour {
+    public float horizontal;
+    public float vertical;
+    public bool jump;
+    public moiro play;
+    public bool noinput;
+    public bool run;
+    // Use this for initialization
+    void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+        if (Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
+        {
+            vertical = -1;
+            noinput = false;
+        }
+        if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+        {
+            vertical = 1;
+            noinput = false;
+        }
+        if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        {
+            horizontal = -1;
+            noinput = false;
+        }
+        if (Input.GetKey(KeyCode.D) && !Input.GetKeyDown(KeyCode.A))
+        {
+            horizontal = 1;
+            noinput = false;
+        }
+        if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+        {
+            horizontal = 0;
+        }
+        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+        {
+            vertical = 0;
+        }
+        if(!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S)&& !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+        {
+            noinput = true;
+        }
+        if (play.grounded == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                transform.position += transform.up * play.jump * Time.deltaTime;
+            }
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            run = true;
+        }
+        if (!Input.GetKey(KeyCode.LeftShift))
+        {
+            run = false;
+        }
+      
+
+
+    }
+}
