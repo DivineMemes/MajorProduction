@@ -11,6 +11,7 @@ public class EnemySeek : MonoBehaviour
     public float maxVel;
     Vector3 velocity;
 
+    public bool targetSpotted = false;
 
     public float viewRad;
     [Range(0,360)]
@@ -37,8 +38,14 @@ public class EnemySeek : MonoBehaviour
         {
             if(visibleTargets[i].gameObject.CompareTag("Player"))
             {
+                targetSpotted = true;
                 transform.LookAt(visibleTargets[i]);
+
                 //seek(visibleTargets[i]);
+            }
+            else
+            {
+                targetSpotted = false;
             }
         }
     }
