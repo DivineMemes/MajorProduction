@@ -9,6 +9,8 @@ public class controler : MonoBehaviour {
     public moiro play;
     public bool noinput;
     public bool run;
+    public bool light;
+    public Light myflaselight;
     // Use this for initialization
     void Start () {
 		
@@ -54,6 +56,18 @@ public class controler : MonoBehaviour {
             {
                 transform.position += transform.up * play.jump * Time.deltaTime;
             }
+        }
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            light = !light;
+        }
+        if(light == true)
+        {
+            myflaselight.enabled = true;
+        }
+        if (light == false)
+        {
+            myflaselight.enabled = false;
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
