@@ -18,7 +18,7 @@ public class EnemySeek : MonoBehaviour
     public float viewAng;
     public float delay;
     public LayerMask targetMask;
-    public LayerMask obstacleMask;
+    public LayerMask Wall;
 
     public List<Transform> visibleTargets = new List<Transform>();
 
@@ -43,7 +43,7 @@ public class EnemySeek : MonoBehaviour
 
                 //seek(visibleTargets[i]);
             }
-            else
+            else if(visibleTargets[i].gameObject.CompareTag("Player") != true)
             {
                 targetSpotted = false;
             }
@@ -61,7 +61,7 @@ public class EnemySeek : MonoBehaviour
             if(Vector3.Angle(transform.forward, dirToTarget) < viewAng /2)
             {
                 float distToTarget = Vector3.Distance(transform.position, target.position);
-                if(!Physics.Raycast(transform.position, dirToTarget, distToTarget, obstacleMask))
+                if(!Physics.Raycast(transform.position, dirToTarget, distToTarget, Wall))
                 {
                     visibleTargets.Add(target);
                 }
@@ -76,20 +76,6 @@ public class EnemySeek : MonoBehaviour
         }
         return new Vector3(Mathf.Sin(angInDeg * Mathf.Deg2Rad), 0, Mathf.Cos(angInDeg * Mathf.Deg2Rad)); 
     }
-
-    void seek(Transform target)
-    {
-        Vector3 desiredVel = target.transform.position - transform.position;
-        desiredVel = desiredVel.normalized * maxVel * Time.deltaTime;
-        Vector3 steering = desiredVel - velocity;
-        steering = Vector3.ClampMagnitude(steering, maxforce);
-        steering = steering / rb.mass;
-
-        velocity = Vector3.ClampMagnitude(velocity + steering, maxSpd);
-        rb.velocity += velocity * Time.deltaTime;
-
-    }
-
     IEnumerator FindTargetDelayed(float delay)
     {
         while (true)

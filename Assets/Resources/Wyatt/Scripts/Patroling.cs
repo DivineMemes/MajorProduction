@@ -6,16 +6,16 @@ using UnityEngine.AI;
 public class Patroling : MonoBehaviour
 {
     EnemySeek seeker;
-    public Transform[] nodes;
-    int destinationPoint = 0;
     NavMeshAgent agent;
+    public GameObject player;
+    public Transform[] nodes;
     public bool heardSomething = false;
+    int destinationPoint = 0;
     // Use this for initialization
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         seeker = gameObject.GetComponent<EnemySeek>();
-
     }
 
     void NextPosition()
@@ -37,6 +37,11 @@ public class Patroling : MonoBehaviour
             {
                 NextPosition();
             }
+        }
+
+        if(seeker.targetSpotted)
+        {
+            agent.destination = player.transform.position;
         }
     }
 }
