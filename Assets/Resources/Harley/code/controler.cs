@@ -10,6 +10,7 @@ public class controler : MonoBehaviour {
     public bool noinput;
     public bool run;
     public bool light;
+    public GameObject stop;
     public Light myflaselight;
     // Use this for initialization
     void Start () {
@@ -18,6 +19,11 @@ public class controler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (gamemanger.GM.pause == true)
+        {
+            return;
+        }
         if (Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
         {
             vertical = -1;
@@ -61,7 +67,12 @@ public class controler : MonoBehaviour {
         {
             light = !light;
         }
-        if(light == true)
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gamemanger.GM.pause = true;
+            stop.SetActive(true);
+        }
+        if (light == true)
         {
             myflaselight.enabled = true;
         }
