@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class EnemySeek : MonoBehaviour
 {
-    public Rigidbody rb;
-    public GameObject target;
-    public float maxforce;
-    public float maxSpd;
-    public float maxVel;
+    public Transform target;
     Vector3 velocity;
 
     public bool targetSpotted = false;
@@ -28,7 +24,7 @@ public class EnemySeek : MonoBehaviour
     private void Start()
     {
         StartCoroutine(FindTargetDelayed(delay));
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
         velocity = Vector3.zero;
     }
 
@@ -36,17 +32,15 @@ public class EnemySeek : MonoBehaviour
     {
         for(int i = 0; i < visibleTargets.Count; i++)
         {
-            if(visibleTargets[i].gameObject.CompareTag("Player"))
+            if (visibleTargets[i]==target)
             {
                 targetSpotted = true;
                 transform.LookAt(visibleTargets[i]);
-
-                //seek(visibleTargets[i]);
             }
-            else if(visibleTargets[i].gameObject.CompareTag("Player") != true)
-            {
-                targetSpotted = false;
-            }
+        }
+        if(visibleTargets.Count == 0)
+        {
+            targetSpotted = false;
         }
     }
     void FindVisibleTargets()

@@ -41,6 +41,7 @@ public class Patroling : MonoBehaviour
 
         if(seeker.targetSpotted)
         {
+
             agent.destination = player.transform.position;
         }
     }
