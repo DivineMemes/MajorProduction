@@ -313,7 +313,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4856296969552322, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.9914448
       objectReference: {fileID: 0}
     - target: {fileID: 4856296969552322, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
       propertyPath: m_LocalRotation.z
@@ -321,7 +321,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4856296969552322, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.1305268
       objectReference: {fileID: 0}
     - target: {fileID: 4856296969552322, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
       propertyPath: m_RootOrder
@@ -345,6 +345,10 @@ Prefab:
     - target: {fileID: 1878030727972084, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4856296969552322, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -194.99998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
@@ -781,6 +785,7 @@ GameObject:
   - component: {fileID: 827250130}
   - component: {fileID: 827250133}
   - component: {fileID: 827250129}
+  - component: {fileID: 827250135}
   - component: {fileID: 827250134}
   - component: {fileID: 827250128}
   m_Layer: 0
@@ -820,7 +825,6 @@ MonoBehaviour:
   - {fileID: 359404756}
   - {fileID: 1479246646}
   - {fileID: 445420817}
-  heardSomething: 0
 --- !u!23 &827250130
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -920,6 +924,22 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &827250135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 827250127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e61da7037c15ae145ab4008a0d6419fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 5
+  sound:
+    serializedVersion: 2
+    m_Bits: 16384
+  heardSound: 0
 --- !u!1 &947256457
 GameObject:
   m_ObjectHideFlags: 0

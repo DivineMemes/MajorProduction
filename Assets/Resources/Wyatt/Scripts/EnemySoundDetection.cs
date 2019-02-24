@@ -8,10 +8,6 @@ public class EnemySoundDetection : MonoBehaviour
     public LayerMask sound;
     public bool heardSound = false;
 
-    void Start()
-    {
-
-    }
     void Update()
     {
         Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, radius, sound);
