@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Resources/Harley/scenes/mine menu.unity
+    guid: 2e0e302f51cc2ec4eb41e769a90d0a40
   m_configObjects: {}
