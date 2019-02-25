@@ -33,6 +33,7 @@ public class throwobjacts : MonoBehaviour {
         {
             GetComponent<Rigidbody>().isKinematic = true;
             transform.parent = playerCam;
+            gamemanger.GM.grab = true;
             me.GetComponent<MeshRenderer>().enabled = false;
             beingCarried = true;
         }
@@ -51,6 +52,7 @@ public class throwobjacts : MonoBehaviour {
                 transform.parent = null;
                 me.GetComponent<MeshRenderer>().enabled = true;
                 beingCarried = false;
+                gamemanger.GM.grab = false;
                 sound.enabled = true;
                 GetComponent<Rigidbody>().AddForce(playerCam.forward * throwforce);
             }
