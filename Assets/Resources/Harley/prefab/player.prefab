@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4599681139983746}
   - component: {fileID: 82190057812878008}
   - component: {fileID: 65690021250806944}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Audio Source
   m_TagString: Sound
   m_Icon: {fileID: 0}
@@ -41,9 +41,9 @@ GameObject:
   - component: {fileID: 136637455360969348}
   - component: {fileID: 114360460497196478}
   - component: {fileID: 114413180706559562}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 33990246799229272}
   - component: {fileID: 23142998444580466}
   - component: {fileID: 135934640090353766}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

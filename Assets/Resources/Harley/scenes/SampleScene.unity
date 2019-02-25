@@ -4530,6 +4530,10 @@ Prefab:
       propertyPath: myflaselight
       value: 
       objectReference: {fileID: 1402048156}
+    - target: {fileID: 1722970056214692, guid: 4c90437ef6cfa6349a136f885d0005b1, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c90437ef6cfa6349a136f885d0005b1, type: 2}
   m_IsPrefabAsset: 0
