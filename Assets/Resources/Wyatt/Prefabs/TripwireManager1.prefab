@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4007928986454520}
   - component: {fileID: 114484274861082136}
   m_Layer: 0
-  m_Name: TripwireManager
+  m_Name: TripwireManager1
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
