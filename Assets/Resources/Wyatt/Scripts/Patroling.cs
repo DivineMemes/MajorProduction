@@ -10,7 +10,9 @@ public class Patroling : MonoBehaviour
     NavMeshAgent agent;
     public GameObject player;
     public Transform[] nodes;
+    public float searchTimer;
     int destinationPoint = 0;
+    bool coroutineStarted;
     // Use this for initialization
     void Start()
     {
@@ -44,13 +46,25 @@ public class Patroling : MonoBehaviour
         {
             agent.destination = player.transform.position;
         }
-        if(soundDetect.heardSound)
+        if(soundDetect.searchingSound)
         {
-            agent.destination = gameObject.transform.position; //replace with sound position
+            agent.destination = soundDetect.soundPos.position;
+            if(agent.remainingDistance < 0.5f)
+            {
+                agent.ResetPath();
+                if(!coroutineStarted)
+                {
+                    coroutineStarted = true;
+                    StartCoroutine(lookfortarget());
+                }
+            }
         }
     }
     IEnumerator lookfortarget()
     {
-        yield return new WaitForSeconds(10);//replace with adujustable value
+
+        yield return new WaitForSeconds(searchTimer);
+        soundDetect.searchingSound = false;
+        coroutineStarted = false;
     }
 }
