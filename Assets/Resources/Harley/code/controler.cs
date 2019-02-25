@@ -8,6 +8,8 @@ public class controler : MonoBehaviour {
     public bool jump;
     public moiro play;
     public bool noinput;
+    public Collider sound;
+    public AudioSource me;
     public bool run;
     public bool light;
     public GameObject stop;
@@ -32,21 +34,25 @@ public class controler : MonoBehaviour {
         if (Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
         {
             vertical = -1;
+            sound.enabled = true;
             noinput = false;
         }
         if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
         {
             vertical = 1;
+            sound.enabled = true;
             noinput = false;
         }
         if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
         {
             horizontal = -1;
+            sound.enabled = true;
             noinput = false;
         }
         if (Input.GetKey(KeyCode.D) && !Input.GetKeyDown(KeyCode.A))
         {
             horizontal = 1;
+            sound.enabled = true;
             noinput = false;
         }
         if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
@@ -60,6 +66,7 @@ public class controler : MonoBehaviour {
         if(!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S)&& !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
         {
             noinput = true;
+            sound.enabled = false;
         }
         if (play.grounded == true)
         {
