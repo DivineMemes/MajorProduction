@@ -18,7 +18,7 @@ public class pause_menu : MonoBehaviour {
     public void manu()
     {
         gamemanger.GM.pause = true;
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(0);
     }
     public void game()
     {
