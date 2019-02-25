@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Name: Diffusion Profile Settings
   m_EditorClassIdentifier: 
   profiles:
-  - name: Profile 1
+  - name: trees
     scatteringDistance: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    transmissionTint: {r: 1.2165241, g: 2.2823286, b: 1.9138875, a: 1}
+    transmissionTint: {r: 1.2188352, g: 2.2823286, b: 1.9238477, a: 1}
     texturingMode: 0
     transmissionMode: 1
     thicknessRemap: {x: 0, y: 5}
@@ -23,11 +23,11 @@ MonoBehaviour:
     scatterDistance1: {r: 0.3, g: 0.3, b: 0.3, a: 0}
     scatterDistance2: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     lerpWeight: 1
-  - name: Profile 2
-    scatteringDistance: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    transmissionTint: {r: 1, g: 1, b: 1, a: 1}
+  - name: Grass
+    scatteringDistance: {r: 0.24545753, g: 0.3018868, b: 0.23495907, a: 1}
+    transmissionTint: {r: 0.7023285, g: 0.7023285, b: 0.7023285, a: 1}
     texturingMode: 0
-    transmissionMode: 1
+    transmissionMode: 0
     thicknessRemap: {x: 0, y: 5}
     worldScale: 1
     ior: 1.4
