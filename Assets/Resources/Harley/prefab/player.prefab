@@ -91,7 +91,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: cd99a37e54538984fab3883994316287, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,7 +126,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: cd99a37e54538984fab3883994316287, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -245,6 +245,9 @@ MonoBehaviour:
   play: {fileID: 114360460497196478}
   noinput: 0
   run: 0
+  light: 0
+  stop: {fileID: 0}
+  myflaselight: {fileID: 0}
 --- !u!135 &135934640090353766
 SphereCollider:
   m_ObjectHideFlags: 1
