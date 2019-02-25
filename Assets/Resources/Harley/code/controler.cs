@@ -22,6 +22,11 @@ public class controler : MonoBehaviour {
 
         if (gamemanger.GM.pause == true)
         {
+             if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                gamemanger.GM.pause = false;
+                stop.SetActive(false);
+            }
             return;
         }
         if (Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
@@ -72,6 +77,7 @@ public class controler : MonoBehaviour {
             gamemanger.GM.pause = true;
             stop.SetActive(true);
         }
+        
         if (light == true)
         {
             myflaselight.enabled = true;
