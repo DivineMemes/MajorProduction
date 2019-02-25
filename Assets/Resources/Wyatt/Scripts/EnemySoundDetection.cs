@@ -5,19 +5,15 @@ using UnityEngine;
 public class EnemySoundDetection : MonoBehaviour
 {
     public float radius;
-    public LayerMask sound;
+    //public LayerMask sound;
     public bool heardSound = false;
 
-    void Start()
-    {
-
-    }
     void Update()
     {
-        Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, radius, sound);
+        Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, radius);
         for(int i = 0; i < colliders.Length; i++)
         {
-            if(colliders[i].gameObject.layer == sound)
+            if(colliders[i].gameObject.tag== "Sound")
             {
                 heardSound = true;
             }
