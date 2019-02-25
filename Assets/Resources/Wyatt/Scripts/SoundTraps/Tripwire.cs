@@ -6,6 +6,7 @@ public class Tripwire : MonoBehaviour
 {
     public Transform endOne;
     public Transform endTwo;
+    public SphereCollider soundCollider;
 
     void Start()
     {
@@ -19,11 +20,10 @@ public class Tripwire : MonoBehaviour
         {
             if (hit.collider.tag == "Player")
             {
-                //code for sound effects
-                Debug.Log("yeet");
-                Destroy(gameObject);
-                Debug.Log("yeet");
+                SphereCollider spawnedCollider = Instantiate(soundCollider, hit.collider.transform.position, Quaternion.identity);
+                spawnedCollider.tag = "Sound";
 
+                Destroy(gameObject);
             }
         }
         Debug.DrawLine(endOne.position, endTwo.position, Color.black);

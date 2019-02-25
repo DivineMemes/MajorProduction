@@ -46,7 +46,7 @@ public class Patroling : MonoBehaviour
         {
             agent.destination = player.transform.position;
         }
-        if(soundDetect.searchingSound)
+        if(!seeker.targetSpotted && soundDetect.searchingSound)
         {
             agent.destination = soundDetect.soundPos.position;
             if(agent.remainingDistance < 0.5f)
@@ -62,7 +62,6 @@ public class Patroling : MonoBehaviour
     }
     IEnumerator lookfortarget()
     {
-
         yield return new WaitForSeconds(searchTimer);
         soundDetect.searchingSound = false;
         coroutineStarted = false;
