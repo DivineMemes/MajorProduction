@@ -8,6 +8,7 @@ public class throwobjacts : MonoBehaviour {
     public GameObject me;
     public float throwforce = 10;
     bool hasplayer = false;
+    public Collider sound;
     bool beingCarried = false;
     public int dmg;
     //private bool touched = false;
@@ -50,6 +51,7 @@ public class throwobjacts : MonoBehaviour {
                 transform.parent = null;
                 me.GetComponent<MeshRenderer>().enabled = true;
                 beingCarried = false;
+                sound.enabled = true;
                 GetComponent<Rigidbody>().AddForce(playerCam.forward * throwforce);
             }
             else if (Input.GetMouseButtonDown(1))
