@@ -825,6 +825,7 @@ MonoBehaviour:
   - {fileID: 359404756}
   - {fileID: 1479246646}
   - {fileID: 445420817}
+  searchTimer: 3
 --- !u!23 &827250130
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -935,8 +936,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e61da7037c15ae145ab4008a0d6419fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 10
+  soundPos: {fileID: 0}
+  radius: 7.5
   heardSound: 0
+  searchingSound: 0
 --- !u!1 &947256457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,7 +1521,7 @@ GameObject:
   - component: {fileID: 1746671394}
   - component: {fileID: 1746671393}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Sound
   m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
