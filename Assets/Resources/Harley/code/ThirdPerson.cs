@@ -31,8 +31,18 @@ public class ThirdPerson : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
-        CurrentX += Input.GetAxis("Mouse X");
+        if(gamemanger.GM.pause == true)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            return;
+        }
+        if (gamemanger.GM.pause == false)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+            CurrentX += Input.GetAxis("Mouse X");
         CurrentY -= Input.GetAxis("Mouse Y");
         CurrentY = Mathf.Clamp(CurrentY, Y_Angle_min, Y_Angle_max);
         ground();
