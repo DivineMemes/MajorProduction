@@ -22,8 +22,9 @@ public class Tripwire : MonoBehaviour
             {
                 SphereCollider spawnedCollider = Instantiate(soundCollider, hit.collider.transform.position, Quaternion.identity);
                 spawnedCollider.tag = "Sound";
-
+                Destroy(spawnedCollider);
                 Destroy(gameObject);
+
             }
         }
         Debug.DrawLine(endOne.position, endTwo.position, Color.black);
