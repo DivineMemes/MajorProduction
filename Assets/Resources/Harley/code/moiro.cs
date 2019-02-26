@@ -49,10 +49,6 @@ public class moiro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gamemanger.GM.pause == true)
-        {
-            return;
-        }
         Input();
         CalculateDirection();
         CalculateForward();

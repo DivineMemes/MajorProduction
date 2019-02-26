@@ -5,13 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Resources/Harley/scenes/mine menu.unity
-    guid: 2e0e302f51cc2ec4eb41e769a90d0a40
   - enabled: 1
-    path: Assets/Resources/Wyatt/Scenes/TestingScene.unity
-    guid: 278b30d124e7400489dd04a452859a8c
+    path: Assets/Scenes/SampleScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}
