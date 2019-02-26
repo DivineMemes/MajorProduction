@@ -245,9 +245,18 @@ Prefab:
       propertyPath: m_Name
       value: TripWireSoundCollider (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1714617018736978, guid: d85020bf2aa35b943a17422ee0b51082, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d85020bf2aa35b943a17422ee0b51082, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &143227914 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1722970056214692, guid: 33b7c616dd3d9ee45b219ce099a3f520,
+    type: 2}
+  m_PrefabInternal: {fileID: 1589224131}
 --- !u!1 &163392062
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +450,10 @@ Prefab:
       propertyPath: m_Name
       value: TripWireSoundCollider (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1714617018736978, guid: d85020bf2aa35b943a17422ee0b51082, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d85020bf2aa35b943a17422ee0b51082, type: 2}
   m_IsPrefabAsset: 0
@@ -479,7 +492,14 @@ MonoBehaviour:
   playerCam: {fileID: 1537676415}
   me: {fileID: 378166498}
   throwforce: 10
-  sound: {fileID: 0}
+  sound2: {fileID: 0}
+  throwme: 0
+  height: 0.5
+  heightpadding: 0.05
+  ground:
+    serializedVersion: 2
+    m_Bits: 512
+  timer: 0.5
   dmg: 0
 --- !u!65 &378166500
 BoxCollider:
@@ -561,7 +581,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1001 &436530878
 Prefab:
@@ -605,6 +625,10 @@ Prefab:
     - target: {fileID: 1714617018736978, guid: d85020bf2aa35b943a17422ee0b51082, type: 2}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714617018736978, guid: d85020bf2aa35b943a17422ee0b51082, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d85020bf2aa35b943a17422ee0b51082, type: 2}
@@ -692,6 +716,10 @@ Prefab:
     - target: {fileID: 4223522775274170, guid: bc97e28a320ebfc4ba07cc8eec078918, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720466617124762, guid: bc97e28a320ebfc4ba07cc8eec078918, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc97e28a320ebfc4ba07cc8eec078918, type: 2}
@@ -819,7 +847,7 @@ BoxCollider:
   m_GameObject: {fileID: 673240076}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -872,7 +900,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 673240076}
   m_LocalRotation: {x: -0, y: 0.9997666, z: -0, w: -0.021605587}
-  m_LocalPosition: {x: 0, y: 0.91, z: 5.73}
+  m_LocalPosition: {x: 0.11, y: 0.91, z: 8.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -889,6 +917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed8bbac66ff777d49a226a3078f11027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundCollider: {fileID: 1654323080}
 --- !u!1001 &688136442
 Prefab:
   m_ObjectHideFlags: 0
@@ -935,6 +964,10 @@ Prefab:
     - target: {fileID: 1714617018736978, guid: d85020bf2aa35b943a17422ee0b51082, type: 2}
       propertyPath: m_Name
       value: TripWireSoundCollider (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714617018736978, guid: d85020bf2aa35b943a17422ee0b51082, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d85020bf2aa35b943a17422ee0b51082, type: 2}
@@ -989,7 +1022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e90cb6409cbdc4a9484fc796530658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 143227914}
   nodes:
   - {fileID: 2003245581}
   - {fileID: 163392063}
@@ -1063,7 +1096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ffafcd16c786a49817588f3746dff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 1721513167}
   targetSpotted: 0
   viewRad: 7.5
   viewAng: 53
@@ -1167,6 +1200,10 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: 2.95
       objectReference: {fileID: 0}
+    - target: {fileID: 1720466617124762, guid: bc97e28a320ebfc4ba07cc8eec078918, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc97e28a320ebfc4ba07cc8eec078918, type: 2}
   m_IsPrefabAsset: 0
@@ -1224,6 +1261,10 @@ Prefab:
       propertyPath: LookAt
       value: 
       objectReference: {fileID: 1721513167}
+    - target: {fileID: 1162282639832956, guid: 080110e1794016b4291bd2604847feb3, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 080110e1794016b4291bd2604847feb3, type: 2}
   m_IsPrefabAsset: 0
@@ -1372,6 +1413,10 @@ Prefab:
     - target: {fileID: 4223522775274170, guid: bc97e28a320ebfc4ba07cc8eec078918, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720466617124762, guid: bc97e28a320ebfc4ba07cc8eec078918, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc97e28a320ebfc4ba07cc8eec078918, type: 2}
@@ -1637,6 +1682,10 @@ Prefab:
       propertyPath: m_Name
       value: TripWireSoundCollider (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1714617018736978, guid: d85020bf2aa35b943a17422ee0b51082, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d85020bf2aa35b943a17422ee0b51082, type: 2}
   m_IsPrefabAsset: 0
@@ -1853,6 +1902,10 @@ Prefab:
       propertyPath: m_Name
       value: TripWireSoundCollider (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1714617018736978, guid: d85020bf2aa35b943a17422ee0b51082, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d85020bf2aa35b943a17422ee0b51082, type: 2}
   m_IsPrefabAsset: 0
@@ -1945,6 +1998,10 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: 2.95
       objectReference: {fileID: 0}
+    - target: {fileID: 1720466617124762, guid: bc97e28a320ebfc4ba07cc8eec078918, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc97e28a320ebfc4ba07cc8eec078918, type: 2}
   m_IsPrefabAsset: 0
@@ -1968,7 +2025,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4856296969552322, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.017657677
       objectReference: {fileID: 0}
     - target: {fileID: 4856296969552322, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1976,7 +2033,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4856296969552322, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1.86
+      value: 12.028025
       objectReference: {fileID: 0}
     - target: {fileID: 4856296969552322, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1984,7 +2041,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4856296969552322, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.99381596
       objectReference: {fileID: 0}
     - target: {fileID: 4856296969552322, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
       propertyPath: m_LocalRotation.z
@@ -1992,7 +2049,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4856296969552322, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.1110398
       objectReference: {fileID: 0}
     - target: {fileID: 4856296969552322, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
       propertyPath: m_RootOrder
@@ -2025,6 +2082,14 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1373977834133226, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4856296969552322, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 192.75099
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
@@ -2148,7 +2213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1746671393
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2271,6 +2336,10 @@ Prefab:
     - target: {fileID: 4223522775274170, guid: bc97e28a320ebfc4ba07cc8eec078918, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720466617124762, guid: bc97e28a320ebfc4ba07cc8eec078918, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc97e28a320ebfc4ba07cc8eec078918, type: 2}
@@ -2415,6 +2484,10 @@ Prefab:
     - target: {fileID: 4223522775274170, guid: bc97e28a320ebfc4ba07cc8eec078918, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720466617124762, guid: bc97e28a320ebfc4ba07cc8eec078918, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc97e28a320ebfc4ba07cc8eec078918, type: 2}

@@ -6,6 +6,7 @@ public class PlaySound : MonoBehaviour
 {
     AudioSource bruh;
     AudioClip bruhClip;
+    public SphereCollider soundCollider;
 
 
     private void Start()
@@ -24,6 +25,11 @@ public class PlaySound : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
 
         {
+            SphereCollider spawnedCollider = Instantiate(soundCollider, gameObject.transform.position, Quaternion.identity);
+            spawnedCollider.tag = "Sound";
+
+            //Destroy(gameObject);
+            Destroy(spawnedCollider);
             AudioSource.PlayClipAtPoint(bruhClip, gameObject.transform.position);
         }
 
