@@ -3960,6 +3960,7 @@ MonoBehaviour:
   playerCam: {fileID: 823359341}
   me: {fileID: 1815359032}
   throwforce: 100
+  hasplayer: 0
   sound2: {fileID: 34564891}
   throwme: 0
   height: 0.5

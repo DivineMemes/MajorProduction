@@ -7,7 +7,7 @@ public class throwobjacts : MonoBehaviour {
     public Transform playerCam;
     public GameObject me;
     public float throwforce = 10;
-    bool hasplayer = false;
+   public bool hasplayer = false;
     public GameObject sound2;
     bool beingCarried = false;
     public bool throwme;
@@ -41,7 +41,7 @@ public class throwobjacts : MonoBehaviour {
             GetComponent<Rigidbody>().isKinematic = true;
             sound2.GetComponent<Collider>().enabled = false;
             transform.parent = playerCam;
-            gamemanger.GM.grab = true;
+            //gamemanger.GM.grab = true;
             timer = 1;
             me.GetComponent<MeshRenderer>().enabled = false;
             beingCarried = true;
