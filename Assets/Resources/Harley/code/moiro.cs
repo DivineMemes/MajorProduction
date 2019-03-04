@@ -6,12 +6,15 @@ public class moiro : MonoBehaviour
 {
     public float velocity = 5;
     public float velocitybase = 5;
+    public float velocitycrouch = 3;
     public float turnspeed = 10;
     Vector2 input;
     float angle;
     float horizontal;
     float vertical;
     public float height = 0.5f;
+    public float heightnormle = 0.9f;
+    public float heigthcrouch = .5f;
     public float walls = 0.5f;
     public float traps = 0.5f;
     public float roof = 0.5f;
@@ -80,12 +83,23 @@ public class moiro : MonoBehaviour
         }
         Rotate();
         Move();
-        if (controller.run == true)
+        if (controller.run == true && controller.crouch == false) 
         {
             velocity = run;
         }
         if (controller.run == false)
         {
+            velocity = velocitybase;
+        }
+        if (controller.crouch== true && controller.run == false)
+        {
+            height = heigthcrouch;
+            velocity = velocitycrouch;
+            
+        }
+        if(controller.crouch == false)
+        {
+            height = heightnormle;
             velocity = velocitybase;
         }
         //trap1();
