@@ -12,6 +12,7 @@ public class ThirdPerson : MonoBehaviour {
     public float height = 0.5f;
     public LayerMask groundcam;
     RaycastHit hitInfo;
+    public float hightofcamra = 0;
     public float Distance = 10.0f;
     public float CurrentX = 0.0f;
     public float CurrentY = 0.0f;

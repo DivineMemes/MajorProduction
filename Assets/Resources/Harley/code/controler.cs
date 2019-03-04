@@ -10,6 +10,7 @@ public class controler : MonoBehaviour {
     public bool noinput;
     public Collider sound;
     public AudioSource me;
+    public bool crouch;
     public Animator you;
     public bool run;
     public bool light;
@@ -85,6 +86,14 @@ public class controler : MonoBehaviour {
             {
                 transform.position += transform.up * play.jump * Time.deltaTime;
             }
+        }
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            crouch = true;
+        }
+        if (!Input.GetKey(KeyCode.LeftControl))
+        {
+            crouch = false;
         }
         if (Input.GetKeyDown(KeyCode.Z))
         {
