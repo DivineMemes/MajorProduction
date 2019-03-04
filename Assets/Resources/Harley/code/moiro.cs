@@ -56,6 +56,17 @@ public class moiro : MonoBehaviour
         {
             return;
         }
+        if (controller.crouch == true && controller.run == false)
+        {
+            height = heigthcrouch;
+            velocity = velocitycrouch;
+
+        }
+        if (controller.crouch == false)
+        {
+            height = heightnormle;
+            velocity = velocitybase;
+        }
         Input();
         CalculateDirection();
         CalculateForward();
@@ -89,17 +100,6 @@ public class moiro : MonoBehaviour
         }
         if (controller.run == false)
         {
-            velocity = velocitybase;
-        }
-        if (controller.crouch== true && controller.run == false)
-        {
-            height = heigthcrouch;
-            velocity = velocitycrouch;
-            
-        }
-        if(controller.crouch == false)
-        {
-            height = heightnormle;
             velocity = velocitybase;
         }
         //trap1();
