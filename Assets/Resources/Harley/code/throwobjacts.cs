@@ -17,9 +17,15 @@ public class throwobjacts : MonoBehaviour {
     RaycastHit hitInfo;
     public float timer;
     public int dmg;
-    //private bool touched = false;
-	// Use this for initialization
-	void Start () {
+    IEnumerator cliderenble()
+    {
+        sound2.GetComponent<Collider>().enabled = true;
+        yield return new WaitForSeconds(.9f);
+        sound2.GetComponent<Collider>().enabled = false;
+    }
+        //private bool touched = false;
+        // Use this for initialization
+        void Start () {
 		
 	}
 	
@@ -65,7 +71,7 @@ public class throwobjacts : MonoBehaviour {
                 sound2.GetComponent<Collider>().enabled = true;
                 gamemanger.GM.grab = false;
                 throwme = true;
-                
+                StartCoroutine(cliderenble());
                 GetComponent<Rigidbody>().AddForce(playerCam.forward * throwforce);
             }
             else if (Input.GetMouseButtonDown(1))
@@ -92,15 +98,6 @@ public class throwobjacts : MonoBehaviour {
             //}
 
 
-        }
-        if (throwme == true)
-        {
-            timer -= Time.deltaTime;
-        }
-        if (timer <= 0)
-        {
-            sound2.GetComponent<Collider>().enabled = false;
-            throwme = false;
         }
     }
 }
