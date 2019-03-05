@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySoundDetection : MonoBehaviour
 {
     public Transform soundPos;
+    public Transform soundPosTemp;
     public float radius;
     public bool heardSound = false;
     public bool searchingSound;
@@ -22,7 +23,11 @@ public class EnemySoundDetection : MonoBehaviour
         {
             if (colliders[i].gameObject.tag == "Sound" && !heardSound)
             {
-                soundPos = colliders[i].gameObject.transform;
+                if(colliders[i].gameObject.GetComponent<Collider>().enabled)
+                {
+                    soundPos = colliders[i].gameObject.transform;
+                }
+
                 heardSound = true;
                 searchingSound = true;
             }
@@ -30,6 +35,10 @@ public class EnemySoundDetection : MonoBehaviour
             {
                 heardSound = false;
             }
+        }
+        if (!searchingSound)
+        {
+            soundPosTemp = null;
         }
     }
 }
