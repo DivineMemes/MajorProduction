@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class moiro : MonoBehaviour
 {
-    public float velocity = 5;
+    public float velocity/* = 5*/;
     public float velocitybase = 5;
     public float velocitycrouch = 3;
     public float turnspeed = 10;
@@ -39,7 +39,7 @@ public class moiro : MonoBehaviour
     Transform cam;
     public Collider collider;
     public float jump;
-    public float velocityrun;
+    public float velocityrun = 10f;
     public AnimationCurve velocityCurve;
     public float down;
     public float timeToReachTerminalVelocity = 4;
@@ -56,12 +56,18 @@ public class moiro : MonoBehaviour
         {
             return;
         }
-        run();
-        crouch();
+        
         Input();
+       
         CalculateDirection();
         CalculateForward();
         CalculateGroundAngle();
+        crouch();
+        if(!controller.run && !controller.crouch)
+        {
+            velocity = velocitybase;
+        }
+        run();
         wall1();
         wall2();
         wall3();
@@ -85,7 +91,7 @@ public class moiro : MonoBehaviour
         }
         Rotate();
         Move();
-       
+        
         //trap1();
     }
     void OnCollisionStay(Collision hit)
@@ -126,6 +132,8 @@ public class moiro : MonoBehaviour
         if (groundAngle >= maxGroundAngle) return;
        
         transform.position += forword * velocity * Time.deltaTime;
+       
+        
 
     }
     void CalculateForward()
@@ -323,27 +331,31 @@ public class moiro : MonoBehaviour
     }
     void run()
     {
-        if (controller.run == true)
+        if (controller.run)
         {
-            velocity = velocityrun;
+            if (controller.downrun)
+            {
+                velocity = velocityrun;
+            }
         }
-        if (controller.run == false)
+        if (!controller.run)
         {
-            velocity = velocitybase;
+            //velocity = velocitybase;
         }
     }
    void crouch()
     {
-        if (controller.crouch == true)
+        if (controller.crouch)
         {
-            height = heigthcrouch;
             velocity = velocitycrouch;
+            height = heigthcrouch;
+            
 
         }
-        if (controller.crouch == false)
+        if (!controller.crouch)
         {
             height = heightnormle;
-            velocity = velocitybase;
+            //velocity = velocitybase;
         }
     }
 }

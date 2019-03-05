@@ -20,8 +20,9 @@ public class throwobjacts : MonoBehaviour {
     IEnumerator cliderenble()
     {
         sound2.GetComponent<Collider>().enabled = true;
-        yield return new WaitForSeconds(.9f);
+        yield return new WaitForSeconds(timer);
         sound2.GetComponent<Collider>().enabled = false;
+        throwme = false;
     }
         //private bool touched = false;
         // Use this for initialization
@@ -68,10 +69,10 @@ public class throwobjacts : MonoBehaviour {
                 transform.parent = null;
                 me.GetComponent<MeshRenderer>().enabled = true;
                 beingCarried = false;
-                sound2.GetComponent<Collider>().enabled = true;
+                //sound2.GetComponent<Collider>().enabled = true;
                 gamemanger.GM.grab = false;
                 throwme = true;
-                StartCoroutine(cliderenble());
+                //StartCoroutine(cliderenble());
                 GetComponent<Rigidbody>().AddForce(playerCam.forward * throwforce);
             }
             else if (Input.GetMouseButtonDown(1))
@@ -99,5 +100,11 @@ public class throwobjacts : MonoBehaviour {
 
 
         }
+        
+    }
+    void OnCollisionEnter()
+    {
+        if (throwme)
+        StartCoroutine(cliderenble());
     }
 }
