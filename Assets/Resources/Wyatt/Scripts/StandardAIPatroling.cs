@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Patroling : MonoBehaviour
+public class StandardAIPatroling : MonoBehaviour
 {
     EnemySeek seeker;
     EnemySoundDetection soundDetect;
