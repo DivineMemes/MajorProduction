@@ -87,7 +87,7 @@ public class controler : MonoBehaviour {
                 transform.position += transform.up * play.jump * Time.deltaTime;
             }
         }
-        if (Input.GetKey(KeyCode.LeftControl))
+        if (Input.GetKey(KeyCode.LeftControl)&&run == false)
         {
             crouch = true;
         }
@@ -114,7 +114,7 @@ public class controler : MonoBehaviour {
             myflaselight.enabled = false;
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift)&&crouch == false)
         {
             run = true;
         }

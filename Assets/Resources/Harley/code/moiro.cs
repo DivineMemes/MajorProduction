@@ -39,7 +39,7 @@ public class moiro : MonoBehaviour
     Transform cam;
     public Collider collider;
     public float jump;
-    public float run;
+    public float velocityrun;
     public AnimationCurve velocityCurve;
     public float down;
     public float timeToReachTerminalVelocity = 4;
@@ -56,17 +56,8 @@ public class moiro : MonoBehaviour
         {
             return;
         }
-        if (controller.crouch == true && controller.run == false)
-        {
-            height = heigthcrouch;
-            velocity = velocitycrouch;
-
-        }
-        if (controller.crouch == false)
-        {
-            height = heightnormle;
-            velocity = velocitybase;
-        }
+        run();
+        crouch();
         Input();
         CalculateDirection();
         CalculateForward();
@@ -94,14 +85,7 @@ public class moiro : MonoBehaviour
         }
         Rotate();
         Move();
-        if (controller.run == true && controller.crouch == false) 
-        {
-            velocity = run;
-        }
-        if (controller.run == false)
-        {
-            velocity = velocitybase;
-        }
+       
         //trap1();
     }
     void OnCollisionStay(Collision hit)
@@ -336,5 +320,30 @@ public class moiro : MonoBehaviour
     void enmeys()
     {
 
+    }
+    void run()
+    {
+        if (controller.run == true)
+        {
+            velocity = velocityrun;
+        }
+        if (controller.run == false)
+        {
+            velocity = velocitybase;
+        }
+    }
+   void crouch()
+    {
+        if (controller.crouch == true)
+        {
+            height = heigthcrouch;
+            velocity = velocitycrouch;
+
+        }
+        if (controller.crouch == false)
+        {
+            height = heightnormle;
+            velocity = velocitybase;
+        }
     }
 }
