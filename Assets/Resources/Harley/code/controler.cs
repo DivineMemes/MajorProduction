@@ -9,6 +9,8 @@ public class controler : MonoBehaviour {
     public moiro play;
     public bool noinput;
     public Collider sound;
+    public bool downrun;
+    public bool downcrouch;
     public AudioSource me;
     public bool crouch;
     //public Animator you;
@@ -87,7 +89,7 @@ public class controler : MonoBehaviour {
                 transform.position += transform.up * play.jump * Time.deltaTime;
             }
         }
-        if (Input.GetKey(KeyCode.X)&&run == false)
+        if (Input.GetKey(KeyCode.X) && run == false)
         {
             crouch = true;
         }
@@ -114,9 +116,11 @@ public class controler : MonoBehaviour {
             myflaselight.enabled = false;
         }
 
-        if (Input.GetKey(KeyCode.C)&&crouch == false)
+        if (Input.GetKey(KeyCode.C) && crouch == false)
         {
-            run = true;
+            downrun = true;
+           
+                run = true;
         }
         if (!Input.GetKey(KeyCode.C))
         {
