@@ -9,6 +9,7 @@ public class EnemySoundDetection : MonoBehaviour
     public float radius;
     public bool heardSound = false;
     public bool searchingSound;
+    public bool recordPos;
 
 
     private void Start()
@@ -21,13 +22,12 @@ public class EnemySoundDetection : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, radius);
         for (int i = 0; i < colliders.Length; i++)
         {
-            if (colliders[i].gameObject.tag == "Sound" && !heardSound)
+            if (colliders[i].gameObject.tag == "Sound" && colliders[i].gameObject.GetComponent<Collider>().enabled && !heardSound)
             {
-                if(colliders[i].gameObject.GetComponent<Collider>().enabled)
-                {
-                    soundPos = colliders[i].gameObject.transform;
-                }
-
+                //if(colliders[i].gameObject.GetComponent<Collider>().enabled == true)
+                //{
+                    soundPos = colliders[i].gameObject.GetComponent<Collider>().transform;
+                //}
                 heardSound = true;
                 searchingSound = true;
             }
