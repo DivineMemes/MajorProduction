@@ -12,6 +12,7 @@ public class controler : MonoBehaviour {
     public bool downrun;
     public bool downcrouch;
     public AudioSource me;
+    public AudioClip walk;
     public bool crouch;
     //public Animator you;
     public bool run;
