@@ -598,7 +598,7 @@ MonoBehaviour:
   player: {fileID: 1721513167}
   playerCam: {fileID: 1537676415}
   me: {fileID: 378166498}
-  throwforce: 50
+  throwforce: 250
   hasplayer: 0
   sound2: {fileID: 2142030041}
   throwme: 0
@@ -2071,6 +2071,10 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 1721513167}
+    - target: {fileID: 1444112071339602, guid: 16d06b45a0df4d24984e4b6857071fa2, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16d06b45a0df4d24984e4b6857071fa2, type: 2}
   m_IsPrefabAsset: 0
@@ -2151,12 +2155,12 @@ Prefab:
     - target: {fileID: 114194171392317060, guid: f345e523232a9a448996e4580b5b8961,
         type: 2}
       propertyPath: radius
-      value: 20
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 114196367231733792, guid: f345e523232a9a448996e4580b5b8961,
         type: 2}
       propertyPath: searchTimer
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f345e523232a9a448996e4580b5b8961, type: 2}
