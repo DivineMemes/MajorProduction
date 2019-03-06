@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySoundDetection : MonoBehaviour
+public class TPAISoundDetection : MonoBehaviour
 {
     public Vector3 soundPos;
     public Vector3 soundPosTemp;
@@ -25,15 +25,15 @@ public class EnemySoundDetection : MonoBehaviour
         {
             if (colliders[i].gameObject.tag == "Sound" && !heardSound)
             {
-                if(colliders[i].gameObject.GetComponent<Collider>().enabled == true)
+                if (colliders[i].gameObject.GetComponent<Collider>().enabled == true)
                 {
                     if (!positionRecorded)
                     {
                         soundPos = colliders[i].gameObject.GetComponent<Collider>().transform.position;
-                        
+
                         positionRecorded = true;
                     }
-                    if(positionRecorded)
+                    if (positionRecorded)
                     {
                         soundPosTemp = soundPos;
                     }

@@ -48,7 +48,7 @@ public class StandardAIPatroling : MonoBehaviour
         }
         if(!seeker.targetSpotted && soundDetect.searchingSound)
         {
-            agent.destination = soundDetect.soundPos.position;
+            agent.destination = soundDetect.soundPos;
             if(agent.remainingDistance < 0.5f)
             {
                 agent.ResetPath();

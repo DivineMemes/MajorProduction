@@ -1530,6 +1530,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4547870558429416, guid: 5f81955ebfbeb334e881a25246b17a31,
     type: 2}
   m_PrefabInternal: {fileID: 1408601161}
+--- !u!1 &1304294616 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1697282431115788, guid: f345e523232a9a448996e4580b5b8961,
+    type: 2}
+  m_PrefabInternal: {fileID: 1501676500}
+--- !u!114 &1304294617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1304294616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028e95c5a096bc849846b7abb62afa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundPos: {x: 0, y: 0, z: 0}
+  soundPosTemp: {x: 0, y: 0, z: 0}
+  radius: 0
+  heardSound: 0
+  searchingSound: 0
+  positionRecorded: 0
 --- !u!1001 &1312147912
 Prefab:
   m_ObjectHideFlags: 0
@@ -2162,7 +2184,8 @@ Prefab:
       propertyPath: searchTimer
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114194171392317060, guid: f345e523232a9a448996e4580b5b8961, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: f345e523232a9a448996e4580b5b8961, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1534212260
