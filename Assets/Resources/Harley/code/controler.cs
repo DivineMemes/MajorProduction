@@ -18,6 +18,7 @@ public class controler : MonoBehaviour {
     public bool run;
     public bool light;
     public GameObject stop;
+    public float number = 0;
     public Light myflaselight;
     // Use this for initialization
     void Start () {
@@ -119,15 +120,21 @@ public class controler : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.LeftShift) && crouch == false)
         {
-            downrun = true;
+            number = 1;
            
-                run = true;
         }
         if (!Input.GetKey(KeyCode.LeftShift))
         {
+            number = 0;
+        }
+      if(number == 1)
+        {
+            run = true;
+        }
+      else
+        {
             run = false;
         }
-      
         //if(gamemanger.GM.grab == true)
         //{
         //    you.SetTrigger("grab");
