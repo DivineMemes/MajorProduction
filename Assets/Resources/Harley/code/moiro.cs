@@ -30,6 +30,8 @@ public class moiro : MonoBehaviour
     public float maxGroundAngle = 120;
     public bool debug;
     float groundAngle;
+    public bool runisdown;
+    public bool crouchisdown;
     public bool grounded;
     bool inawall;
     Vector3 forword;
@@ -47,6 +49,7 @@ public class moiro : MonoBehaviour
     void Start()
     {
         cam = Camera.main.transform;
+        velocitybase = velocity;
     }
 
     // Update is called once per frame
@@ -62,12 +65,11 @@ public class moiro : MonoBehaviour
         CalculateDirection();
         CalculateForward();
         CalculateGroundAngle();
-        crouch();
         if(!controller.run && !controller.crouch)
         {
             velocity = velocitybase;
         }
-        run();
+        crouch_run();
         wall1();
         wall2();
         wall3();
@@ -329,33 +331,39 @@ public class moiro : MonoBehaviour
     {
 
     }
-    void run()
+   void crouch_run()
     {
-        if (controller.run)
+        if (controller.crouch&&!crouchisdown)
         {
-            if (controller.downrun)
-            {
-                velocity = velocityrun;
-            }
-        }
-        if (!controller.run)
-        {
-            //velocity = velocitybase;
-        }
-    }
-   void crouch()
-    {
-        if (controller.crouch)
-        {
-            velocity = velocitycrouch;
+            velocity /= 2;
             height = heigthcrouch;
+            if(velocity == velocitycrouch)
+            {
+                crouchisdown = true;
+            }
             
 
+        }
+
+        if (controller.run&&!runisdown)
+        {
+
+            velocity *=2;
+            if(velocity == velocityrun)
+            {
+                runisdown = true;
+            }
+          
         }
         if (!controller.crouch)
         {
             height = heightnormle;
             //velocity = velocitybase;
+        }
+        if (velocity == velocitybase)
+        {
+            runisdown = false;
+            crouchisdown = false;
         }
     }
 }

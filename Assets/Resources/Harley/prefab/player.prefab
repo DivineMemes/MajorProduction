@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 136637455360969348}
   - component: {fileID: 114360460497196478}
   - component: {fileID: 114413180706559562}
+  - component: {fileID: 135636226153228304}
   m_Layer: 13
   m_Name: player
   m_TagString: Player
@@ -199,7 +200,7 @@ BoxCollider:
   m_GameObject: {fileID: 1373977834133226}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -309,10 +310,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7abaf7ca763a917459cebc3e5cad8e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 5
-  velocitybase: 5
+  velocity: 4
+  velocitybase: 3
+  velocitycrouch: 2
   turnspeed: 100
   height: 0.9
+  heightnormle: 0.9
+  heigthcrouch: 0.5
   walls: 0.9
   traps: 0.5
   roof: 0.5
@@ -335,11 +339,13 @@ MonoBehaviour:
   airtime: 0
   maxGroundAngle: 180
   debug: 1
+  runisdown: 0
+  crouchisdown: 0
   grounded: 1
   controller: {fileID: 114413180706559562}
   collider: {fileID: 136637455360969348}
   jump: 200
-  run: 10
+  velocityrun: 8
   velocityCurve:
     serializedVersion: 2
     m_Curve:
@@ -383,12 +389,28 @@ MonoBehaviour:
   play: {fileID: 114360460497196478}
   noinput: 0
   sound: {fileID: 65690021250806944}
+  downrun: 0
+  downcrouch: 0
   me: {fileID: 82190057812878008}
-  you: {fileID: 0}
+  walk: {fileID: 0}
+  crouch: 0
   run: 0
   light: 0
   stop: {fileID: 0}
+  number: 0
   myflaselight: {fileID: 0}
+--- !u!135 &135636226153228304
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1722970056214692}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.9222217
+  m_Center: {x: 0, y: 0.92222166, z: 0}
 --- !u!135 &135934640090353766
 SphereCollider:
   m_ObjectHideFlags: 1
