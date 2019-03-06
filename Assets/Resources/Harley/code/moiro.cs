@@ -6,6 +6,9 @@ public class moiro : MonoBehaviour
 {
     public float velocity/* = 5*/;
     public float velocitybase = 5;
+    public float normalradius;
+    public float currentradius;
+    public SphereCollider mysoud;
     public float velocitycrouch = 3;
     public float turnspeed = 10;
     Vector2 input;
@@ -35,6 +38,7 @@ public class moiro : MonoBehaviour
     public bool grounded;
     bool inawall;
     Vector3 forword;
+    public bool isworking;
     RaycastHit hitInfo;
     public controler controller;
     Quaternion targetRotation;
@@ -50,6 +54,7 @@ public class moiro : MonoBehaviour
     {
         cam = Camera.main.transform;
         velocitybase = velocity;
+        currentradius = normalradius;
     }
 
     // Update is called once per frame
@@ -59,9 +64,9 @@ public class moiro : MonoBehaviour
         {
             return;
         }
-        
+        mysoud.radius = currentradius;
         Input();
-       
+        
         CalculateDirection();
         CalculateForward();
         CalculateGroundAngle();
@@ -364,6 +369,22 @@ public class moiro : MonoBehaviour
         {
             runisdown = false;
             crouchisdown = false;
+        }
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "enemy")
+        {
+            isworking = true;
+            controller.sound.enabled = true;
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "enemy")
+        {
+            isworking = false;
+            controller.sound.enabled = false;
         }
     }
 }

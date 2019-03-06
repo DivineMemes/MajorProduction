@@ -42,7 +42,7 @@ public class controler : MonoBehaviour {
             vertical = -1;
             //you.ResetTrigger("idle");
             //you.SetTrigger("walk");
-            sound.enabled = true;
+            //sound.enabled = true;
             noinput = false;
         }
         if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
@@ -50,7 +50,7 @@ public class controler : MonoBehaviour {
             vertical = 1;
             //you.ResetTrigger("idle");
             //you.SetTrigger("walk");
-            sound.enabled = true;
+            //sound.enabled = true;
             noinput = false;
         }
         if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
@@ -58,7 +58,7 @@ public class controler : MonoBehaviour {
             horizontal = -1;
             //you.ResetTrigger("idle");
             //you.SetTrigger("walk");
-            sound.enabled = true;
+            //sound.enabled = true;
             noinput = false;
         }
         if (Input.GetKey(KeyCode.D) && !Input.GetKeyDown(KeyCode.A))
@@ -66,7 +66,7 @@ public class controler : MonoBehaviour {
             horizontal = 1;
             //you.ResetTrigger("idle");
             //you.SetTrigger("walk");
-            sound.enabled = true;
+            //sound.enabled = true;
             noinput = false;
         }
         if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
@@ -82,7 +82,7 @@ public class controler : MonoBehaviour {
             noinput = true;
             //you.ResetTrigger("walk");
            // you.SetTrigger("idle");
-            sound.enabled = false;
+            //sound.enabled = false;
         }
         if (play.grounded == true)
         {
