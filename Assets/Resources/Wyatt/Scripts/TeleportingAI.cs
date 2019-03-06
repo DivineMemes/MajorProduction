@@ -48,7 +48,7 @@ public class TeleportingAI : MonoBehaviour
         }
         if (!seeker.targetSpotted && soundDetect.searchingSound)
         {
-            agent.destination = soundDetect.soundPos.position;
+            agent.destination = soundDetect.soundPosTemp.position;
             gameObject.transform.position = new Vector3 (soundDetect.soundPos.position.x, gameObject.transform.position.y, soundDetect.soundPos.position.z);
             if (agent.remainingDistance < 0.5f)
             {
