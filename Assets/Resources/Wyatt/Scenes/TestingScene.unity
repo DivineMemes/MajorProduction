@@ -819,6 +819,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc97e28a320ebfc4ba07cc8eec078918, type: 2}
   m_IsPrefabAsset: 0
+--- !u!135 &538370708 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 135934640090353766, guid: 33b7c616dd3d9ee45b219ce099a3f520,
+    type: 2}
+  m_PrefabInternal: {fileID: 1589224131}
 --- !u!1 &548911322
 GameObject:
   m_ObjectHideFlags: 0
@@ -2357,6 +2362,11 @@ Prefab:
       propertyPath: run
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114360460497196478, guid: 33b7c616dd3d9ee45b219ce099a3f520,
+        type: 2}
+      propertyPath: mysoud
+      value: 
+      objectReference: {fileID: 538370708}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
   m_IsPrefabAsset: 0
