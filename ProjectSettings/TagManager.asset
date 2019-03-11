@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Sound
   - enemy
+  - ground
   layers:
   - Default
   - TransparentFX

@@ -12,7 +12,7 @@ public class controler : MonoBehaviour {
     public bool downrun;
     public bool downcrouch;
     public AudioSource me;
-    public AudioClip walk;
+    public AudioClip[] footsteps;
     public bool crouch;
     //public Animator you;
     public bool run;
@@ -40,6 +40,9 @@ public class controler : MonoBehaviour {
         if (Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
         {
             vertical = -1;
+            //me.clip = walk;
+            me.Play();
+
             //you.ResetTrigger("idle");
             //you.SetTrigger("walk");
             //sound.enabled = true;
@@ -48,6 +51,8 @@ public class controler : MonoBehaviour {
         if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
         {
             vertical = 1;
+            //me.clip = walk;
+            me.Play();
             //you.ResetTrigger("idle");
             //you.SetTrigger("walk");
             //sound.enabled = true;

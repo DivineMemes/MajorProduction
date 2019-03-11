@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class moiro : MonoBehaviour
 {
+
     public float velocity/* = 5*/;
-    public float velocitybase = 5;
+    public float velocitybase = 4;
     public float normalradius;
     public float currentradius;
     public SphereCollider mysoud;
-    public float velocitycrouch = 3;
+    public float velocitycrouch = 2;
     public float turnspeed = 10;
     Vector2 input;
+    public float maxvol = 1.0f;
     float angle;
     float horizontal;
     float vertical;
@@ -45,10 +47,12 @@ public class moiro : MonoBehaviour
     Transform cam;
     public Collider collider;
     public float jump;
-    public float velocityrun = 10f;
+    public float velocityrun = 8f;
     public AnimationCurve velocityCurve;
     public float down;
     public float timeToReachTerminalVelocity = 4;
+    public bool once;
+    public float timereset;
     // Use this for initialization
     void Start()
     {
@@ -98,7 +102,7 @@ public class moiro : MonoBehaviour
         }
         Rotate();
         Move();
-        
+        walk();
         //trap1();
     }
     void OnCollisionStay(Collision hit)
@@ -371,9 +375,33 @@ public class moiro : MonoBehaviour
             crouchisdown = false;
         }
     }
+    void walk()
+    {
+        AudioClip clip = null;
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position, -transform.up,out hit, 1.2f))
+        {
+            if(hit.collider.CompareTag("ground"))
+            {
+                clip = controller.footsteps[0];
+                //maxvol = UnityEngine.Random.Range(0.2f, 0.9f);
+            }
+            if(clip!= null&&!once)
+            {
+                controller.me.PlayOneShot(clip, maxvol);
+                once = true;
+                Invoke("reset", timereset);
+            }
+        }
+    }
+    void reset()
+    {
+        once = false;
+    }
+
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "enemy")
+        if(other.tag == "enemy"&&controller.noinput == false)
         {
             isworking = true;
             controller.sound.enabled = true;
@@ -387,4 +415,5 @@ public class moiro : MonoBehaviour
             controller.sound.enabled = false;
         }
     }
+   
 }
