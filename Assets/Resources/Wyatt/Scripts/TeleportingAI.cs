@@ -6,7 +6,7 @@ using UnityEngine;
 public class TeleportingAI : MonoBehaviour
 {
     EnemySeek seeker;
-    EnemySoundDetection soundDetect;
+    TPAISoundDetection soundDetect;
     NavMeshAgent agent;
     public GameObject player;
     public Transform[] nodes;
@@ -18,7 +18,7 @@ public class TeleportingAI : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         seeker = gameObject.GetComponent<EnemySeek>();
-        soundDetect = gameObject.GetComponent<EnemySoundDetection>();
+        soundDetect = gameObject.GetComponent<TPAISoundDetection>();
     }
 
     void NextPosition()
@@ -48,8 +48,8 @@ public class TeleportingAI : MonoBehaviour
         }
         if (!seeker.targetSpotted && soundDetect.searchingSound)
         {
-            agent.destination = soundDetect.soundPosTemp.position;
-            gameObject.transform.position = new Vector3 (soundDetect.soundPos.position.x, gameObject.transform.position.y, soundDetect.soundPos.position.z);
+            agent.destination = soundDetect.soundPosTemp;
+            gameObject.transform.position = new Vector3 (soundDetect.soundPosTemp.x, gameObject.transform.position.y, soundDetect.soundPosTemp.z);
             if (agent.remainingDistance < 0.5f)
             {
                 agent.ResetPath();
