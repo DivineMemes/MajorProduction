@@ -9,11 +9,16 @@ public class controler : MonoBehaviour {
     public moiro play;
     public bool noinput;
     public Collider sound;
+    public bool downrun;
+    public bool downcrouch;
     public AudioSource me;
-    public Animator you;
+    public AudioClip walk;
+    public bool crouch;
+    //public Animator you;
     public bool run;
     public bool light;
     public GameObject stop;
+    public float number = 0;
     public Light myflaselight;
     // Use this for initialization
     void Start () {
@@ -35,33 +40,33 @@ public class controler : MonoBehaviour {
         if (Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
         {
             vertical = -1;
-            you.ResetTrigger("idle");
-            you.SetTrigger("walk");
-            sound.enabled = true;
+            //you.ResetTrigger("idle");
+            //you.SetTrigger("walk");
+            //sound.enabled = true;
             noinput = false;
         }
         if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
         {
             vertical = 1;
-            you.ResetTrigger("idle");
-            you.SetTrigger("walk");
-            sound.enabled = true;
+            //you.ResetTrigger("idle");
+            //you.SetTrigger("walk");
+            //sound.enabled = true;
             noinput = false;
         }
         if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
         {
             horizontal = -1;
-            you.ResetTrigger("idle");
-            you.SetTrigger("walk");
-            sound.enabled = true;
+            //you.ResetTrigger("idle");
+            //you.SetTrigger("walk");
+            //sound.enabled = true;
             noinput = false;
         }
         if (Input.GetKey(KeyCode.D) && !Input.GetKeyDown(KeyCode.A))
         {
             horizontal = 1;
-            you.ResetTrigger("idle");
-            you.SetTrigger("walk");
-            sound.enabled = true;
+            //you.ResetTrigger("idle");
+            //you.SetTrigger("walk");
+            //sound.enabled = true;
             noinput = false;
         }
         if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
@@ -75,9 +80,9 @@ public class controler : MonoBehaviour {
         if(!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S)&& !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
         {
             noinput = true;
-            you.ResetTrigger("walk");
-            you.SetTrigger("idle");
-            sound.enabled = false;
+            //you.ResetTrigger("walk");
+           // you.SetTrigger("idle");
+            //sound.enabled = false;
         }
         if (play.grounded == true)
         {
@@ -85,6 +90,14 @@ public class controler : MonoBehaviour {
             {
                 transform.position += transform.up * play.jump * Time.deltaTime;
             }
+        }
+        if (Input.GetKey(KeyCode.LeftControl) && run == false)
+        {
+            crouch = true;
+        }
+        if (!Input.GetKey(KeyCode.LeftControl))
+        {
+            crouch = false;
         }
         if (Input.GetKeyDown(KeyCode.Z))
         {
@@ -105,23 +118,31 @@ public class controler : MonoBehaviour {
             myflaselight.enabled = false;
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && crouch == false)
         {
-            run = true;
+            number = 1;
+           
         }
         if (!Input.GetKey(KeyCode.LeftShift))
         {
+            number = 0;
+        }
+      if(number == 1)
+        {
+            run = true;
+        }
+      else
+        {
             run = false;
         }
-      
-        if(gamemanger.GM.grab == true)
-        {
-            you.SetTrigger("grab");
-        }
-        if (gamemanger.GM.grab == false)
-        {
-            you.ResetTrigger("grab");
-        }
+        //if(gamemanger.GM.grab == true)
+        //{
+        //    you.SetTrigger("grab");
+        //}
+        //if (gamemanger.GM.grab == false)
+        //{
+        //    you.ResetTrigger("grab");
+        //}
 
     }
 }

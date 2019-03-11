@@ -7,7 +7,7 @@ public class throwobjacts : MonoBehaviour {
     public Transform playerCam;
     public GameObject me;
     public float throwforce = 10;
-    bool hasplayer = false;
+   public bool hasplayer = false;
     public GameObject sound2;
     bool beingCarried = false;
     public bool throwme;
@@ -17,9 +17,16 @@ public class throwobjacts : MonoBehaviour {
     RaycastHit hitInfo;
     public float timer;
     public int dmg;
-    //private bool touched = false;
-	// Use this for initialization
-	void Start () {
+    IEnumerator cliderenble()
+    {
+        sound2.GetComponent<Collider>().enabled = true;
+        yield return new WaitForSeconds(timer);
+        sound2.GetComponent<Collider>().enabled = false;
+        throwme = false;
+    }
+        //private bool touched = false;
+        // Use this for initialization
+        void Start () {
 		
 	}
 	
@@ -41,7 +48,7 @@ public class throwobjacts : MonoBehaviour {
             GetComponent<Rigidbody>().isKinematic = true;
             sound2.GetComponent<Collider>().enabled = false;
             transform.parent = playerCam;
-            gamemanger.GM.grab = true;
+            //gamemanger.GM.grab = true;
             timer = 1;
             me.GetComponent<MeshRenderer>().enabled = false;
             beingCarried = true;
@@ -62,10 +69,10 @@ public class throwobjacts : MonoBehaviour {
                 transform.parent = null;
                 me.GetComponent<MeshRenderer>().enabled = true;
                 beingCarried = false;
-                sound2.GetComponent<Collider>().enabled = true;
+                //sound2.GetComponent<Collider>().enabled = true;
                 gamemanger.GM.grab = false;
                 throwme = true;
-                
+                //StartCoroutine(cliderenble());
                 GetComponent<Rigidbody>().AddForce(playerCam.forward * throwforce);
             }
             else if (Input.GetMouseButtonDown(1))
@@ -93,14 +100,11 @@ public class throwobjacts : MonoBehaviour {
 
 
         }
-        if (throwme == true)
-        {
-            timer -= Time.deltaTime;
-        }
-        if (timer <= 0)
-        {
-            sound2.GetComponent<Collider>().enabled = false;
-            throwme = false;
-        }
+        
+    }
+    void OnCollisionEnter()
+    {
+        if (throwme)
+        StartCoroutine(cliderenble());
     }
 }

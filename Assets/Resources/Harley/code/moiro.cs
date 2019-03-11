@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class moiro : MonoBehaviour
 {
-    public float velocity = 5;
+    public float velocity/* = 5*/;
     public float velocitybase = 5;
+    public float normalradius;
+    public float currentradius;
+    public SphereCollider mysoud;
+    public float velocitycrouch = 3;
     public float turnspeed = 10;
     Vector2 input;
     float angle;
     float horizontal;
     float vertical;
     public float height = 0.5f;
+    public float heightnormle = 0.9f;
+    public float heigthcrouch = .5f;
     public float walls = 0.5f;
     public float traps = 0.5f;
     public float roof = 0.5f;
@@ -27,16 +33,19 @@ public class moiro : MonoBehaviour
     public float maxGroundAngle = 120;
     public bool debug;
     float groundAngle;
+    public bool runisdown;
+    public bool crouchisdown;
     public bool grounded;
     bool inawall;
     Vector3 forword;
+    public bool isworking;
     RaycastHit hitInfo;
     public controler controller;
     Quaternion targetRotation;
     Transform cam;
     public Collider collider;
     public float jump;
-    public float run;
+    public float velocityrun = 10f;
     public AnimationCurve velocityCurve;
     public float down;
     public float timeToReachTerminalVelocity = 4;
@@ -44,6 +53,8 @@ public class moiro : MonoBehaviour
     void Start()
     {
         cam = Camera.main.transform;
+        velocitybase = velocity;
+        currentradius = normalradius;
     }
 
     // Update is called once per frame
@@ -53,10 +64,17 @@ public class moiro : MonoBehaviour
         {
             return;
         }
+        mysoud.radius = currentradius;
         Input();
+        
         CalculateDirection();
         CalculateForward();
         CalculateGroundAngle();
+        if(!controller.run && !controller.crouch)
+        {
+            velocity = velocitybase;
+        }
+        crouch_run();
         wall1();
         wall2();
         wall3();
@@ -80,14 +98,7 @@ public class moiro : MonoBehaviour
         }
         Rotate();
         Move();
-        if (controller.run == true)
-        {
-            velocity = run;
-        }
-        if (controller.run == false)
-        {
-            velocity = velocitybase;
-        }
+        
         //trap1();
     }
     void OnCollisionStay(Collision hit)
@@ -128,6 +139,8 @@ public class moiro : MonoBehaviour
         if (groundAngle >= maxGroundAngle) return;
        
         transform.position += forword * velocity * Time.deltaTime;
+       
+        
 
     }
     void CalculateForward()
@@ -322,5 +335,56 @@ public class moiro : MonoBehaviour
     void enmeys()
     {
 
+    }
+   void crouch_run()
+    {
+        if (controller.crouch&&!crouchisdown)
+        {
+            velocity /= 2;
+            height = heigthcrouch;
+            if(velocity == velocitycrouch)
+            {
+                crouchisdown = true;
+            }
+            
+
+        }
+
+        if (controller.run&&!runisdown)
+        {
+
+            velocity *=2;
+            if(velocity == velocityrun)
+            {
+                runisdown = true;
+            }
+          
+        }
+        if (!controller.crouch)
+        {
+            height = heightnormle;
+            //velocity = velocitybase;
+        }
+        if (velocity == velocitybase)
+        {
+            runisdown = false;
+            crouchisdown = false;
+        }
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "enemy")
+        {
+            isworking = true;
+            controller.sound.enabled = true;
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "enemy")
+        {
+            isworking = false;
+            controller.sound.enabled = false;
+        }
     }
 }
