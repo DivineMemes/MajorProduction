@@ -1,0 +1,180 @@
+fileFormatVersion: 2
+guid: 8ea6915ddd12f4b4e830e09d34bf1bbd
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Branch_01
+    100002: Branch_02
+    100004: //RootNode
+    100006: Trunk_01
+    400000: Branch_01
+    400002: Branch_02
+    400004: //RootNode
+    400006: Trunk_01
+    2100000: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__lambert15
+    2100002: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__lambert15
+    2100004: pasted__pasted__pasted__lambert2
+    2100006: pasted__pasted__pasted__lambert3
+    2100008: pasted__pasted__pasted__pasted__pasted__lambert3
+    2100010: pasted__pasted__lambert2
+    2100012: pasted__pasted__pasted__pasted__lambert3
+    2100014: pasted__pasted__pasted__pasted__pasted__lambert4
+    2100016: pasted__pasted__pasted__pasted__pasted__pasted__lambert3
+    2100018: pasted__pasted__pasted__pasted__pasted__pasted__pasted__lambert4
+    2100020: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__lambert16
+    2100022: pasted__pasted__pasted__pasted__pasted__pasted__pasted__lambert5
+    2100024: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__lambert5
+    2100026: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__lambert7
+    2100028: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__lambert8
+    2100030: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__lambert12
+    2100032: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__lambert9
+    2100034: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__lambert11
+    2100036: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__lambert6
+    2100038: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__lambert10
+    2100040: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__lambert14
+    2100042: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__lambert13
+    2100044: pasted__pasted__lambert4
+    2100046: pasted__lambert12
+    2100048: pasted__pasted__lambert12
+    2100050: pasted__pasted__lambert28
+    2100052: pasted__pasted__lambert20
+    2100054: pasted__pasted__lambert36
+    2100056: pasted__lambert11
+    2100058: pasted__pasted__lambert11
+    2100060: pasted__pasted__lambert27
+    2100062: pasted__pasted__lambert10
+    2100064: pasted__pasted__lambert19
+    2100066: pasted__lambert10
+    2100068: pasted__pasted__lambert26
+    2100070: pasted__pasted__lambert35
+    2100072: pasted__pasted__lambert18
+    2100074: pasted__pasted__lambert34
+    2100076: pasted__pasted__lambert25
+    2100078: pasted__pasted__lambert9
+    2100080: pasted__lambert9
+    2100082: pasted__pasted__lambert17
+    2100084: pasted__pasted__lambert33
+    2100086: pasted__pasted__lambert16
+    2100088: pasted__pasted__lambert8
+    2100090: pasted__lambert8
+    2100092: pasted__pasted__lambert24
+    2100094: pasted__pasted__lambert32
+    2100096: pasted__pasted__lambert7
+    2100098: pasted__lambert7
+    2100100: pasted__pasted__lambert15
+    2100102: pasted__pasted__lambert23
+    2100104: pasted__pasted__lambert31
+    2100106: pasted__lambert6
+    2100108: pasted__pasted__lambert6
+    2100110: pasted__pasted__lambert14
+    2100112: pasted__pasted__lambert22
+    2100114: pasted__pasted__lambert30
+    2100116: pasted__pasted__lambert5
+    2100118: pasted__lambert5
+    2100120: pasted__pasted__lambert13
+    2100122: pasted__pasted__lambert21
+    2100124: pasted__lambert13
+    2100126: lambert3
+    2100128: pasted__lambert14
+    2100130: pasted__pasted__lambert29
+    2100132: pasted__lambert15
+    2100134: pasted__lambert16
+    2100136: lambert5
+    2100138: pasted__pasted__lambert37
+    2100140: pasted__lambert18
+    2100142: lambert6
+    2100144: pasted__pasted__lambert38
+    2100146: lambert4
+    2100148: pasted__lambert19
+    2300000: Branch_01
+    2300002: Branch_02
+    2300004: Trunk_01
+    3300000: Branch_01
+    3300002: Branch_02
+    3300004: Trunk_01
+    4300000: Branch_01
+    4300002: Branch_02
+    4300004: Trunk_01
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
