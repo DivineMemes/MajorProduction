@@ -1,11 +1,13 @@
 fileFormatVersion: 2
 guid: 301c93e8ae67dae4e9ba82c455557374
+labels:
+- Ground
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert1
+    2100000: lambert2
     2300000: //RootNode
     3300000: //RootNode
     4300000: pPlane1
