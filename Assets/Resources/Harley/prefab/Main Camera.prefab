@@ -162,7 +162,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1202804166377320
 GameObject:
   m_ObjectHideFlags: 1
@@ -543,6 +543,7 @@ GameObject:
   - component: {fileID: 114342421071889690}
   - component: {fileID: 114010176925735740}
   - component: {fileID: 54812117095977160}
+  - component: {fileID: 114606171232627918}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1628,6 +1629,26 @@ MonoBehaviour:
   showAdditionalSettings: 0
   displayLightIntensity: 600
   displayAreaLightEmissiveMesh: 0
+--- !u!114 &114606171232627918
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1881308369857270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0d5f6e7b301e124ca8218ed86fe1f18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maincam: {fileID: 20451805898224746}
+  hands: {fileID: 20179292508172400}
+  hidingcam: {fileID: 0}
+  isHiding: 0
+  raylength: 10
+  guiShow: 0
+  mm: {fileID: 0}
+  me: {fileID: 0}
+  hidui: {fileID: 0}
 --- !u!114 &114758634292947572
 MonoBehaviour:
   m_ObjectHideFlags: 1
