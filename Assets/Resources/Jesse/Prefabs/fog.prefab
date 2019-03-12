@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198737443454263762}
   - component: {fileID: 199407584003241822}
   m_Layer: 0
-  m_Name: Fog
+  m_Name: fog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
