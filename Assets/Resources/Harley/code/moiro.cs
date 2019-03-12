@@ -42,6 +42,7 @@ public class moiro : MonoBehaviour
     Vector3 forword;
     public bool isworking;
     RaycastHit hitInfo;
+    public Rigidbody rm;
     public controler controller;
     Quaternion targetRotation;
     Transform cam;
@@ -53,6 +54,7 @@ public class moiro : MonoBehaviour
     public float timeToReachTerminalVelocity = 4;
     public bool once;
     public float timereset;
+    public bool hid;
     // Use this for initialization
     void Start()
     {
@@ -121,10 +123,20 @@ public class moiro : MonoBehaviour
     }
     void Input()
     {
-        horizontal = controller.horizontal;
-        vertical =  controller.vertical;
-        input.x = horizontal;
-        input.y = vertical;
+        if (hid == false)
+        {
+            horizontal = controller.horizontal;
+            vertical = controller.vertical;
+            input.x = horizontal;
+            input.y = vertical;
+        }
+        if(hid== true)
+        {
+            horizontal = 0;
+            velocity = 0;
+            input.x = horizontal;
+            input.y = vertical;
+        }
     }
     void Rotate()
     {
@@ -195,7 +207,7 @@ public class moiro : MonoBehaviour
         {
             airtime += Time.deltaTime;
             float curveEval = velocityCurve.Evaluate(Mathf.Clamp01(airtime / timeToReachTerminalVelocity));
-            transform.position += (-transform.up * curveEval * down);
+            transform.position += (Vector3.down * curveEval * down);
             //transform.position += Physics.gravity * Time.deltaTime;
         }
     }
@@ -383,8 +395,9 @@ public class moiro : MonoBehaviour
         {
             if(hit.collider.CompareTag("ground"))
             {
-                clip = controller.footsteps[0];
+                clip = controller.footsteps[5];
                 //maxvol = UnityEngine.Random.Range(0.2f, 0.9f);
+                
             }
             if(clip!= null&&!once)
             {
