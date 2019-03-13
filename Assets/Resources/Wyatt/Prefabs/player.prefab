@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1722970056214692
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,9 +41,9 @@ GameObject:
   - component: {fileID: 136637455360969348}
   - component: {fileID: 114360460497196478}
   - component: {fileID: 114413180706559562}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,15 +98,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1722970056214692}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.41, z: 1.86}
+  m_LocalRotation: {x: -0, y: 0.99381596, z: -0, w: -0.1110398}
+  m_LocalPosition: {x: 0.017657677, y: 1.41, z: 12.028025}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4209592417362258}
   - {fileID: 4599681139983746}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 192.75099, z: 0}
 --- !u!23 &23142998444580466
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -309,10 +309,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7abaf7ca763a917459cebc3e5cad8e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 5
-  velocitybase: 5
+  velocity: 4
+  velocitybase: 4
+  normalradius: 0
+  currentradius: 0
+  mysoud: {fileID: 135934640090353766}
+  velocitycrouch: 2
   turnspeed: 100
+  maxvol: 1
   height: 0.9
+  heightnormle: 0.9
+  heigthcrouch: 0.5
   walls: 0.9
   traps: 0.5
   roof: 0.5
@@ -335,11 +342,14 @@ MonoBehaviour:
   airtime: 0
   maxGroundAngle: 180
   debug: 1
+  runisdown: 0
+  crouchisdown: 0
   grounded: 1
+  isworking: 0
   controller: {fileID: 114413180706559562}
   collider: {fileID: 136637455360969348}
   jump: 200
-  run: 10
+  velocityrun: 8
   velocityCurve:
     serializedVersion: 2
     m_Curve:
@@ -366,6 +376,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   down: 10
   timeToReachTerminalVelocity: 4
+  once: 0
+  timereset: 0
+  hid: 0
 --- !u!114 &114413180706559562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -383,11 +396,15 @@ MonoBehaviour:
   play: {fileID: 114360460497196478}
   noinput: 0
   sound: {fileID: 65690021250806944}
+  downrun: 0
+  downcrouch: 0
   me: {fileID: 82190057812878008}
-  you: {fileID: 0}
+  footsteps: []
+  crouch: 0
   run: 0
   light: 0
   stop: {fileID: 0}
+  number: 0
   myflaselight: {fileID: 0}
 --- !u!135 &135934640090353766
 SphereCollider:
@@ -397,7 +414,7 @@ SphereCollider:
   m_GameObject: {fileID: 1878030727972084}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}

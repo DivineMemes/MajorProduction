@@ -271,10 +271,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e61da7037c15ae145ab4008a0d6419fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundPos: {fileID: 0}
+  soundPos: {x: 0, y: 0, z: 0}
+  soundPosTemp: {x: 0, y: 0, z: 0}
   radius: 7.5
   heardSound: 0
   searchingSound: 0
+  positionRecorded: 0
 --- !u!114 &114694975162422306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -297,6 +299,7 @@ MonoBehaviour:
   Wall:
     serializedVersion: 2
     m_Bits: 1024
+  grass: []
   visibleTargets: []
 --- !u!114 &114705730756864122
 MonoBehaviour:
