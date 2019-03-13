@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class hiding : MonoBehaviour {
     public Camera maincam;
     public Camera hands;
+    public GameObject hand;
     public Camera hidingcam;
     public bool isHiding = false;
     public float raylength = 10;
@@ -46,6 +47,7 @@ public class hiding : MonoBehaviour {
                 {
                     //mm.hid = true;
                     me.SetActive(false);
+                    hand.SetActive(false);
                     maincam.enabled = false;
                     hands.enabled = false;
                     hidingcam.enabled = true;
@@ -65,6 +67,7 @@ public class hiding : MonoBehaviour {
             {
                 //mm.hid = false;
                 me.SetActive(true);
+               hand.SetActive(true);
                 maincam.enabled = true;
                 hands.enabled = false;
                 hidingcam.enabled = false;
