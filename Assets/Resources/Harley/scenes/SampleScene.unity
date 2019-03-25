@@ -3185,6 +3185,24 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114869085269955028, guid: 2ec64faad73658d4e9deeff3bde20e51,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b49327e667579e7469c21d4861e03e1a,
+        type: 3}
+    - target: {fileID: 114533559087257902, guid: 2ec64faad73658d4e9deeff3bde20e51,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 020044602ce10d640b34f995715ede50,
+        type: 3}
+    - target: {fileID: 114300877856686412, guid: 2ec64faad73658d4e9deeff3bde20e51,
+        type: 2}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c59fc32db5f69414a8dafd5f55d9a506,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ec64faad73658d4e9deeff3bde20e51, type: 2}
   m_IsPrefabAsset: 0
