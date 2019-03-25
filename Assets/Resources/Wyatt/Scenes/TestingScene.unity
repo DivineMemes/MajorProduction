@@ -819,11 +819,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc97e28a320ebfc4ba07cc8eec078918, type: 2}
   m_IsPrefabAsset: 0
---- !u!135 &538370708 stripped
-SphereCollider:
-  m_CorrespondingSourceObject: {fileID: 135934640090353766, guid: 33b7c616dd3d9ee45b219ce099a3f520,
-    type: 2}
-  m_PrefabInternal: {fileID: 1589224131}
 --- !u!1 &548911322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,11 +1230,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc97e28a320ebfc4ba07cc8eec078918, type: 2}
   m_IsPrefabAsset: 0
---- !u!95 &921889615 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 95443209078224684, guid: 080110e1794016b4291bd2604847feb3,
-    type: 2}
-  m_PrefabInternal: {fileID: 976141291}
 --- !u!4 &953539042 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4070503985089900, guid: 5f81955ebfbeb334e881a25246b17a31,
@@ -1286,18 +1276,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114758634292947572, guid: 080110e1794016b4291bd2604847feb3,
         type: 2}
-      propertyPath: Distance
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 114758634292947572, guid: 080110e1794016b4291bd2604847feb3,
-        type: 2}
       propertyPath: LookAt
       value: 
       objectReference: {fileID: 1721513167}
-    - target: {fileID: 1162282639832956, guid: 080110e1794016b4291bd2604847feb3, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 080110e1794016b4291bd2604847feb3, type: 2}
   m_IsPrefabAsset: 0
@@ -2063,6 +2044,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114694975162422306, guid: 16d06b45a0df4d24984e4b6857071fa2,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1721513167}
     - target: {fileID: 114705730756864122, guid: 16d06b45a0df4d24984e4b6857071fa2,
         type: 2}
       propertyPath: player
@@ -2093,15 +2079,6 @@ Prefab:
       propertyPath: nodes.Array.data[4]
       value: 
       objectReference: {fileID: 445420817}
-    - target: {fileID: 114694975162422306, guid: 16d06b45a0df4d24984e4b6857071fa2,
-        type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1721513167}
-    - target: {fileID: 1444112071339602, guid: 16d06b45a0df4d24984e4b6857071fa2, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16d06b45a0df4d24984e4b6857071fa2, type: 2}
   m_IsPrefabAsset: 0
@@ -2313,70 +2290,9 @@ Prefab:
       objectReference: {fileID: 362211732}
     - target: {fileID: 114413180706559562, guid: 33b7c616dd3d9ee45b219ce099a3f520,
         type: 2}
-      propertyPath: you
-      value: 
-      objectReference: {fileID: 921889615}
-    - target: {fileID: 114413180706559562, guid: 33b7c616dd3d9ee45b219ce099a3f520,
-        type: 2}
       propertyPath: myflaselight
       value: 
       objectReference: {fileID: 733462410}
-    - target: {fileID: 1722970056214692, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 1722970056214692, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 135934640090353766, guid: 33b7c616dd3d9ee45b219ce099a3f520,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1373977834133226, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4856296969552322, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 192.75099
-      objectReference: {fileID: 0}
-    - target: {fileID: 114360460497196478, guid: 33b7c616dd3d9ee45b219ce099a3f520,
-        type: 2}
-      propertyPath: velocitybase
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114360460497196478, guid: 33b7c616dd3d9ee45b219ce099a3f520,
-        type: 2}
-      propertyPath: velocity
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114360460497196478, guid: 33b7c616dd3d9ee45b219ce099a3f520,
-        type: 2}
-      propertyPath: run
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114413180706559562, guid: 33b7c616dd3d9ee45b219ce099a3f520,
-        type: 2}
-      propertyPath: run
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114360460497196478, guid: 33b7c616dd3d9ee45b219ce099a3f520,
-        type: 2}
-      propertyPath: mysoud
-      value: 
-      objectReference: {fileID: 538370708}
-    - target: {fileID: 114360460497196478, guid: 33b7c616dd3d9ee45b219ce099a3f520,
-        type: 2}
-      propertyPath: velocityrun
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114360460497196478, guid: 33b7c616dd3d9ee45b219ce099a3f520,
-        type: 2}
-      propertyPath: velocitycrouch
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33b7c616dd3d9ee45b219ce099a3f520, type: 2}
   m_IsPrefabAsset: 0
@@ -2408,7 +2324,7 @@ GameObject:
   - component: {fileID: 1730867387}
   m_Layer: 9
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8

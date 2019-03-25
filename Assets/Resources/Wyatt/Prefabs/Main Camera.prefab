@@ -1494,7 +1494,8 @@ MonoBehaviour:
   groundcam:
     serializedVersion: 2
     m_Bits: 512
-  Distance: 0.1
+  hightofcamra: 0
+  Distance: 0.01
   CurrentX: 0
   CurrentY: 0
   SensivityX: 4
