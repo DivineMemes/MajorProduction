@@ -8,6 +8,7 @@ public class EnemySeek : MonoBehaviour
     Vector3 velocity;
 
     public bool targetSpotted = false;
+    public bool targetLost = false;
 
     public float viewRad;
     [Range(0,360)]
