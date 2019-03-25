@@ -13,6 +13,7 @@ public class StandardAIPatroling : MonoBehaviour
     public float searchTimer;
     int destinationPoint = 0;
     bool coroutineStarted;
+    bool targetSpotted;
     // Use this for initialization
     void Start()
     {
