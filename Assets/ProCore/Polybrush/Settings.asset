@@ -12,23 +12,22 @@ MonoBehaviour:
   m_Name: Settings
   m_EditorClassIdentifier: 
   m_bool_keys:
+  - z_pref_lockBrushToFirst
+  - prefab_hitSurfaceIsParent
   - z_pref_rebuildNormals
   - z_pref_rebuildCollisions
-  - z_pref_lockBrushToFirst
   - z_pref_lockBrushSettings
   - z_pref_additionalVertexStreams
   - z_pref_hideWireframe
-  - z_pref_floatingEditorWindow
   - prefab_avoidOverlappingGameObjects
   m_int_keys:
   - z_GIWorkflowMode
-  - prefab_previewThumbSize
   m_float_keys: []
   m_string_keys: []
   m_Color_keys:
   - z_pref_brushColor
-  m_bool_values: 0101010001010100
-  m_int_values: 010000004f000000
+  m_bool_values: 0000010100010100
+  m_int_values: 00000000
   m_float_values: []
   m_string_values: []
   m_Color_values:

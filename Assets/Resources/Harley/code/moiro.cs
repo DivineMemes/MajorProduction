@@ -42,6 +42,7 @@ public class moiro : MonoBehaviour
     Vector3 forword;
     public bool isworking;
     RaycastHit hitInfo;
+    public Rigidbody rm;
     public controler controller;
     Quaternion targetRotation;
     Transform cam;
@@ -206,7 +207,7 @@ public class moiro : MonoBehaviour
         {
             airtime += Time.deltaTime;
             float curveEval = velocityCurve.Evaluate(Mathf.Clamp01(airtime / timeToReachTerminalVelocity));
-            transform.position += (-transform.up * curveEval * down);
+            transform.position += (Vector3.down * curveEval * down);
             //transform.position += Physics.gravity * Time.deltaTime;
         }
     }
