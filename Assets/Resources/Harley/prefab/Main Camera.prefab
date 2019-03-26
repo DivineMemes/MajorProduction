@@ -1757,7 +1757,7 @@ Light:
   m_ShadowAngle: 0
 --- !u!114 &114009824745637542
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1634480702676846}
@@ -1928,7 +1928,7 @@ MonoBehaviour:
       isFptlEnabled: 1
 --- !u!114 &114423284496644184
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1250621177269222}
@@ -1971,7 +1971,7 @@ MonoBehaviour:
   shadowDatas: []
 --- !u!114 &114600207395970268
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1250621177269222}
