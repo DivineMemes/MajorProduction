@@ -68,8 +68,10 @@ public class moiro : MonoBehaviour
     {
         if(gamemanger.GM.pause == true)
         {
+            controller.you.enabled = false;
             return;
         }
+        controller.you.enabled = true;
         mysoud.radius = currentradius;
         Input();
         

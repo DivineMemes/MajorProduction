@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1e026c613daca6a4b9f39f856e384ccd
+guid: e7ab9e2b9d8df7a4998c9b15cf71b00d
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -53,8 +53,7 @@ ModelImporter:
     100094: J_R_wrist
     100096: J_ROOT
     100098: player1
-    100100: RP_character_player_idle_pCylinder1
-    100102: //RootNode
+    100100: //RootNode
     400000: J_L_arm_base
     400002: J_L_fing_index_1
     400004: J_L_fing_index_2
@@ -105,14 +104,9 @@ ModelImporter:
     400094: J_R_wrist
     400096: J_ROOT
     400098: player1
-    400100: RP_character_player_idle_pCylinder1
-    400102: //RootNode
+    400100: //RootNode
     2100000: lambert2
-    2100002: lambert7
-    2300000: RP_character_player_idle_pCylinder1
-    3300000: RP_character_player_idle_pCylinder1
-    4300000: RP_character_player_idle_pCylinder1
-    4300002: player1
+    4300000: player1
     7400000: Take 001
     9500000: //RootNode
     13700000: player1
