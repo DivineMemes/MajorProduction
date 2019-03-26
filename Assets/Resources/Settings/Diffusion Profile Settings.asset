@@ -18,8 +18,8 @@ MonoBehaviour:
     texturingMode: 0
     transmissionMode: 1
     thicknessRemap: {x: 0, y: 5}
-    worldScale: 1
-    ior: 1.4
+    worldScale: 0.001
+    ior: 1
     scatterDistance1: {r: 0.3, g: 0.3, b: 0.3, a: 0}
     scatterDistance2: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     lerpWeight: 1
@@ -29,8 +29,8 @@ MonoBehaviour:
     texturingMode: 0
     transmissionMode: 0
     thicknessRemap: {x: 0, y: 5}
-    worldScale: 1
-    ior: 1.4
+    worldScale: 0.001
+    ior: 1.417
     scatterDistance1: {r: 0.3, g: 0.3, b: 0.3, a: 0}
     scatterDistance2: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     lerpWeight: 1
