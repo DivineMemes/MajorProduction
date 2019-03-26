@@ -1582,7 +1582,7 @@ MonoBehaviour:
       isFptlEnabled: 1
 --- !u!114 &114342421071889690
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1881308369857270}
