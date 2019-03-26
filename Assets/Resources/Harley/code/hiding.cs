@@ -40,6 +40,7 @@ public class hiding : MonoBehaviour {
             if (hit.collider.tag == "Hide"&&isHiding == false)
             {
                 guiShow = true;
+                
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     
