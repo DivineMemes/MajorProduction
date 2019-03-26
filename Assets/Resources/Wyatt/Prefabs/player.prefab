@@ -21,13 +21,29 @@ GameObject:
   - component: {fileID: 4599681139983746}
   - component: {fileID: 82190057812878008}
   - component: {fileID: 65690021250806944}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Audio Source
   m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
+--- !u!1 &1634942377538836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4532187976698962}
+  - component: {fileID: 135318407293378060}
+  m_Layer: 13
+  m_Name: Sphere (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1722970056214692
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,6 +57,8 @@ GameObject:
   - component: {fileID: 136637455360969348}
   - component: {fileID: 114360460497196478}
   - component: {fileID: 114413180706559562}
+  - component: {fileID: 114414605682425222}
+  - component: {fileID: 54549671192408056}
   m_Layer: 13
   m_Name: player
   m_TagString: Player
@@ -59,7 +77,7 @@ GameObject:
   - component: {fileID: 33990246799229272}
   - component: {fileID: 23142998444580466}
   - component: {fileID: 135934640090353766}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,6 +96,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4856296969552322}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4532187976698962
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1634942377538836}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4856296969552322}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4599681139983746
 Transform:
@@ -98,15 +129,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1722970056214692}
-  m_LocalRotation: {x: -0, y: 0.99381596, z: -0, w: -0.1110398}
-  m_LocalPosition: {x: 0.017657677, y: 1.41, z: 12.028025}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.41, z: 1.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4209592417362258}
   - {fileID: 4599681139983746}
+  - {fileID: 4532187976698962}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 192.75099, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23142998444580466
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -191,6 +223,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1878030727972084}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54549671192408056
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1722970056214692}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65690021250806944
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -213,10 +260,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -258,7 +305,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -311,9 +358,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: 4
   velocitybase: 4
-  normalradius: 0
+  normalradius: 2
   currentradius: 0
-  mysoud: {fileID: 135934640090353766}
+  mysoud: {fileID: 135318407293378060}
   velocitycrouch: 2
   turnspeed: 100
   maxvol: 1
@@ -346,9 +393,10 @@ MonoBehaviour:
   crouchisdown: 0
   grounded: 1
   isworking: 0
+  rm: {fileID: 54549671192408056}
   controller: {fileID: 114413180706559562}
   collider: {fileID: 136637455360969348}
-  jump: 200
+  jump: 3
   velocityrun: 8
   velocityCurve:
     serializedVersion: 2
@@ -377,7 +425,7 @@ MonoBehaviour:
   down: 10
   timeToReachTerminalVelocity: 4
   once: 0
-  timereset: 0
+  timereset: 0.75
   hid: 0
 --- !u!114 &114413180706559562
 MonoBehaviour:
@@ -399,13 +447,45 @@ MonoBehaviour:
   downrun: 0
   downcrouch: 0
   me: {fileID: 82190057812878008}
-  footsteps: []
+  footsteps:
+  - {fileID: 8300000, guid: e65ccb9992e274541b7461e11ae31456, type: 3}
+  - {fileID: 8300000, guid: c73598472ed8506409a111510aa9589e, type: 3}
+  - {fileID: 8300000, guid: eb6dd9aaa22289f48994fcfcdff9f513, type: 3}
+  - {fileID: 8300000, guid: b03cd39cf0fc71e4db0553210f0b6db9, type: 3}
+  - {fileID: 8300000, guid: 10c61722f3fa07c49b39fe33b364fc77, type: 3}
+  - {fileID: 8300000, guid: 3273e48b8d883f2428511f61854e26aa, type: 3}
+  - {fileID: 8300000, guid: 984103af196a1714b81578c52bf221f3, type: 3}
+  - {fileID: 8300000, guid: ebad4f67b949e7349a445583535baf0f, type: 3}
   crouch: 0
-  run: 0
+  run: 1
   light: 0
   stop: {fileID: 0}
   number: 0
   myflaselight: {fileID: 0}
+--- !u!114 &114414605682425222
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1722970056214692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1460c7becccacd94cb03da52c0ae80ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mm: {fileID: 114360460497196478}
+--- !u!135 &135318407293378060
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1634942377538836}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135934640090353766
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -414,7 +494,7 @@ SphereCollider:
   m_GameObject: {fileID: 1878030727972084}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
