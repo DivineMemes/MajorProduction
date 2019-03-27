@@ -943,7 +943,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x sentivdy
+  m_Text: x sensitivity
 --- !u!114 &114391742554753028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1094,7 +1094,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: y sentivdy
+  m_Text: y sensitivity
 --- !u!114 &114778876213976954
 MonoBehaviour:
   m_ObjectHideFlags: 1
