@@ -137,18 +137,26 @@ public class controler : MonoBehaviour {
         {
             you.SetBool("walk", false);
         }
-
-        if (Input.GetKey(KeyCode.LeftShift) && crouch == false)
+        if(noinput == true)
         {
-            number = 1;
-            
-            you.SetBool("run", true);
-
-        }
-        if (!Input.GetKey(KeyCode.LeftShift))
-        {
-            number = 0;
             you.SetBool("run", false);
+        }
+        if (noinput == false)
+        {
+
+
+            if (Input.GetKey(KeyCode.LeftShift) && crouch == false)
+            {
+                number = 1;
+
+                you.SetBool("run", true);
+
+            }
+            if (!Input.GetKey(KeyCode.LeftShift))
+            {
+                number = 0;
+                you.SetBool("run", false);
+            }
         }
       if(number == 1)
         {

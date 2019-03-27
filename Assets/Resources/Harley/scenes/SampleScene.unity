@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0
-  m_AmbientMode: 0
+  m_AmbientMode: 4
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -4903,6 +4903,20 @@ Prefab:
       propertyPath: look
       value: 
       objectReference: {fileID: 966246132}
+    - target: {fileID: 1713516579386364, guid: 2ec64faad73658d4e9deeff3bde20e51, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308082655567760, guid: 2ec64faad73658d4e9deeff3bde20e51,
+        type: 2}
+      propertyPath: m_Text
+      value: x sensitivity
+      objectReference: {fileID: 0}
+    - target: {fileID: 114763144130579830, guid: 2ec64faad73658d4e9deeff3bde20e51,
+        type: 2}
+      propertyPath: m_Text
+      value: y sensitivity
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ec64faad73658d4e9deeff3bde20e51, type: 2}
   m_IsPrefabAsset: 0
@@ -5774,7 +5788,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1132988220}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
   m_Name: 
@@ -5832,7 +5846,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1132988220}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
   m_Name: 

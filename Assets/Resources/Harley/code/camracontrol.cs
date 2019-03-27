@@ -39,7 +39,7 @@ public class camracontrol : MonoBehaviour {
         xAxisClamp -= rotAmountY;
 
         Vector3 targetRotCam = transform.rotation.eulerAngles;
-        Vector3 targetRotBody = game.transform.rotation.eulerAngles;
+        //Vector3 targetRotBody = game.transform.rotation.eulerAngles;
 
         targetRotCam.x -= rotAmountY;
         targetRotCam.z = 0;
@@ -59,8 +59,8 @@ public class camracontrol : MonoBehaviour {
         print(mouseY);
 
 
-        transform.rotation = Quaternion.Euler(targetRotCam);
-        game.rotation = Quaternion.Euler(targetRotBody);
+        //transform.rotation = Quaternion.Euler(targetRotCam);
+        //game.rotation = Quaternion.Euler(targetRotBody);
     }
    
 }
