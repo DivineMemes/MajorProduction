@@ -2051,7 +2051,7 @@ MonoBehaviour:
     m_Bits: 512
   YOffSet: 0
   hightofcamra: 0
-  Distance: 0.1
+  Distance: 10
   Distancey: 0.5
   Distancex: 0.5
   CurrentX: 0
