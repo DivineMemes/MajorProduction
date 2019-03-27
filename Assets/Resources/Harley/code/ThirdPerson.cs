@@ -21,7 +21,7 @@ public class ThirdPerson : MonoBehaviour {
     public float CurrentY = 0.0f;
     public float SensivityX = 4.0f;
     public float SensivityY = 1.0f;
-    public Vector3 offset = new Vector3 (0,.5f,0);
+   // public Vector3 offset = new Vector3 (0,.5f,0);
 	// Use this for initialization
 	void Start () {
         CamTransform = transform;
