@@ -7,7 +7,7 @@ public class hiding : MonoBehaviour {
     public Camera maincam;
     public Camera hands ;
     public GameObject hand;
-    public Camera hidingcam;
+    //public Camera hidingcam;
     public bool isHiding = false;
     public float raylength = 10;
     RaycastHit hit;
@@ -33,7 +33,7 @@ public class hiding : MonoBehaviour {
     void Start ()
     {
         maincam.enabled = true;
-        hidingcam.enabled = false;
+        //hidingcam.enabled = false;
  ;
     }
 	

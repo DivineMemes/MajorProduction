@@ -22,7 +22,6 @@ public class controler : MonoBehaviour {
     public Light myflaselight;
     // Use this for initialization
     void Start () {
-        foo
     }
 
     // Update is called once per frame
