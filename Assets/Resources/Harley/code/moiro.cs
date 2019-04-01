@@ -38,6 +38,7 @@ public class moiro : MonoBehaviour
     public bool runisdown;
     public bool crouchisdown;
     public bool grounded;
+    public int i;
     bool inawall;
     Vector3 forword;
     public bool isworking;
@@ -393,13 +394,26 @@ public class moiro : MonoBehaviour
     {
         AudioClip clip = null;
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, -transform.up,out hit, 1.2f))
+        if (i == controller.footsteps.Length)
+        {
+            i = 0;
+        }
+        if (Physics.Raycast(transform.position, -transform.up,out hit, 1.2f))
         {
             if(hit.collider.CompareTag("ground"))
             {
-                clip = controller.footsteps[5];
+                   
+                    for (i = 0; i < controller.footsteps.Length; i++)
+                {
+                    clip = controller.footsteps[i];
+                   
+                }
+                if (i == controller.footsteps.Length)
+                {
+                    i = 0;
+                }
                 //maxvol = UnityEngine.Random.Range(0.2f, 0.9f);
-                
+
             }
             if(clip!= null&&!once)
             {
