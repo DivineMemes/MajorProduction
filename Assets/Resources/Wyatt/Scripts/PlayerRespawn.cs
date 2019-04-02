@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerRespawn : MonoBehaviour
 {
+    bool hasdied;
     Vector3 respawnPosition;
     void Start()
     {
@@ -12,7 +13,7 @@ public class PlayerRespawn : MonoBehaviour
 
     private void Update()
     {
-        //Respawn();
+        Respawn();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -22,11 +23,21 @@ public class PlayerRespawn : MonoBehaviour
             respawnPosition = collision.gameObject.transform.position;
             Destroy(collision.gameObject);
         }
+
+        if(collision.collider.gameObject.CompareTag("Enemy"))
+        {
+            hasdied = true;
+        }
     }
     
     void Respawn()
-    {   
-        //do respawn when you die
+    {
+        
+        if(hasdied)
+        {
+            gameObject.transform.position = respawnPosition;
+            hasdied = false;
+        }
     }
 
 }
