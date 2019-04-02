@@ -47,11 +47,18 @@ public class EnemySoundDetection : MonoBehaviour
             }
         }
 
+        
+
         if (!searchingSound)
         {
             //soundPos = null;
             //soundPosTemp = null;
             positionRecorded = false;
         }
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(gameObject.transform.position, radius);
     }
 }
