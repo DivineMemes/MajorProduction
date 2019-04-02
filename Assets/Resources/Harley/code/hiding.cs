@@ -84,7 +84,7 @@ public class hiding : MonoBehaviour {
             maincam.transform.position = Vector3.Lerp(maincam.transform.position, hidingspot.position, i);
             if (maincam.transform.position == Vector3.Lerp(maincam.transform.position, hidingspot.position, i))
             {
-                maincam.transform.rotation = Quaternion.Euler(0,  turn, 0);
+                maincam.transform.forward = hidingspot.transform.forward;
             }
             if (Input.GetKeyDown(KeyCode.F))
             {
