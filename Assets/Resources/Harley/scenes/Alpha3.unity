@@ -1974,6 +1974,11 @@ Prefab:
       propertyPath: runisdown
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114360460497196478, guid: 4c90437ef6cfa6349a136f885d0005b1,
+        type: 2}
+      propertyPath: heigthcrouch
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c90437ef6cfa6349a136f885d0005b1, type: 2}
   m_IsPrefabAsset: 0
@@ -4365,7 +4370,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4555382515837102, guid: 5628c7d67c7875a41a476c4e7e10a804, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.449
+      value: 0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555382515837102, guid: 5628c7d67c7875a41a476c4e7e10a804, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.413
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5628c7d67c7875a41a476c4e7e10a804, type: 2}

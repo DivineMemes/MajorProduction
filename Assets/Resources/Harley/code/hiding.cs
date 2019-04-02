@@ -11,6 +11,7 @@ public class hiding : MonoBehaviour {
     public bool isHiding = false;
     public float raylength = 10;
     RaycastHit hit;
+    public float turn;
     public bool guiShow = false;
     public moiro mm;
     public GameObject me;
@@ -24,7 +25,7 @@ public class hiding : MonoBehaviour {
     {
         
         yield return new WaitForSeconds(0.5f);
-        var rate = 6.0f / time;
+        var rate = 7.0f / time;
         i += Time.deltaTime * rate;
         isHiding = true;
         guiShow = false;
@@ -83,7 +84,7 @@ public class hiding : MonoBehaviour {
             maincam.transform.position = Vector3.Lerp(maincam.transform.position, hidingspot.position, i);
             if (maincam.transform.position == Vector3.Lerp(maincam.transform.position, hidingspot.position, i))
             {
-                maincam.transform.rotation = Quaternion.Euler(0, -90, 0);
+                maincam.transform.rotation = Quaternion.Euler(0,  turn, 0);
             }
             if (Input.GetKeyDown(KeyCode.F))
             {
