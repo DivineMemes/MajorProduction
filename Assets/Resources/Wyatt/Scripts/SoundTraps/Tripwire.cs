@@ -33,7 +33,7 @@ public class Tripwire : MonoBehaviour
                 
             }
         }
-        Debug.DrawLine(endOne.position, endTwo.position, Color.black);
+        //Debug.DrawLine(endOne.position, endTwo.position, Color.black);
     }
     IEnumerator waitfordelete(SphereCollider collider)
     {
@@ -41,6 +41,7 @@ public class Tripwire : MonoBehaviour
         yield return new WaitForSeconds(killTime);
         coroutineStarted = false;
         Destroy(collider);
-        Destroy(gameObject);
+        this.gameObject.SetActive(false);
+        //Destroy(gameObject);
     }
 }
