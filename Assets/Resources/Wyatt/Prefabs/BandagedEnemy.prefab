@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 195426380629365542}
   - component: {fileID: 135277204299554226}
   m_Layer: 0
-  m_Name: rp_character_cultist_bandage_uv2
+  m_Name: BandagedEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1530,6 +1530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   targetSpotted: 0
+  targetLost: 0
   viewRad: 0
   viewAng: 0
   delay: 0
