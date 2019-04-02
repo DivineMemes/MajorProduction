@@ -59,6 +59,6 @@ public class EnemySoundDetection : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Gizmos.DrawSphere(gameObject.transform.position, radius);
+        //Gizmos.DrawSphere(gameObject.transform.position, radius);
     }
 }
