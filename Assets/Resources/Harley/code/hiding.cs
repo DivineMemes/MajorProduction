@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class hiding : MonoBehaviour {
     public Camera maincam;
     public Camera hands ;
+    public GameObject lookat;
     public GameObject hand;
     //public Camera hidingcam;
     public bool isHiding = false;
@@ -62,7 +63,7 @@ public class hiding : MonoBehaviour {
                 {
                     
                     //mm.hid = true;
-                    k.enabled = false;
+                    //k.enabled = false;
                     me.SetActive(false);
                    //hand.SetActive(false);
                     //maincam.enabled = false;
@@ -81,15 +82,15 @@ public class hiding : MonoBehaviour {
 
         if (isHiding == true)
         {
-            maincam.transform.position = Vector3.Lerp(maincam.transform.position, hidingspot.position, i);
-            if (maincam.transform.position == Vector3.Lerp(maincam.transform.position, hidingspot.position, i))
-            {
-                maincam.transform.forward = hidingspot.transform.forward;
-            }
+            lookat.transform.position = Vector3.Lerp(lookat.transform.position, hidingspot.position, i);
+            //if (maincam.transform.position == Vector3.Lerp(maincam.transform.position, hidingspot.position, i))
+            //{
+            //    maincam.transform.forward = hidingspot.transform.forward;
+            //}
             if (Input.GetKeyDown(KeyCode.F))
             {
                 //mm.hid = false;
-                k.enabled = true;
+                //k.enabled = true;
                 me.SetActive(true);
                 //hand.SetActive(true);
                // maincam.enabled = true;
