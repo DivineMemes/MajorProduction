@@ -62,7 +62,8 @@ public class hiding : MonoBehaviour {
                 //time = time -= Time.deltaTime;
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    
+                    mm.controller.you.SetBool("walk", false);
+                    mm.controller.you.SetBool("run", false);
                     //mm.hid = true;
                     //k.enabled = false;
                     me.SetActive(false);

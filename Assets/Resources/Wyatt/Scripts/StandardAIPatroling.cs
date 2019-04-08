@@ -14,6 +14,7 @@ public class StandardAIPatroling : MonoBehaviour
     int destinationPoint = 0;
     bool coroutineStarted;
     bool targetSpotted;
+    public Animator coltist;
     // Use this for initialization
     void Start()
     {
@@ -37,6 +38,8 @@ public class StandardAIPatroling : MonoBehaviour
     {
         if(!soundDetect.heardSound&&!seeker.targetSpotted)
         {
+            coltist.SetBool("walk", true);
+            coltist.SetBool("run", false);
             if (!agent.pathPending && agent.remainingDistance < 0.5f)
             {
                 NextPosition();
@@ -46,12 +49,14 @@ public class StandardAIPatroling : MonoBehaviour
         if(seeker.targetSpotted)
         {
             agent.destination = player.transform.position;
+            coltist.SetBool("run", true);
         }
         if(!seeker.targetSpotted && soundDetect.searchingSound)
         {
             agent.destination = soundDetect.soundPos;
             if(agent.remainingDistance < 0.5f)
             {
+                coltist.SetBool("run", true);
                 agent.ResetPath();
                 if(!coroutineStarted)
                 {
