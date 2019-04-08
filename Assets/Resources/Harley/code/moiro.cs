@@ -406,7 +406,7 @@ public class moiro : MonoBehaviour
             if(hit.collider.CompareTag("ground"))
             {
 
-                pich = UnityEngine.Random.Range(0.0f,1.0f);
+                pich = UnityEngine.Random.Range(0.2f,3.0f);
                 for (i = 0; i < controller.footsteps.Length; i++)
                 {
                     clip = controller.footsteps[i];
