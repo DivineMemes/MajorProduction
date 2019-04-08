@@ -167,13 +167,13 @@ MonoBehaviour:
     scatterDistance2: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     lerpWeight: 1
   - name: Profile 15
-    scatteringDistance: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    transmissionTint: {r: 1, g: 1, b: 1, a: 1}
+    scatteringDistance: {r: 0.8577302, g: 1, b: 0.2971698, a: 1}
+    transmissionTint: {r: 0.5881813, g: 1, b: 0.1273585, a: 1}
     texturingMode: 0
     transmissionMode: 1
     thicknessRemap: {x: 0, y: 5}
     worldScale: 1
-    ior: 1.4
+    ior: 1.45
     scatterDistance1: {r: 0.3, g: 0.3, b: 0.3, a: 0}
     scatterDistance2: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     lerpWeight: 1
