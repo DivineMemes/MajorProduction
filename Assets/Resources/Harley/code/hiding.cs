@@ -21,12 +21,13 @@ public class hiding : MonoBehaviour {
     public float i = 0.0f;
     public Transform hidingspot;
     public ThirdPerson k;
+    public Transform normelspot;
     // Use this for initialization
     IEnumerator Wait2()
     {
         
         yield return new WaitForSeconds(0.5f);
-        var rate = 7.0f / time;
+        var rate = 8.0f / time;
         i += Time.deltaTime * rate;
         isHiding = true;
         guiShow = false;
@@ -36,7 +37,7 @@ public class hiding : MonoBehaviour {
     {
         maincam.enabled = true;
         //hidingcam.enabled = false;
- ;
+        
     }
 	
 	// Update is called once per frame
@@ -56,7 +57,7 @@ public class hiding : MonoBehaviour {
                 
                 guiShow = true;
                 hidingspot = hit.collider.GetComponent<Transform>().GetChild(0).GetComponent<Transform>();
-                
+     
 
                 //time = time -= Time.deltaTime;
                 if (Input.GetKeyDown(KeyCode.F))
@@ -92,6 +93,7 @@ public class hiding : MonoBehaviour {
                 //mm.hid = false;
                 //k.enabled = true;
                 me.SetActive(true);
+                lookat.transform.position = normelspot.position;
                 //hand.SetActive(true);
                // maincam.enabled = true;
                 //hands.enabled = true;
