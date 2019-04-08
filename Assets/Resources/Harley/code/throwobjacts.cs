@@ -15,7 +15,7 @@ public class throwobjacts : MonoBehaviour {
     public float heightpadding = 0.05f;
     public LayerMask ground;
     RaycastHit hitInfo;
-    
+    public AnimationCurve velocityCurve;
     public float timer;
     public controler control;
     public int dmg;
