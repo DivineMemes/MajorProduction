@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class hiding : MonoBehaviour {
     public Camera maincam;
     public Camera hands ;
+    public GameObject lookat;
     public GameObject hand;
-    public Camera hidingcam;
+    //public Camera hidingcam;
     public bool isHiding = false;
     public float raylength = 10;
     RaycastHit hit;
+    public float turn;
     public bool guiShow = false;
     public moiro mm;
     public GameObject me;
@@ -19,12 +21,13 @@ public class hiding : MonoBehaviour {
     public float i = 0.0f;
     public Transform hidingspot;
     public ThirdPerson k;
+    public Transform normelspot;
     // Use this for initialization
     IEnumerator Wait2()
     {
         
         yield return new WaitForSeconds(0.5f);
-        var rate = 6.0f / time;
+        var rate = 8.0f / time;
         i += Time.deltaTime * rate;
         isHiding = true;
         guiShow = false;
@@ -33,8 +36,8 @@ public class hiding : MonoBehaviour {
     void Start ()
     {
         maincam.enabled = true;
-        hidingcam.enabled = false;
- ;
+        //hidingcam.enabled = false;
+        
     }
 	
 	// Update is called once per frame
@@ -54,14 +57,14 @@ public class hiding : MonoBehaviour {
                 
                 guiShow = true;
                 hidingspot = hit.collider.GetComponent<Transform>().GetChild(0).GetComponent<Transform>();
-                
+     
 
                 //time = time -= Time.deltaTime;
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     
                     //mm.hid = true;
-                    k.enabled = false;
+                    //k.enabled = false;
                     me.SetActive(false);
                    //hand.SetActive(false);
                     //maincam.enabled = false;
@@ -80,16 +83,17 @@ public class hiding : MonoBehaviour {
 
         if (isHiding == true)
         {
-            maincam.transform.position = Vector3.Lerp(maincam.transform.position, hidingspot.position, i);
-            if (maincam.transform.position == Vector3.Lerp(maincam.transform.position, hidingspot.position, i))
-            {
-                maincam.transform.rotation = Quaternion.Euler(0, -90, 0);
-            }
+            lookat.transform.position = Vector3.Lerp(lookat.transform.position, hidingspot.position, i);
+            //if (maincam.transform.position == Vector3.Lerp(maincam.transform.position, hidingspot.position, i))
+            //{
+            //    maincam.transform.forward = hidingspot.transform.forward;
+            //}
             if (Input.GetKeyDown(KeyCode.F))
             {
                 //mm.hid = false;
-                k.enabled = true;
+                //k.enabled = true;
                 me.SetActive(true);
+                lookat.transform.position = normelspot.position;
                 //hand.SetActive(true);
                // maincam.enabled = true;
                 //hands.enabled = true;
