@@ -9,8 +9,39 @@ public class step_over : MonoBehaviour {
     public GameObject player;
     public GameObject text;
     bool on;
-    // Use this for initialization
-    void Start () {
+    public float time;
+    bool step;
+    public float i = 0.0f;
+
+    public float duration = 3.0f;
+
+    IEnumerator Wait2()
+    {
+        yield return new WaitForSeconds(0.5f);
+        var rate = 8.0f / time;
+        i += Time.deltaTime * rate;
+    }
+
+    IEnumerator DoStep()
+    {
+        Vector3 start = player.transform.position;
+        Vector3 end = move.position;
+        float amount = 0.0f;
+       
+        while(amount < duration)
+        {
+            amount += Time.deltaTime;
+
+            float perc = amount / duration;
+            player.transform.position = Vector3.Lerp(start, end, perc);
+            player.SetActive(false);
+            yield return null;
+        }
+        player.SetActive(true);
+    }
+
+        // Use this for initialization
+        void Start () {
 		
 	}
 	
@@ -27,10 +58,16 @@ public class step_over : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.G))
                 {
                     on = false;
-
-                    player.transform.position = Vector3.Lerp(player.transform.position,move.position,1); 
+                    //step = true;
+                    //StartCoroutine(Wait2());
+                    StartCoroutine(DoStep());
                 }
             }
+        }
+        if(step == true)
+        {
+            //player.transform.position = Vector3.Lerp(player1.transform.position, move.position, i);
+          
         }
         if(on == true)
         {
