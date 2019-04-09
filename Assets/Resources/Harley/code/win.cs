@@ -19,10 +19,11 @@ public class win : MonoBehaviour {
 
             if(hit.collider.tag == "Player")
             {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
+                
                 //print("hit me");
                 SceneManager.LoadScene("you win");
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
    }

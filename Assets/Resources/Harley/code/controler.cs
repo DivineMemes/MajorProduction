@@ -18,6 +18,7 @@ public class controler : MonoBehaviour {
     public bool run;
     public bool light;
     public GameObject stop;
+    public GameObject cross_hair;
     public float number = 0;
     public Light myflaselight;
     public int nomore;
@@ -34,6 +35,7 @@ public class controler : MonoBehaviour {
             {
                 gamemanger.GM.pause = false;
                 stop.SetActive(false);
+                cross_hair.SetActive(true);
             }
             return;
         }
@@ -107,6 +109,7 @@ public class controler : MonoBehaviour {
         {
             gamemanger.GM.pause = true;
             stop.SetActive(true);
+            cross_hair.SetActive(false);
         }
 
         if (light == true)

@@ -17,6 +17,8 @@ public class throwobjacts : MonoBehaviour {
     RaycastHit hitInfo;
     public AnimationCurve velocityCurve;
     public float timer;
+    public GameObject grabui;
+    public GameObject normalui;
     public controler control;
     public int dmg;
     IEnumerator cliderenble()
@@ -40,11 +42,12 @@ public class throwobjacts : MonoBehaviour {
         if (dist <= 2.5f)
         {
             hasplayer = true;
-
+           
         }
         else
         {
             hasplayer = false;
+           
         }
         if(hasplayer && Input.GetKeyDown(KeyCode.E)&&control.nomore == 0)
         {
@@ -54,7 +57,7 @@ public class throwobjacts : MonoBehaviour {
             //gamemanger.GM.grab = true;
             timer = 1;
             me.GetComponent<MeshRenderer>().enabled = false;
-            beingCarried = true;
+            beingCarried = true; 
             control.nomore = 1;
            
         }
