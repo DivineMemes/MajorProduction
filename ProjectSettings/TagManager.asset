@@ -8,6 +8,8 @@ TagManager:
   - ground
   - Hide
   - Enemy
+  - enemy
+  - step_over
   layers:
   - Default
   - TransparentFX
