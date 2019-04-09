@@ -6,14 +6,13 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: key
-  m_Shader: {fileID: 4800000, guid: 747e012b315429f4f9fcca8b34c5d47b, type: 3}
-  m_ShaderKeywords: _BLENDMODE_ALPHA _BLENDMODE_PRESERVE_SPECULAR_LIGHTING _ENABLE_FOG_ON_TRANSPARENT
-    _MASKMAP _MATERIAL_FEATURE_IRIDESCENCE _NORMALMAP _NORMALMAP_TANGENT_SPACE _SURFACE_TYPE_TRANSPARENT
+  m_Name: house_walls
+  m_Shader: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59, type: 3}
+  m_ShaderKeywords: _MASKMAP _NORMALMAP _NORMALMAP_TANGENT_SPACE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2000
   stringTagMap: {}
   disabledShaderPasses:
   - DistortionVectors
@@ -29,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap:
-        m_Texture: {fileID: 2800000, guid: 8422c652bb102b44c9b0eaaf882b2b62, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1b4c094acef3e0547a840e1285683c4a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BentNormalMap:
@@ -69,15 +68,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 8422c652bb102b44c9b0eaaf882b2b62, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1b4c094acef3e0547a840e1285683c4a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
-        m_Texture: {fileID: 2800000, guid: 4233e47f5f0cbf54b94105c643b636b8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5b37379bd79108e438c196e29d326d05, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: 07d6e8965e7ae4b4faf0466d042a71be, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4f6ab700ab4ad4147adacdfee23be26d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMapOS:
@@ -146,9 +145,9 @@ Material:
     - _DistortionVectorBias: -1
     - _DistortionVectorScale: 2
     - _DoubleSidedEnable: 0
-    - _DoubleSidedNormalMode: 0
+    - _DoubleSidedNormalMode: 1
     - _Drag: 1
-    - _DstBlend: 10
+    - _DstBlend: 0
     - _EmissiveColorMode: 1
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
@@ -173,10 +172,10 @@ Material:
     - _IridescenceMask: 1
     - _IridescenceThickness: 1
     - _LinkDetailsWithBase: 1
-    - _MaterialID: 3
-    - _Metallic: 0.379
+    - _MaterialID: 1
+    - _Metallic: 0
     - _NormalMapSpace: 0
-    - _NormalScale: 2
+    - _NormalScale: 0.206
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
     - _PPDMinSamples: 5
@@ -188,7 +187,7 @@ Material:
     - _ShiverDirectionality: 0.5
     - _ShiverDrag: 0.2
     - _Smoothness: 1
-    - _SmoothnessRemapMax: 0.66600525
+    - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2
@@ -200,7 +199,7 @@ Material:
     - _Stiffness: 1
     - _SubsurfaceMask: 1
     - _SupportDBuffer: 1
-    - _SurfaceType: 1
+    - _SurfaceType: 0
     - _TexWorldScale: 1
     - _TexWorldScaleEmissive: 1
     - _Thickness: 1
@@ -213,15 +212,14 @@ Material:
     - _UVBase: 0
     - _UVDetail: 0
     - _UVEmissive: 0
-    - _ZTestDepthEqualForOpaque: 4
+    - _ZTestDepthEqualForOpaque: 3
     - _ZTestGBuffer: 4
     - _ZTestModeDistortion: 4
-    - _ZWrite: 0
+    - _ZWrite: 1
     m_Colors:
-    - Color_6133E269: {r: 1, g: 0, b: 0, a: 0}
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 0.6784314}
-    - _Color: {r: 1, g: 1, b: 1, a: 0.6784314}
-    - _DoubleSidedConstants: {r: -1, g: -1, b: -1, a: 0}
+    - _BaseColor: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
+    - _Color: {r: 0.46226412, g: 0.46226412, b: 0.46226412, a: 1}
+    - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
