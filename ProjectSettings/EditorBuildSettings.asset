@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
+  - enabled: 1
     path: Assets/Resources/Harley/scenes/mine menu.unity
     guid: 2e0e302f51cc2ec4eb41e769a90d0a40
   - enabled: 0
@@ -17,7 +17,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Resources/Wyatt/TeamateScenes/betty scene.unity
     guid: 3f1dd06ddff1e2544a5dac86870b0c53
-  - enabled: 1
+  - enabled: 0
     path: Assets/Resources/Wyatt/TeamateScenes/alpha_v1.unity
     guid: fc5918a1bb19847438af0bacff6c8a7b
+  - enabled: 1
+    path: Assets/Resources/Harley/scenes/Alpha4.unity
+    guid: c0462baac9e95f04fbd29957f0e55377
+  - enabled: 1
+    path: Assets/Resources/Harley/scenes/you win.unity
+    guid: f5ac15f5d0940714190a10bb340823fa
   m_configObjects: {}
