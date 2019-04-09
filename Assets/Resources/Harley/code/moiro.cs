@@ -14,6 +14,7 @@ public class moiro : MonoBehaviour
     public float turnspeed = 10;
     Vector2 input;
     public float maxvol = 1.0f;
+    public float pich = 1.0f;
     float angle;
     float horizontal;
     float vertical;
@@ -38,6 +39,7 @@ public class moiro : MonoBehaviour
     public bool runisdown;
     public bool crouchisdown;
     public bool grounded;
+    public int i;
     bool inawall;
     Vector3 forword;
     public bool isworking;
@@ -55,6 +57,7 @@ public class moiro : MonoBehaviour
     public bool once;
     public float timereset;
     public bool hid;
+
     // Use this for initialization
     void Start()
     {
@@ -116,7 +119,7 @@ public class moiro : MonoBehaviour
 
             if (hit.gameObject.layer == wall)
             {
-                print("hit me");
+                //print("hit me");
             }
             Debug.DrawRay(contact.point, contact.normal, Color.blue);
 
@@ -240,8 +243,8 @@ public class moiro : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, hitInfo.point) < walls)
             {
-                print("hit me wall front of me");
-                transform.position = Vector3.Lerp(transform.position, transform.position + -transform.forward * walls, 1 * Time.deltaTime);
+                //print("hit me wall front of me");
+                transform.position = Vector3.Lerp(transform.position, transform.position + -transform.forward * walls, 9 * Time.deltaTime);
             }
         }
 
@@ -252,7 +255,7 @@ public class moiro : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, hitInfo.point) < roof)
             {
-                print("hit me cealling");
+                //print("hit me cealling");
                 transform.position = Vector3.Lerp(transform.position, transform.position + -transform.up * roof, 9 * Time.deltaTime);
             }
         }
@@ -263,7 +266,7 @@ public class moiro : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, hitInfo.point) < walls)
             {
-                print("hit me left wall ");
+                //print("hit me left wall ");
                 transform.position = Vector3.Lerp(transform.position, transform.position + -transform.right * walls, 9 * Time.deltaTime);
             }
         }
@@ -275,7 +278,7 @@ public class moiro : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, hitInfo.point) < walls)
             {
-                print("hit me right wall ");
+               // print("hit me right wall ");
                 transform.position = Vector3.Lerp(transform.position, transform.position + transform.right * walls, 9 * Time.deltaTime);
             }
         }
@@ -286,7 +289,7 @@ public class moiro : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, hitInfo.point) < walls)
             {
-                print("hit me right wall ");
+               // print("hit me right wall ");
 
                 transform.position = Vector3.Lerp(transform.position, transform.position + transform.right * walls, 9 * Time.deltaTime);
             }
@@ -298,7 +301,7 @@ public class moiro : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, hitInfo.point) < walls)
             {
-                print("hit me left wall ");
+                //print("hit me left wall ");
                 transform.position = Vector3.Lerp(transform.position, transform.position + -transform.right * walls, 9 * Time.deltaTime);
             }
         }
@@ -310,7 +313,7 @@ public class moiro : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, hitInfo.point) < walls)
             {
-                print("hit me wall front of me");
+                //print("hit me wall front of me");
                 transform.position = Vector3.Lerp(transform.position, transform.position + -transform.forward * walls, 9 * Time.deltaTime);
             }
         }
@@ -322,7 +325,7 @@ public class moiro : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, hitInfo.point) < walls)
             {
-                print("hit me wall front of me");
+                //print("hit me wall front of me");
                 transform.position = Vector3.Lerp(transform.position, transform.position + -transform.forward * walls, 9 * Time.deltaTime);
             }
         }
@@ -334,7 +337,7 @@ public class moiro : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, hitInfo.point) < walls)
             {
-                print("hit me left wall ");
+               // print("hit me left wall ");
                 transform.position = Vector3.Lerp(transform.position, transform.position + -transform.right * walls, 9 * Time.deltaTime);
             }
         }
@@ -346,7 +349,7 @@ public class moiro : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, hitInfo.point) < traps)
             {
-                print("hit me a trap");
+                //print("hit me a trap");
             }
         }
     }
@@ -393,17 +396,33 @@ public class moiro : MonoBehaviour
     {
         AudioClip clip = null;
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, -transform.up,out hit, 1.2f))
+        //if (i == controller.footsteps.Length)
+        //{
+        //    i = 0;
+        //}
+        
+        if (Physics.Raycast(transform.position, -transform.up,out hit, 1.2f))
         {
             if(hit.collider.CompareTag("ground"))
             {
-                clip = controller.footsteps[5];
+
+                pich = UnityEngine.Random.Range(0.2f,3.0f);
+                for (i = 0; i < controller.footsteps.Length; i++)
+                {
+                    clip = controller.footsteps[i];
+                   
+                }
+                //if (i == controller.footsteps.Length)
+                //{
+                //    i = 0;
+                //}
                 //maxvol = UnityEngine.Random.Range(0.2f, 0.9f);
-                
+
             }
             if(clip!= null&&!once)
             {
                 controller.me.PlayOneShot(clip, maxvol);
+                controller.me.pitch = pich;
                 once = true;
                 Invoke("reset", timereset);
             }

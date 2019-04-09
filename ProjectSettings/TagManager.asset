@@ -5,9 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Sound
-  - enemy
   - ground
   - Hide
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -26,7 +26,7 @@ TagManager:
   - Sound
   - hands
   - CheckPoint
-  - 
+  - Enemy
   - 
   - 
   - 

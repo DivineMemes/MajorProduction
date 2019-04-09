@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class PlayerRespawn : MonoBehaviour
 {
+
+    //public GameObject[] Colliders = new GameObject[0];
     Vector3 respawnPosition;
+    public bool hasdied;
+
+
     void Start()
     {
         respawnPosition = gameObject.transform.position;
@@ -12,21 +17,31 @@ public class PlayerRespawn : MonoBehaviour
 
     private void Update()
     {
-        //Respawn();
+        Respawn();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.collider.gameObject.layer.Equals(16))
+        if (collision.gameObject.layer.Equals(16))
         {
             respawnPosition = collision.gameObject.transform.position;
             Destroy(collision.gameObject);
         }
+
+        if(collision.gameObject.tag == "Enemy")
+        {
+            hasdied = true;
+        }
     }
     
     void Respawn()
-    {   
-        //do respawn when you die
+    {
+        
+        if(hasdied)
+        {
+            transform.parent.position = respawnPosition;
+            hasdied = false;
+        }
     }
 
 }
