@@ -1871,7 +1871,7 @@ MonoBehaviour:
       isFptlEnabled: 1
 --- !u!114 &114342421071889690
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1881308369857270}
@@ -2020,7 +2020,6 @@ MonoBehaviour:
   maincam: {fileID: 20451805898224746}
   hands: {fileID: 20179292508172400}
   hand: {fileID: 0}
-  hidingcam: {fileID: 0}
   isHiding: 0
   raylength: 10
   guiShow: 0

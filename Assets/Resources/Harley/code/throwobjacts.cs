@@ -15,7 +15,9 @@ public class throwobjacts : MonoBehaviour {
     public float heightpadding = 0.05f;
     public LayerMask ground;
     RaycastHit hitInfo;
+    public AnimationCurve velocityCurve;
     public float timer;
+    public controler control;
     public int dmg;
     IEnumerator cliderenble()
     {
@@ -26,9 +28,10 @@ public class throwobjacts : MonoBehaviour {
     }
         //private bool touched = false;
         // Use this for initialization
-        void Start () {
-		
-	}
+        void Start ()
+        {
+            
+        }
 	
 	// Update is called once per frame
 	void Update () {
@@ -43,7 +46,7 @@ public class throwobjacts : MonoBehaviour {
         {
             hasplayer = false;
         }
-        if(hasplayer && Input.GetKeyDown(KeyCode.E))
+        if(hasplayer && Input.GetKeyDown(KeyCode.E)&&control.nomore == 0)
         {
             GetComponent<Rigidbody>().isKinematic = true;
             sound2.GetComponent<Collider>().enabled = false;
@@ -52,6 +55,7 @@ public class throwobjacts : MonoBehaviour {
             timer = 1;
             me.GetComponent<MeshRenderer>().enabled = false;
             beingCarried = true;
+            control.nomore = 1;
            
         }
         if (beingCarried)
@@ -74,6 +78,7 @@ public class throwobjacts : MonoBehaviour {
                 throwme = true;
                 //StartCoroutine(cliderenble());
                 GetComponent<Rigidbody>().AddForce(playerCam.forward * throwforce);
+                control.nomore = 0;
             }
             else if (Input.GetMouseButtonDown(1))
             {
@@ -81,6 +86,7 @@ public class throwobjacts : MonoBehaviour {
                 me.GetComponent<MeshRenderer>().enabled = true;
                 transform.parent = null;
                 beingCarried = false;
+                control.nomore = 0;
             }
             //if (Physics.Raycast(transform.position, -transform.up, out hitInfo, height + heightpadding, ground))
             //{

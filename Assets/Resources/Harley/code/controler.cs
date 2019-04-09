@@ -20,6 +20,7 @@ public class controler : MonoBehaviour {
     public GameObject stop;
     public float number = 0;
     public Light myflaselight;
+    public int nomore;
     // Use this for initialization
     void Start () {
     }
