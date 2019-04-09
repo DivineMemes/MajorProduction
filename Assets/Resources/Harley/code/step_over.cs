@@ -14,6 +14,7 @@ public class step_over : MonoBehaviour {
     public float i = 0.0f;
 
     public float duration = 3.0f;
+    public AnimationCurve heightChange;
 
     IEnumerator Wait2()
     {
@@ -33,7 +34,7 @@ public class step_over : MonoBehaviour {
             amount += Time.deltaTime;
 
             float perc = amount / duration;
-            player.transform.position = Vector3.Lerp(start, end, perc);
+            player.transform.position = Vector3.Lerp(start, end, perc) + Vector3.up * heightChange.Evaluate(perc);
             player.SetActive(false);
             yield return null;
         }
