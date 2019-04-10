@@ -58,7 +58,7 @@ public class moiro : MonoBehaviour
     public bool once;
     public float timereset;
     public bool hid;
-    //public float duration = 3.0f;
+    public float duration = 3.0f;
     // Use this for initialization
     void Start()
     {
@@ -72,9 +72,7 @@ public class moiro : MonoBehaviour
     {
         if(gamemanger.GM.pause == true)
         {
-
             controller.you.enabled = false;
-
             return;
         }
         controller.you.enabled = true;
@@ -108,9 +106,9 @@ public class moiro : MonoBehaviour
         }
         if (controller.jump == true)
         {
-            //float amount = 0.0f;
-            //amount += Time.deltaTime;
-            //float perc = amount / duration;
+            float amount = 0.0f;
+            amount += Time.deltaTime;
+            float perc = amount / duration;
             transform.position += transform.up /** jumpCurve.Evaluate(perc)*/ * jump  * Time.deltaTime;
         }
         Rotate();
