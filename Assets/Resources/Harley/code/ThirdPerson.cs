@@ -20,6 +20,8 @@ public class ThirdPerson : MonoBehaviour {
     public float CurrentX = 0.0f;
     public float CurrentY = 0.0f;
     public float SensivityX = 4.0f;
+    public GameObject stop;
+    public GameObject cross_hair;
     public float SensivityY = 1.0f;
    // public Vector3 offset = new Vector3 (0,.5f,0);
 	// Use this for initialization
@@ -38,6 +40,7 @@ public class ThirdPerson : MonoBehaviour {
     {
         if(gamemanger.GM.pause == true)
         {
+            
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             return;
