@@ -52,12 +52,13 @@ public class moiro : MonoBehaviour
     public float jump;
     public float velocityrun = 8f;
     public AnimationCurve velocityCurve;
+    public AnimationCurve jumpCurve;
     public float down;
     public float timeToReachTerminalVelocity = 4;
     public bool once;
     public float timereset;
     public bool hid;
-
+    public float duration = 3.0f;
     // Use this for initialization
     void Start()
     {
@@ -105,7 +106,10 @@ public class moiro : MonoBehaviour
         }
         if (controller.jump == true)
         {
-            transform.position += transform.up * jump * Time.deltaTime;
+            float amount = 0.0f;
+            amount += Time.deltaTime;
+            float perc = amount / duration;
+            transform.position += transform.up /** jumpCurve.Evaluate(perc)*/ * jump  * Time.deltaTime;
         }
         Rotate();
         Move();

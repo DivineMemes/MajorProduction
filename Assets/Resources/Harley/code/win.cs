@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class win : MonoBehaviour {
     public float raylength = 10;
@@ -19,10 +19,10 @@ public class win : MonoBehaviour {
 
             if(hit.collider.tag == "Player")
             {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
+
                 //print("hit me");
-                SceneManager.LoadScene("you win");
+                gamemanger.GM.win = true;
+               
             }
         }
    }

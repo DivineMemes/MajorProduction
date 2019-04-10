@@ -28,8 +28,8 @@ public class step_over : MonoBehaviour {
         Vector3 start = player.transform.position;
         Vector3 end = move.position;
         float amount = 0.0f;
-       
-        while(amount < duration)
+
+        while (amount < duration)
         {
             amount += Time.deltaTime;
 
