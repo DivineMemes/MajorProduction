@@ -23,6 +23,7 @@ public class hiding : MonoBehaviour {
     public Transform hidingspot;
     public ThirdPerson k;
     public Transform normelspot;
+    public float duration = 3.0f;
     // Use this for initialization
     IEnumerator Wait2()
     {
@@ -33,6 +34,25 @@ public class hiding : MonoBehaviour {
         isHiding = true;
         guiShow = false;
         //time = 3;
+    }
+    IEnumerator dohid()
+    {
+        Vector3 start = lookat.transform.position;
+        Vector3 end = hidingspot.position;
+        float amount = 0.0f;
+       
+        while (amount < duration)
+        {
+            amount += Time.deltaTime;
+            float perc = amount / duration;
+            lookat.transform.position = Vector3.Lerp(start, end, perc);
+            me.SetActive(false);
+            mm.controller.you.SetBool("walk", false);
+            mm.controller.you.SetBool("run", false);
+            isHiding = true;
+            guiShow = false;
+            yield return null;
+        }
     }
     void Start ()
     {
@@ -63,16 +83,16 @@ public class hiding : MonoBehaviour {
                 //time = time -= Time.deltaTime;
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    mm.controller.you.SetBool("walk", false);
-                    mm.controller.you.SetBool("run", false);
+                    //mm.controller.you.SetBool("walk", false);
+                    //mm.controller.you.SetBool("run", false);
                     //mm.hid = true;
                     //k.enabled = false;
-                    me.SetActive(false);
+                    //me.SetActive(false);
                    //hand.SetActive(false);
                     //maincam.enabled = false;
                     //hands.enabled = false;
                     //hidingcam.enabled = true;
-                    StartCoroutine(Wait2());
+                    StartCoroutine(dohid());
 
 
 
@@ -85,7 +105,6 @@ public class hiding : MonoBehaviour {
 
         if (isHiding == true)
         {
-            lookat.transform.position = Vector3.Lerp(lookat.transform.position, hidingspot.position, i);
             //if (maincam.transform.position == Vector3.Lerp(maincam.transform.position, hidingspot.position, i))
             //{
             //    maincam.transform.forward = hidingspot.transform.forward;
