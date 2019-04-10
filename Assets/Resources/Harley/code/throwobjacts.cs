@@ -39,30 +39,35 @@ public class throwobjacts : MonoBehaviour {
 	void Update () {
         Debug.DrawLine(transform.position, transform.position - Vector3.up * height, Color.red);
         float dist = Vector3.Distance(gameObject.transform.position, player.position);
-        if (dist <= 2.5f)
+        if (!beingCarried)
         {
-            hasplayer = true;
-           
-        }
-        else
-        {
-            hasplayer = false;
-           
-        }
-        if(hasplayer && Input.GetKeyDown(KeyCode.E)&&control.nomore == 0)
-        {
-            GetComponent<Rigidbody>().isKinematic = true;
-            sound2.GetComponent<Collider>().enabled = false;
-            transform.parent = playerCam;
-            //gamemanger.GM.grab = true;
-            timer = 1;
-            me.GetComponent<MeshRenderer>().enabled = false;
-            beingCarried = true; 
-            control.nomore = 1;
-           
+            if (dist <= 2.5f)
+            {
+                hasplayer = true;
+
+            }
+            if(dist > 2.5f)
+            {
+                hasplayer = false;
+
+            }
+            if (hasplayer && Input.GetKeyDown(KeyCode.E) && control.nomore == 0)
+            {
+                GetComponent<Rigidbody>().isKinematic = true;
+                sound2.GetComponent<Collider>().enabled = false;
+                transform.parent = playerCam;
+                //gamemanger.GM.grab = true;
+
+                timer = 1;
+                me.GetComponent<MeshRenderer>().enabled = false;
+                beingCarried = true;
+                control.nomore = 1;
+
+            }
         }
         if (beingCarried)
         {
+            hasplayer = false;
             //if (touched)
             //{
             //    GetComponent<Rigidbody>().isKinematic = false;
@@ -108,6 +113,16 @@ public class throwobjacts : MonoBehaviour {
             //}
 
 
+        }
+        if (hasplayer == true)
+        {
+            grabui.SetActive(true);
+            normalui.SetActive(false);
+        }
+        if(hasplayer == false)
+        {
+            grabui.SetActive(false);
+            normalui.SetActive(true);
         }
         
     }

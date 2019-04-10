@@ -59,12 +59,17 @@ public class moiro : MonoBehaviour
     public float timereset;
     public bool hid;
     public float duration = 3.0f;
+    public Transform size;
+    public Vector3 normelsize = new Vector3 (1,2,1);
+    public Vector3 crouchsize = new Vector3 (1,1,1);
+
     // Use this for initialization
     void Start()
     {
         cam = Camera.main.transform;
         velocitybase = velocity;
         currentradius = normalradius;
+        size.localScale = normelsize;
     }
 
     // Update is called once per frame
@@ -367,6 +372,7 @@ public class moiro : MonoBehaviour
         {
             velocity /= 2;
             height = heigthcrouch;
+            size.localScale = crouchsize;
             if(velocity == velocitycrouch)
             {
                 crouchisdown = true;
@@ -388,6 +394,7 @@ public class moiro : MonoBehaviour
         if (!controller.crouch)
         {
             height = heightnormle;
+            size.localScale = normelsize;
             //velocity = velocitybase;
         }
         if (velocity == velocitybase)
