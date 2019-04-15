@@ -17,7 +17,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Resources/Wyatt/TeamateScenes/betty scene.unity
     guid: 3f1dd06ddff1e2544a5dac86870b0c53
-  - enabled: 1
+  - enabled: 0
     path: Assets/Resources/Wyatt/TeamateScenes/alpha_v1.unity
     guid: fc5918a1bb19847438af0bacff6c8a7b
+  - enabled: 1
+    path: Assets/Resources/Wyatt/TeamateScenes/AlphaFinal.unity
+    guid: d1a022aa575ceb149be9eb1f1745d3d1
   m_configObjects: {}
