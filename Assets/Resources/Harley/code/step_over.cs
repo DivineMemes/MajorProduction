@@ -6,13 +6,14 @@ public class step_over : MonoBehaviour {
     public float raylength = 10;
     RaycastHit hit;
     public Transform move;
+    public Transform move2;
     public GameObject player;
     public GameObject text;
     bool on;
     public float time;
     bool step;
     public float i = 0.0f;
-
+    
     public float duration = 3.0f;
     public AnimationCurve heightChange;
 
@@ -54,9 +55,10 @@ public class step_over : MonoBehaviour {
             if (hit.collider.tag == "step_over")
             {
               move = hit.collider.GetComponent<Transform>().GetChild(0).GetComponent<Transform>();
+              move2 = hit.collider.GetComponent<Transform>().GetChild(1).GetComponent<Transform>();
                 //print("hit player");
                 on = true;
-                if (Input.GetKeyDown(KeyCode.G))
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
                     on = false;
                     //step = true;

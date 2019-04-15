@@ -84,15 +84,15 @@ public class controler : MonoBehaviour {
            
             //sound.enabled = false;
         }
-        if (play.grounded == true)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                //transform.position += transform.up * play.jump * Time.deltaTime;
-                this.transform.Translate(Vector3.up * play.jump);
-                //play.rm.velocity = Vector3.up * play.jump;
-            }
-        }
+        //if (play.grounded == true)
+        //{
+        //    if (Input.GetKeyDown(KeyCode.Space))
+        //    {
+        //        //transform.position += transform.up * play.jump * Time.deltaTime;
+        //        this.transform.Translate(Vector3.up * play.jump);
+        //        //play.rm.velocity = Vector3.up * play.jump;
+        //    }
+        //}
         if (Input.GetKey(KeyCode.LeftControl) && run == false)
         {
             crouch = true;

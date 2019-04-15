@@ -110,13 +110,13 @@ public class moiro : MonoBehaviour
         {
             return;
         }
-        if (controller.jump == true)
-        {
-            float amount = 0.0f;
-            amount += Time.deltaTime;
-            float perc = amount / duration;
-            transform.position += transform.up /** jumpCurve.Evaluate(perc)*/ * jump  * Time.deltaTime;
-        }
+        //if (controller.jump == true)
+        //{
+        //    float amount = 0.0f;
+        //    amount += Time.deltaTime;
+        //    float perc = amount / duration;
+        //    transform.position += transform.up  * jump  * Time.deltaTime;
+        //}
         Rotate();
         Move();
         walk();
