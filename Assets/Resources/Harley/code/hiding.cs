@@ -49,10 +49,32 @@ public class hiding : MonoBehaviour {
             me.SetActive(false);
             mm.controller.you.SetBool("walk", false);
             mm.controller.you.SetBool("run", false);
-            isHiding = true;
-            guiShow = false;
+           
             yield return null;
         }
+        isHiding = true;
+        guiShow = false;
+    }
+    IEnumerator dounhid()
+    {
+        Vector3 start = lookat.transform.position;
+        Vector3 end = normelspot.position;
+        float amount = 0.0f;
+       
+        while (amount < duration)
+        {
+            amount += Time.deltaTime;
+            float perc = amount / duration;
+            lookat.transform.position = Vector3.Lerp(start, end, perc);
+            //me.SetActive(false);
+            mm.controller.you.SetBool("walk", false);
+            mm.controller.you.SetBool("run", false);
+            //isHiding = true;
+            //guiShow = false;
+            yield return null;
+        }
+        me.SetActive(true);
+        isHiding = false;
     }
     void Start ()
     {
@@ -88,7 +110,7 @@ public class hiding : MonoBehaviour {
                     //mm.hid = true;
                     //k.enabled = false;
                     //me.SetActive(false);
-                   //hand.SetActive(false);
+                    //hand.SetActive(false);
                     //maincam.enabled = false;
                     //hands.enabled = false;
                     //hidingcam.enabled = true;
@@ -113,14 +135,14 @@ public class hiding : MonoBehaviour {
             {
                 //mm.hid = false;
                 //k.enabled = true;
-                me.SetActive(true);
-                lookat.transform.position = normelspot.position;
+                
+                StartCoroutine(dounhid());
                 //hand.SetActive(true);
-               // maincam.enabled = true;
+                // maincam.enabled = true;
                 //hands.enabled = true;
                 //hidingcam.enabled = false;
+
                 
-                isHiding = false;
                 //you = false;
 
             }
