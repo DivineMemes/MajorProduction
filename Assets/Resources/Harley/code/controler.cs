@@ -101,7 +101,7 @@ public class controler : MonoBehaviour {
         {
             crouch = false;
         }
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             light = !light;
         }
