@@ -70,6 +70,7 @@ public class moiro : MonoBehaviour
         velocitybase = velocity;
         currentradius = normalradius;
         size.localScale = normelsize;
+        gamemanger.GM.once = 0;
     }
 
     // Update is called once per frame

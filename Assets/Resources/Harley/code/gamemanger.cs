@@ -7,6 +7,7 @@ public class gamemanger : MonoBehaviour {
     public bool pause;
     public bool grab;
     public bool win;
+    public int once;
     // Use this for initialization
     void Awake()
     {
@@ -23,12 +24,19 @@ public class gamemanger : MonoBehaviour {
     }
     void Update()
     {
-        if(win == true)
+        if(win == true&& once == 0)
+        {
+            
+            SceneManager.LoadScene("you win");
+            once = 1;
+            //win = false;
+        }
+        if(once == 1)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            SceneManager.LoadScene("you win");
         }
+        
         
     }
 }
