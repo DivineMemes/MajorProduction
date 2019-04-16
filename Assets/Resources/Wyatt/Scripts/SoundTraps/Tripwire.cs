@@ -25,6 +25,7 @@ public class Tripwire : MonoBehaviour
             {
                 SphereCollider spawnedCollider = Instantiate(soundCollider, hit.collider.transform.position, Quaternion.identity);
                 spawnedCollider.tag = "Sound";
+                spawnedCollider.radius = 25;
                 hasTriggered = true;
                 if (!coroutineStarted)
                 {
@@ -33,7 +34,7 @@ public class Tripwire : MonoBehaviour
                 
             }
         }
-        //Debug.DrawLine(endOne.position, endTwo.position, Color.black);
+        Debug.DrawLine(endOne.position, endTwo.position, Color.black, 100, false);
     }
     IEnumerator waitfordelete(SphereCollider collider)
     {

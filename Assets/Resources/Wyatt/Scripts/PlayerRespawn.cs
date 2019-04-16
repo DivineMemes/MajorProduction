@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerRespawn : MonoBehaviour
 {
 
     //public GameObject[] Colliders = new GameObject[0];
+    Scene current;
     Vector3 respawnPosition;
     public bool hasdied;
 
@@ -18,6 +20,7 @@ public class PlayerRespawn : MonoBehaviour
     private void Update()
     {
         Respawn();
+        Reload();
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -41,6 +44,15 @@ public class PlayerRespawn : MonoBehaviour
         {
             transform.parent.position = respawnPosition;
             hasdied = false;
+        }
+    }
+
+    void Reload()
+    {
+        if(Input.GetKeyDown(KeyCode.F5))
+        {
+            Scene current = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(current.name);
         }
     }
 
