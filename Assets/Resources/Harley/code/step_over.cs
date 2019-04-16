@@ -10,6 +10,7 @@ public class step_over : MonoBehaviour {
     public GameObject player;
     public GameObject text;
     bool on;
+    bool cool;
     public float time;
     bool step;
     public float i = 0.0f;
@@ -26,6 +27,7 @@ public class step_over : MonoBehaviour {
 
     IEnumerator DoStep()
     {
+        
         Vector3 start = player.transform.position;
         Vector3 end = move.position;
         float amount = 0.0f;
@@ -56,6 +58,7 @@ public class step_over : MonoBehaviour {
             {
               move = hit.collider.GetComponent<Transform>().GetChild(0).GetComponent<Transform>();
               move2 = hit.collider.GetComponent<Transform>().GetChild(1).GetComponent<Transform>();
+               
                 //print("hit player");
                 on = true;
                 if (Input.GetKeyDown(KeyCode.Space))
