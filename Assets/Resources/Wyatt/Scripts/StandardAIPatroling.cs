@@ -11,10 +11,11 @@ public class StandardAIPatroling : MonoBehaviour
     public GameObject player;
     public Transform[] nodes;
     public float searchTimer;
+    public float suspectTimer;
     int destinationPoint = 0;
     bool coroutineStarted;
     bool targetSpotted;
-    public Animator coltist;
+    public Animator cultist;
     // Use this for initialization
     void Start()
     {
@@ -38,8 +39,8 @@ public class StandardAIPatroling : MonoBehaviour
     {
         if(!soundDetect.heardSound&&!seeker.targetSpotted)
         {
-            coltist.SetBool("walk", true);
-            coltist.SetBool("run", false);
+            cultist.SetBool("walk", true);
+            cultist.SetBool("run", false);
             if (!agent.pathPending && agent.remainingDistance < 0.5f)
             {
                 NextPosition();
@@ -49,27 +50,39 @@ public class StandardAIPatroling : MonoBehaviour
         if(seeker.targetSpotted)
         {
             agent.destination = player.transform.position;
-            coltist.SetBool("run", true);
+            agent.speed = 5;
+            cultist.SetBool("run", true);
+        }
+        if (!seeker.targetSpotted)
+        {
+            agent.speed = 3;
         }
         if(!seeker.targetSpotted && soundDetect.searchingSound)
         {
+            //StartCoroutine(HeardSomething());
             agent.destination = soundDetect.soundPos;
             if(agent.remainingDistance < 0.5f)
             {
-                coltist.SetBool("run", true);
+                //cultist.SetBool("run", true);
                 agent.ResetPath();
                 if(!coroutineStarted)
                 {
                     coroutineStarted = true;
-                    StartCoroutine(lookfortarget());
+                    StartCoroutine(LookForTarget());
                 }
             }
         }
     }
-    IEnumerator lookfortarget()
+    IEnumerator LookForTarget()
     {
         yield return new WaitForSeconds(searchTimer);
         soundDetect.searchingSound = false;
         coroutineStarted = false;
+    }
+
+    IEnumerator HeardSomething()
+    {
+        //cultist.SetBool("surprised", true);
+        yield return new WaitForSeconds(suspectTimer);
     }
 }

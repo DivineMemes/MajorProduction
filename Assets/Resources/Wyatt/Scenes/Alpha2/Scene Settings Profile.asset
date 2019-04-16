@@ -232,4 +232,4 @@ MonoBehaviour:
     min: 0
   hdriSky:
     m_OverrideState: 1
-    m_Value: {fileID: 8900000, guid: d24cefb7b9fc91646bcd8da7aac8a691, type: 3}
+    m_Value: {fileID: 8900000, guid: ddb4299e0f2cfa449a5954243e35dfef, type: 3}
