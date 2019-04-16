@@ -9,8 +9,11 @@ public class EnemySeek : MonoBehaviour
 
     public bool targetSpotted = false;
     public bool targetLost = false;
+    public bool targetWasSpotted = false;
 
+    
     public float viewRad;
+    float s_ViewRad;//s_ == script value
     [Range(0,360)]
     public float viewAng;
     public float delay;
@@ -33,11 +36,20 @@ public class EnemySeek : MonoBehaviour
 
     private void Update()
     {
+        if(targetSpotted)
+        {
+            s_ViewRad = 20;
+        }
+        else
+        {
+            s_ViewRad = viewRad;
+        }
         for(int i = 0; i < visibleTargets.Count; i++)
         {
             if (visibleTargets[i]==target)
             {
                 targetSpotted = true;
+                targetWasSpotted = true;
                 transform.LookAt(visibleTargets[i]);
             }
         }
@@ -49,7 +61,7 @@ public class EnemySeek : MonoBehaviour
     void FindVisibleTargets()
     {
         visibleTargets.Clear();
-        Collider[] targetsInView = Physics.OverlapSphere(transform.position, viewRad, targetMask);
+        Collider[] targetsInView = Physics.OverlapSphere(transform.position, s_ViewRad, targetMask);
 
         for(int i = 0; i < targetsInView.Length; i++)
         {
@@ -81,6 +93,4 @@ public class EnemySeek : MonoBehaviour
             FindVisibleTargets();
         }
     }
-
-
 }
