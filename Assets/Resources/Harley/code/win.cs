@@ -12,18 +12,27 @@ public class win : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        Debug.DrawLine(transform.position, transform.position + transform.up, Color.green);
-        if (Physics.Raycast(transform.position, transform.position + transform.up, out hit, raylength))
-        {
+	void Update ()
+    {
+        //Debug.DrawLine(transform.position, transform.position + transform.up, Color.green);
+        //if (Physics.Raycast(transform.position, transform.position + transform.up, out hit, raylength))
+        //{
 
-            if(hit.collider.tag == "Player")
-            {
+        //    if(hit.collider.tag == "Player")
+        //    {
 
-                //print("hit me");
-                gamemanger.GM.win = true;
+        //        //print("hit me");
+        //        gamemanger.GM.win = true;
                
-            }
-        }
+        //    }
+        //}
    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            gamemanger.GM.win = true;
+        }
+    }
 }
