@@ -82,7 +82,7 @@ public class throwobjacts : MonoBehaviour {
                 me.GetComponent<MeshRenderer>().enabled = true;
                 beingCarried = false;
                 //sound2.GetComponent<Collider>().enabled = true;
-                gamemanger.GM.grab = false;
+                //gamemanger.GM.grab = false;
                 throwme = true;
                 //StartCoroutine(cliderenble());
                 GetComponent<Rigidbody>().AddForce(playerCam.forward * throwforce);
@@ -114,16 +114,28 @@ public class throwobjacts : MonoBehaviour {
 
 
         }
-        if (hasplayer == true)
+        if (hasplayer)
         {
-            grabui.SetActive(true);
+            gamemanger.GM.grab = true;
+        }
+        if(!hasplayer)
+        {
+            gamemanger.GM.grab = false;
+        }
+        if(gamemanger.GM.grab == true)
+        {
             normalui.SetActive(false);
+            grabui.SetActive(true);
         }
-        if(hasplayer == false)
+        if(gamemanger.GM.grab == false)
         {
-            grabui.SetActive(false);
             normalui.SetActive(true);
+            grabui.SetActive(false);
         }
+        //else
+        //{
+        //    hasplayer = false;
+        //}
         
     }
     void OnCollisionEnter()

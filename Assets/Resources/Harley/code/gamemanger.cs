@@ -8,6 +8,10 @@ public class gamemanger : MonoBehaviour {
     public bool grab;
     public bool win;
     public int once;
+    //public GameObject grabui;
+    //public GameObject normalui;
+    //public GameObject hidui;
+    public bool hide;
     // Use this for initialization
     void Awake()
     {
@@ -24,7 +28,8 @@ public class gamemanger : MonoBehaviour {
     }
     void Update()
     {
-        if(win == true&& once == 0)
+        
+        if(win == true && once == 0)
         {
             
             SceneManager.LoadScene("you win");
@@ -36,6 +41,13 @@ public class gamemanger : MonoBehaviour {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
+        //if (hide== false && grab == false)
+        //{
+        //    hidui.SetActive(false);
+        //    normalui.SetActive(true);
+        //    grabui.SetActive(false);
+        //}
+       
         
         
     }
