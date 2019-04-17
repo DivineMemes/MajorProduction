@@ -150,10 +150,18 @@ public class hiding : MonoBehaviour {
 
         if (guiShow == true)
         {
+            gamemanger.GM.hide = true;
+        }
+        if (guiShow == false)
+        {
+            gamemanger.GM.hide = false;
+        }
+        if(gamemanger.GM.hide == true)
+        {
             hidui.SetActive(true);
             normalui.SetActive(false);
         }
-        if (guiShow == false)
+        if (gamemanger.GM.hide == false)
         {
             hidui.SetActive(false);
             normalui.SetActive(true);
