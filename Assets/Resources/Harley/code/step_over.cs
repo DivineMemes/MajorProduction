@@ -56,8 +56,8 @@ public class step_over : MonoBehaviour {
         {
             if (hit.collider.tag == "step_over")
             {
-              //move = hit.collider.GetComponent<Transform>().GetChild(0).GetComponent<Transform>();
-              //move2 = hit.collider.GetComponent<Transform>().GetChild(1).GetComponent<Transform>();
+              move = hit.collider.GetComponent<Transform>().GetChild(0).GetComponent<Transform>();
+              move2 = hit.collider.GetComponent<Transform>().GetChild(1).GetComponent<Transform>();
                
                 //print("hit player");
                 on = true;

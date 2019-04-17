@@ -103,7 +103,7 @@ public class hiding : MonoBehaviour {
      
 
                 //time = time -= Time.deltaTime;
-                if (Input.GetKeyDown(KeyCode.Q))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     //mm.controller.you.SetBool("walk", false);
                     //mm.controller.you.SetBool("run", false);
@@ -131,7 +131,7 @@ public class hiding : MonoBehaviour {
             //{
             //    maincam.transform.forward = hidingspot.transform.forward;
             //}
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 //mm.hid = false;
                 //k.enabled = true;
