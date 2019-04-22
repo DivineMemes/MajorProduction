@@ -18,6 +18,7 @@ public class throwobjacts : MonoBehaviour {
     public AnimationCurve velocityCurve;
     public float timer;
     public GameObject grabui;
+    public GameObject grabui2;
     public GameObject normalui;
     public controler control;
     public int dmg;
@@ -82,7 +83,7 @@ public class throwobjacts : MonoBehaviour {
                 me.GetComponent<MeshRenderer>().enabled = true;
                 beingCarried = false;
                 //sound2.GetComponent<Collider>().enabled = true;
-                gamemanger.GM.grab = false;
+                //gamemanger.GM.grab = false;
                 throwme = true;
                 //StartCoroutine(cliderenble());
                 GetComponent<Rigidbody>().AddForce(playerCam.forward * throwforce);
@@ -114,16 +115,30 @@ public class throwobjacts : MonoBehaviour {
 
 
         }
-        if (hasplayer == true)
+        if (hasplayer)
         {
-            grabui.SetActive(true);
+            gamemanger.GM.grab = true;
+        }
+        if(!hasplayer)
+        {
+            gamemanger.GM.grab = false;
+        }
+        if(gamemanger.GM.grab == true)
+        {
             normalui.SetActive(false);
+            grabui.SetActive(true);
+            grabui2.SetActive(true);
         }
-        if(hasplayer == false)
+        if(gamemanger.GM.grab == false)
         {
-            grabui.SetActive(false);
             normalui.SetActive(true);
+            grabui.SetActive(false);
+            grabui2.SetActive(false);
         }
+        //else
+        //{
+        //    hasplayer = false;
+        //}
         
     }
     void OnCollisionEnter()

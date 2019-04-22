@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Tripwire : MonoBehaviour
 {
-    public Transform endOne;
-    public Transform endTwo;
+    //public Transform endOne;
+    //public Transform endTwo;
     public SphereCollider soundCollider;
     public float killTime = .5f;
     bool coroutineStarted;
@@ -18,23 +18,39 @@ public class Tripwire : MonoBehaviour
 
     void Update()
     {
-        RaycastHit hit;
-        if (Physics.Linecast(endOne.position, endTwo.position, out hit))
-        {
-            if (hit.collider.tag == "Player"&&!hasTriggered)
-            {
-                SphereCollider spawnedCollider = Instantiate(soundCollider, hit.collider.transform.position, Quaternion.identity);
-                spawnedCollider.tag = "Sound";
-                spawnedCollider.radius = 25;
-                hasTriggered = true;
-                if (!coroutineStarted)
-                {
-                    StartCoroutine(waitfordelete(spawnedCollider));
-                }
+        //RaycastHit hit;
+        //if (Physics.Linecast(endOne.position, endTwo.position, out hit))
+        //{
+        //    if (hit.collider.tag == "Player"&&!hasTriggered)
+        //    {
+        //        SphereCollider spawnedCollider = Instantiate(soundCollider, hit.collider.transform.position, Quaternion.identity);
+        //        spawnedCollider.tag = "Sound";
+        //        spawnedCollider.radius = 25;
+        //        hasTriggered = true;
+        //        if (!coroutineStarted)
+        //        {
+        //            StartCoroutine(waitfordelete(spawnedCollider));
+        //        }
                 
+        //    }
+        //}
+        //Debug.DrawLine(endOne.position, endTwo.position, Color.black, 100, false);
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player") && !hasTriggered)
+        {
+            SphereCollider spawnedCollider = Instantiate(soundCollider, other.transform.position, Quaternion.identity);
+            spawnedCollider.tag = "Sound";
+            spawnedCollider.radius = 25;
+            hasTriggered = true;
+            if (!coroutineStarted)
+            {
+                StartCoroutine(waitfordelete(spawnedCollider));
             }
         }
-        Debug.DrawLine(endOne.position, endTwo.position, Color.black, 100, false);
     }
     IEnumerator waitfordelete(SphereCollider collider)
     {

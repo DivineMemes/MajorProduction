@@ -17,6 +17,7 @@ public class hiding : MonoBehaviour {
     public moiro mm;
     public GameObject me;
     public GameObject hidui;
+    public GameObject hidui2;
     public GameObject normalui;
     public float time;
     public float i = 0.0f;
@@ -103,7 +104,7 @@ public class hiding : MonoBehaviour {
      
 
                 //time = time -= Time.deltaTime;
-                if (Input.GetKeyDown(KeyCode.Q))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     //mm.controller.you.SetBool("walk", false);
                     //mm.controller.you.SetBool("run", false);
@@ -131,7 +132,7 @@ public class hiding : MonoBehaviour {
             //{
             //    maincam.transform.forward = hidingspot.transform.forward;
             //}
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 //mm.hid = false;
                 //k.enabled = true;
@@ -150,12 +151,22 @@ public class hiding : MonoBehaviour {
 
         if (guiShow == true)
         {
-            hidui.SetActive(true);
-            normalui.SetActive(false);
+            gamemanger.GM.hide = true;
         }
         if (guiShow == false)
         {
+            gamemanger.GM.hide = false;
+        }
+        if(gamemanger.GM.hide == true)
+        {
+            hidui.SetActive(true);
+            hidui2.SetActive(true);
+            normalui.SetActive(false);
+        }
+        if (gamemanger.GM.hide == false)
+        {
             hidui.SetActive(false);
+            hidui2.SetActive(false);
             normalui.SetActive(true);
         }
         else

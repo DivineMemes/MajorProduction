@@ -6,7 +6,7 @@ public class step_over : MonoBehaviour {
     public float raylength = 10;
     RaycastHit hit;
     public Transform move;
-    public Transform move2;
+    //public Transform move2;
     public GameObject player;
     public GameObject text;
     bool on;
@@ -57,7 +57,7 @@ public class step_over : MonoBehaviour {
             if (hit.collider.tag == "step_over")
             {
               move = hit.collider.GetComponent<Transform>().GetChild(0).GetComponent<Transform>();
-              move2 = hit.collider.GetComponent<Transform>().GetChild(1).GetComponent<Transform>();
+              //move2 = hit.collider.GetComponent<Transform>().GetChild(1).GetComponent<Transform>();
                
                 //print("hit player");
                 on = true;
