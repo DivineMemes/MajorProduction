@@ -18,6 +18,7 @@ public class throwobjacts : MonoBehaviour {
     public AnimationCurve velocityCurve;
     public float timer;
     public GameObject grabui;
+    public GameObject grabui2;
     public GameObject normalui;
     public controler control;
     public int dmg;
@@ -126,11 +127,13 @@ public class throwobjacts : MonoBehaviour {
         {
             normalui.SetActive(false);
             grabui.SetActive(true);
+            grabui2.SetActive(true);
         }
         if(gamemanger.GM.grab == false)
         {
             normalui.SetActive(true);
             grabui.SetActive(false);
+            grabui2.SetActive(false);
         }
         //else
         //{

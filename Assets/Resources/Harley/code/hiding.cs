@@ -17,6 +17,7 @@ public class hiding : MonoBehaviour {
     public moiro mm;
     public GameObject me;
     public GameObject hidui;
+    public GameObject hidui2;
     public GameObject normalui;
     public float time;
     public float i = 0.0f;
@@ -159,11 +160,13 @@ public class hiding : MonoBehaviour {
         if(gamemanger.GM.hide == true)
         {
             hidui.SetActive(true);
+            hidui2.SetActive(true);
             normalui.SetActive(false);
         }
         if (gamemanger.GM.hide == false)
         {
             hidui.SetActive(false);
+            hidui2.SetActive(false);
             normalui.SetActive(true);
         }
         else
