@@ -1,14 +1,8 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Resources/Jarren/New Material.mat.meta
-guid: 0b55796e94e9949439fb69bf8ccc0d12
+guid: 16dceaa46ec034b4f838fc8ca4ee769c
 NativeFormatImporter:
-=======
-guid: 9ed931ac7f465284e9aef264456eefd1
-folderAsset: yes
-DefaultImporter:
->>>>>>> 1f1e62e3e49d33465c8adf9a6fe26674df6a3f13:Assets/Resources/Betty/Animations/UI.meta
   externalObjects: {}
-  mainObjectFileID: 2100000
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

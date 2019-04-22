@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerRespawn : MonoBehaviour
 {
-
-    //public GameObject[] Colliders = new GameObject[0];
     Scene current;
     Vector3 respawnPosition;
     public bool hasdied;
