@@ -9,6 +9,8 @@ public class step_over : MonoBehaviour {
     //public Transform move2;
     public GameObject player;
     public GameObject text;
+    public GameObject text2;
+    public int number;
     bool on;
     bool cool;
     public float time;
@@ -64,6 +66,7 @@ public class step_over : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     on = false;
+                    number += 1;
                     //step = true;
                     //StartCoroutine(Wait2());
                     StartCoroutine(DoStep());
@@ -77,11 +80,17 @@ public class step_over : MonoBehaviour {
         }
         if(on == true)
         {
-            text.SetActive(true);
+            if (number == 0)
+            {
+                text.SetActive(true);
+            }
+
+            text2.SetActive(true);
         }
         if (on == false)
         {
             text.SetActive(false);
+            text2.SetActive(false);
         }
         else
         {
