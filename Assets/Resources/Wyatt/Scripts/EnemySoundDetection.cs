@@ -15,7 +15,8 @@ public class EnemySoundDetection : MonoBehaviour
     public bool positionRecorded;
     private AudioSource source;
     public AudioClip suprised;
-    public AudioClip whispers;
+    public AudioClip whisper;
+    
     private void Start()
     {
         source = gameObject.GetComponent<AudioSource>();
@@ -51,14 +52,20 @@ public class EnemySoundDetection : MonoBehaviour
                     searchingSound = true;
                     if (heardSound)
                     {
+                        source.loop = false;
                         source.maxDistance = 10;
                         source.PlayOneShot(suprised);
-                     
                     }
                 }
                 else
                 {
                     heardSound = false;
+                }
+                if(!heardSound && source.isPlaying == false)
+                {
+                    source.loop = true;
+                    source.maxDistance = 5;
+                    source.PlayOneShot(whisper);
                 }
             }
         }

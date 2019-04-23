@@ -7,12 +7,15 @@ public class main_menu : MonoBehaviour
 {
     public void start()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene(1);
         gamemanger.GM.once = 0;
+        gamemanger.GM.thrownumber = 0;
     }
     public void settings()
     {
         SceneManager.LoadScene(1);
+        gamemanger.GM.once = 0;
+        gamemanger.GM.thrownumber = 0;
     }
     public void mainmenu()
     {

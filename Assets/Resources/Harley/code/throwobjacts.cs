@@ -6,6 +6,7 @@ public class throwobjacts : MonoBehaviour {
     public Transform player;
     public Transform playerCam;
     public GameObject me;
+   
     public float throwforce = 10;
    public bool hasplayer = false;
     public GameObject sound2;
@@ -19,10 +20,11 @@ public class throwobjacts : MonoBehaviour {
     public float timer;
     public AudioSource sound;
     public AudioClip throwsoud;
+    public AudioClip pickupsound;
     public GameObject grabui;
     public GameObject grabui2;
     public GameObject normalui;
-    public int number;
+    public GameObject throwui;
     public controler control;
     public int dmg;
     IEnumerator cliderenble()
@@ -62,9 +64,11 @@ public class throwobjacts : MonoBehaviour {
                 GetComponent<Rigidbody>().isKinematic = true;
                 sound2.GetComponent<Collider>().enabled = false;
                 transform.parent = playerCam;
+                sound.PlayOneShot(pickupsound);
                 //gamemanger.GM.grab = true;
-
-                number = 1;
+                //normalui.SetActive(false);
+                //throwui.SetActive(true);
+                gamemanger.GM.thrownumber = 1;
                 timer = 1;
                 me.GetComponent<MeshRenderer>().enabled = false;
                 beingCarried = true;
@@ -89,6 +93,8 @@ public class throwobjacts : MonoBehaviour {
                 me.GetComponent<MeshRenderer>().enabled = true;
                 beingCarried = false;
                 //sound2.GetComponent<Collider>().enabled = true;
+                //normalui.SetActive(true);
+                //throwui.SetActive(false);
                 //gamemanger.GM.grab = false;
                 throwme = true;
                 //StartCoroutine(cliderenble());
@@ -97,6 +103,8 @@ public class throwobjacts : MonoBehaviour {
             }
             else if (Input.GetMouseButtonDown(1))
             {
+                //normalui.SetActive(true);
+                //throwui.SetActive(false);
                 GetComponent<Rigidbody>().isKinematic = false;
                 me.GetComponent<MeshRenderer>().enabled = true;
                 transform.parent = null;
@@ -134,7 +142,7 @@ public class throwobjacts : MonoBehaviour {
             normalui.SetActive(false);
 
             grabui.SetActive(true);
-            if (number == 0)
+            if (gamemanger.GM.thrownumber == 0)
             {
                 grabui2.SetActive(true);
             }
