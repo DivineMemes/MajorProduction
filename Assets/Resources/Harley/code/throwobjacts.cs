@@ -6,6 +6,7 @@ public class throwobjacts : MonoBehaviour {
     public Transform player;
     public Transform playerCam;
     public GameObject me;
+   
     public float throwforce = 10;
    public bool hasplayer = false;
     public GameObject sound2;
@@ -19,6 +20,7 @@ public class throwobjacts : MonoBehaviour {
     public float timer;
     public AudioSource sound;
     public AudioClip throwsoud;
+    public AudioClip pickupsound;
     public GameObject grabui;
     public GameObject grabui2;
     public GameObject normalui;
@@ -62,6 +64,7 @@ public class throwobjacts : MonoBehaviour {
                 GetComponent<Rigidbody>().isKinematic = true;
                 sound2.GetComponent<Collider>().enabled = false;
                 transform.parent = playerCam;
+                sound.PlayOneShot(pickupsound);
                 //gamemanger.GM.grab = true;
                 //normalui.SetActive(false);
                 //throwui.SetActive(true);
