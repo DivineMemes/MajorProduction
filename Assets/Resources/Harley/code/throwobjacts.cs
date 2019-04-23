@@ -40,6 +40,7 @@ public class throwobjacts : MonoBehaviour {
         // Use this for initialization
         void Start ()
         {
+        sound = gameObject.GetComponent<AudioSource>();
             
         }
 	
