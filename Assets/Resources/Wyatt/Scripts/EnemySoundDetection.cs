@@ -13,14 +13,13 @@ public class EnemySoundDetection : MonoBehaviour
     public bool heardSound = false;
     public bool searchingSound;
     public bool positionRecorded;
-    public bool suprisedSound;
-    //public AudioClip suprised;
     private AudioSource source;
-    AudioMixer screech;
-
+    public AudioClip suprised;
+    public AudioClip whispers;
     private void Start()
     {
         source = gameObject.GetComponent<AudioSource>();
+        chasing = gameObject.GetComponent<EnemySeek>();
         positionRecorded = false;
     }
 
@@ -30,38 +29,38 @@ public class EnemySoundDetection : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, radius);
         for (int i = 0; i < colliders.Length; i++)
         {
-            if(!chasing.targetSpotted)
+            if (!chasing.targetSpotted)
             {
-
-            if (colliders[i].gameObject.tag == "Sound" && !heardSound)
-            {
-                if(colliders[i].gameObject.GetComponent<Collider>().enabled == true)
+                if (colliders[i].gameObject.tag == "Sound" && !heardSound)
                 {
-                    if (!positionRecorded)
+                    if(colliders[i].gameObject.GetComponent<Collider>().enabled == true)
                     {
-                        soundPos = colliders[i].gameObject.GetComponent<Collider>().transform.position;
+                        if (!positionRecorded)
+                        {
+                            soundPos = colliders[i].gameObject.GetComponent<Collider>().transform.position;
                         
-                        positionRecorded = true;
+                            positionRecorded = true;
+                        }
+                        if(positionRecorded)
+                        {
+                            soundPosTemp = soundPos;
+                        }
                     }
-                    if(positionRecorded)
-                    {
-                        soundPosTemp = soundPos;
-                    }
-                }
                 
-                heardSound = true;
-                searchingSound = true;
-                if (heardSound)
-                {
-                     source.Play();
+                    heardSound = true;
+                    searchingSound = true;
+                    if (heardSound)
+                    {
+                        source.maxDistance = 10;
+                        source.PlayOneShot(suprised);
                      
+                    }
+                }
+                else
+                {
+                    heardSound = false;
                 }
             }
-            else
-            {
-                heardSound = false;
-            }
-        }
         }
         if (!searchingSound)
         { 
