@@ -23,11 +23,11 @@ public class PlayerRespawn : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.layer.Equals(16))
-        {
-            respawnPosition = collision.gameObject.transform.position;
-            Destroy(collision.gameObject);
-        }
+        //if (collision.gameObject.layer.Equals(16))
+        //{
+        //    respawnPosition = collision.gameObject.transform.position;
+        //    Destroy(collision.gameObject);
+        //}
 
         if(collision.gameObject.tag == "Enemy")
         {
@@ -40,7 +40,8 @@ public class PlayerRespawn : MonoBehaviour
         
         if(hasdied)
         {
-            transform.parent.position = respawnPosition;
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
             hasdied = false;
         }
     }

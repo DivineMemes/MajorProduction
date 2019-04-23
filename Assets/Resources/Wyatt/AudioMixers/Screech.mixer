@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!241 &24100000
+AudioMixerController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Screech
+  m_OutputGroup: {fileID: 0}
+  m_MasterGroup: {fileID: 24300002}
+  m_Snapshots:
+  - {fileID: 24500006}
+  m_StartSnapshot: {fileID: 24500006}
+  m_SuspendThreshold: -80
+  m_EnableSuspend: 1
+  m_UpdateMode: 0
+  m_ExposedParameters: []
+  m_AudioMixerGroupViews: []
+  m_CurrentViewIndex: 0
+  m_TargetSnapshot: {fileID: 24500006}
+--- !u!243 &24300002
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Master
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 05a63ca218bfe2643833c21687001d6f
+  m_Children: []
+  m_Volume: fb9f3ff1c24520d4e9d7a5ec5a08d751
+  m_Pitch: 9b3aa7382264d354bb16a23191698815
+  m_Effects:
+  - {fileID: 24400004}
+  - {fileID: 244451822713153836}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &24400004
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 93d0863bcfa183d43adad575ef7166e8
+  m_EffectName: Attenuation
+  m_MixLevel: ba35bd055c94e1c4bb0fa6417a49a793
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &24500006
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Snapshot
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: e33568ea01ac9d848aa62a0286ed6f79
+  m_FloatValues:
+    fb9f3ff1c24520d4e9d7a5ec5a08d751: 3
+    3bdf471506f359d4cbeee6f8278130d1: 1
+  m_TransitionOverrides: {}
+--- !u!244 &244451822713153836
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 811946d3433697640884c67554116a7b
+  m_EffectName: Echo
+  m_MixLevel: d93ce11dcfe92b14cb2239c5ec3aad5b
+  m_Parameters:
+  - m_ParameterName: Delay
+    m_GUID: 3bdf471506f359d4cbeee6f8278130d1
+  - m_ParameterName: Decay
+    m_GUID: dc3bcdde5cc5dff4b8524ea9e61ab847
+  - m_ParameterName: Max channels
+    m_GUID: 2d12eefb61e7a284391f7ac2a00472d7
+  - m_ParameterName: Drymix
+    m_GUID: 7de9209a4401b7946b804cfc4074e77b
+  - m_ParameterName: Wetmix
+    m_GUID: 6ba838092268c854eb65cf5d01d48ea4
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0

@@ -1,19 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class EnemySoundDetection : MonoBehaviour
 {
+    EnemySeek chasing;
+
     public Vector3 soundPos;
     public Vector3 soundPosTemp;
     public float radius;
     public bool heardSound = false;
     public bool searchingSound;
     public bool positionRecorded;
-
-
+    private AudioSource source;
+    public AudioClip suprised;
+    public AudioClip whispers;
     private void Start()
     {
+        source = gameObject.GetComponent<AudioSource>();
+        chasing = gameObject.GetComponent<EnemySeek>();
         positionRecorded = false;
     }
 
@@ -23,42 +29,42 @@ public class EnemySoundDetection : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, radius);
         for (int i = 0; i < colliders.Length; i++)
         {
-            if (colliders[i].gameObject.tag == "Sound" && !heardSound)
+            if (!chasing.targetSpotted)
             {
-                if(colliders[i].gameObject.GetComponent<Collider>().enabled == true)
+                if (colliders[i].gameObject.tag == "Sound" && !heardSound)
                 {
-                    if (!positionRecorded)
+                    if(colliders[i].gameObject.GetComponent<Collider>().enabled == true)
                     {
-                        soundPos = colliders[i].gameObject.GetComponent<Collider>().transform.position;
+                        if (!positionRecorded)
+                        {
+                            soundPos = colliders[i].gameObject.GetComponent<Collider>().transform.position;
                         
-                        positionRecorded = true;
+                            positionRecorded = true;
+                        }
+                        if(positionRecorded)
+                        {
+                            soundPosTemp = soundPos;
+                        }
                     }
-                    if(positionRecorded)
+                
+                    heardSound = true;
+                    searchingSound = true;
+                    if (heardSound)
                     {
-                        soundPosTemp = soundPos;
+                        source.maxDistance = 10;
+                        source.PlayOneShot(suprised);
+                     
                     }
                 }
-                heardSound = true;
-                searchingSound = true;
-            }
-            else
-            {
-                heardSound = false;
+                else
+                {
+                    heardSound = false;
+                }
             }
         }
-
-        
-
         if (!searchingSound)
-        {
-            //soundPos = null;
-            //soundPosTemp = null;
+        { 
             positionRecorded = false;
         }
-    }
-
-    void OnDrawGizmos()
-    {
-        //Gizmos.DrawSphere(gameObject.transform.position, radius);
     }
 }
