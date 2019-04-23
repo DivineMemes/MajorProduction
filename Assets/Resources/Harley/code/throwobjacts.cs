@@ -17,15 +17,20 @@ public class throwobjacts : MonoBehaviour {
     RaycastHit hitInfo;
     public AnimationCurve velocityCurve;
     public float timer;
+    public AudioSource sound;
+    public AudioClip throwsoud;
     public GameObject grabui;
     public GameObject grabui2;
     public GameObject normalui;
+    public int number;
     public controler control;
     public int dmg;
     IEnumerator cliderenble()
     {
         sound2.GetComponent<Collider>().enabled = true;
+        sound.PlayOneShot(throwsoud);
         yield return new WaitForSeconds(timer);
+        sound.Pause();
         sound2.GetComponent<Collider>().enabled = false;
         throwme = false;
     }
@@ -59,6 +64,7 @@ public class throwobjacts : MonoBehaviour {
                 transform.parent = playerCam;
                 //gamemanger.GM.grab = true;
 
+                number = 1;
                 timer = 1;
                 me.GetComponent<MeshRenderer>().enabled = false;
                 beingCarried = true;
@@ -126,8 +132,12 @@ public class throwobjacts : MonoBehaviour {
         if(gamemanger.GM.grab == true)
         {
             normalui.SetActive(false);
+
             grabui.SetActive(true);
-            grabui2.SetActive(true);
+            if (number == 0)
+            {
+                grabui2.SetActive(true);
+            }
         }
         if(gamemanger.GM.grab == false)
         {

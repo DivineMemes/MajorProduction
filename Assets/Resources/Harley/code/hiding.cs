@@ -18,6 +18,7 @@ public class hiding : MonoBehaviour {
     public GameObject me;
     public GameObject hidui;
     public GameObject hidui2;
+    public int number;
     public GameObject normalui;
     public float time;
     public float i = 0.0f;
@@ -115,6 +116,7 @@ public class hiding : MonoBehaviour {
                     //maincam.enabled = false;
                     //hands.enabled = false;
                     //hidingcam.enabled = true;
+                    number += 1;
                     StartCoroutine(dohid());
 
 
@@ -160,7 +162,10 @@ public class hiding : MonoBehaviour {
         if(gamemanger.GM.hide == true)
         {
             hidui.SetActive(true);
-            hidui2.SetActive(true);
+            if (number == 0)
+            {
+                hidui2.SetActive(true);
+            }
             normalui.SetActive(false);
         }
         if (gamemanger.GM.hide == false)
