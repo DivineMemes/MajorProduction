@@ -8,6 +8,7 @@ public class gamemanger : MonoBehaviour {
     public bool grab;
     public bool win;
     public int once;
+    public int thrownumber;
     //public GameObject grabui;
     //public GameObject normalui;
     //public GameObject hidui;
