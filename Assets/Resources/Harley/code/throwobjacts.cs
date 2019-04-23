@@ -22,7 +22,7 @@ public class throwobjacts : MonoBehaviour {
     public GameObject grabui;
     public GameObject grabui2;
     public GameObject normalui;
-    public int number;
+    
     public controler control;
     public int dmg;
     IEnumerator cliderenble()
@@ -64,7 +64,7 @@ public class throwobjacts : MonoBehaviour {
                 transform.parent = playerCam;
                 //gamemanger.GM.grab = true;
 
-                number = 1;
+                gamemanger.GM.thrownumber = 1;
                 timer = 1;
                 me.GetComponent<MeshRenderer>().enabled = false;
                 beingCarried = true;
@@ -134,7 +134,7 @@ public class throwobjacts : MonoBehaviour {
             normalui.SetActive(false);
 
             grabui.SetActive(true);
-            if (number == 0)
+            if (gamemanger.GM.thrownumber == 0)
             {
                 grabui2.SetActive(true);
             }
