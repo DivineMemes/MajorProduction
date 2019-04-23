@@ -63,8 +63,8 @@ public class throwobjacts : MonoBehaviour {
                 sound2.GetComponent<Collider>().enabled = false;
                 transform.parent = playerCam;
                 //gamemanger.GM.grab = true;
-                normalui.SetActive(false);
-                throwui.SetActive(true);
+                //normalui.SetActive(false);
+                //throwui.SetActive(true);
                 gamemanger.GM.thrownumber = 1;
                 timer = 1;
                 me.GetComponent<MeshRenderer>().enabled = false;
