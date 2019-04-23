@@ -22,7 +22,7 @@ public class throwobjacts : MonoBehaviour {
     public GameObject grabui;
     public GameObject grabui2;
     public GameObject normalui;
-    
+    public GameObject throwui;
     public controler control;
     public int dmg;
     IEnumerator cliderenble()
@@ -63,7 +63,8 @@ public class throwobjacts : MonoBehaviour {
                 sound2.GetComponent<Collider>().enabled = false;
                 transform.parent = playerCam;
                 //gamemanger.GM.grab = true;
-
+                normalui.SetActive(false);
+                throwui.SetActive(true);
                 gamemanger.GM.thrownumber = 1;
                 timer = 1;
                 me.GetComponent<MeshRenderer>().enabled = false;
@@ -89,6 +90,8 @@ public class throwobjacts : MonoBehaviour {
                 me.GetComponent<MeshRenderer>().enabled = true;
                 beingCarried = false;
                 //sound2.GetComponent<Collider>().enabled = true;
+                //normalui.SetActive(true);
+                //throwui.SetActive(false);
                 //gamemanger.GM.grab = false;
                 throwme = true;
                 //StartCoroutine(cliderenble());
@@ -97,6 +100,8 @@ public class throwobjacts : MonoBehaviour {
             }
             else if (Input.GetMouseButtonDown(1))
             {
+                //normalui.SetActive(true);
+                //throwui.SetActive(false);
                 GetComponent<Rigidbody>().isKinematic = false;
                 me.GetComponent<MeshRenderer>().enabled = true;
                 transform.parent = null;
