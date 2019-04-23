@@ -21,6 +21,7 @@ public class throwobjacts : MonoBehaviour {
     public AudioSource sound;
     public AudioClip throwsoud;
     public AudioClip pickupsound;
+    public AudioClip dropsound;
     public GameObject grabui;
     public GameObject grabui2;
     public GameObject normalui;
@@ -108,6 +109,7 @@ public class throwobjacts : MonoBehaviour {
                 //throwui.SetActive(false);
                 GetComponent<Rigidbody>().isKinematic = false;
                 me.GetComponent<MeshRenderer>().enabled = true;
+                sound.PlayOneShot(dropsound);
                 transform.parent = null;
                 beingCarried = false;
                 control.nomore = 0;
