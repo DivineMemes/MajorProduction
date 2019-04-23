@@ -8,14 +8,16 @@ public class StandardAIPatroling : MonoBehaviour
     EnemySeek seeker;
     EnemySoundDetection soundDetect;
     NavMeshAgent agent;
+    public Animator cultist;
     public GameObject player;
     public Transform[] nodes;
+    private AudioSource source;
+    public AudioClip whispers;
     public float searchTimer;
     public float suspectTimer;
     int destinationPoint = 0;
     bool coroutineStarted;
     bool targetSpotted;
-    public Animator cultist;
     // Use this for initialization
     void Start()
     {

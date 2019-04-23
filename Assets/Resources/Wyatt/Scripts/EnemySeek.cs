@@ -20,8 +20,6 @@ public class EnemySeek : MonoBehaviour
     public LayerMask targetMask;
     public LayerMask Wall;
 
-    public AudioClip[] grass;
-
     public List<Transform> visibleTargets = new List<Transform>();
 
 
