@@ -17,6 +17,7 @@ public class step_over : MonoBehaviour {
     bool step;
     public float i = 0.0f;
     public GameObject normalui;
+    public GameObject throwui;
     public float duration = 3.0f;
     public AnimationCurve heightChange;
 
@@ -84,15 +85,31 @@ public class step_over : MonoBehaviour {
             {
                 text.SetActive(true);
             }
-            normalui.SetActive(false);
-            text2.SetActive(true);
+            if(gamemanger.GM.throwme == true)
+            {
+                throwui.SetActive(false);
+                text2.SetActive(true);
+            }
+            if (gamemanger.GM.throwme == false)
+            {
+                normalui.SetActive(false);
+                text2.SetActive(true);
+            }
         }
         if (on == false)
         {
-            normalui.SetActive(true);
-            text.SetActive(false);
-            
-            text2.SetActive(false);
+            if(gamemanger.GM.throwme == true)
+            {
+                text.SetActive(false);
+                throwui.SetActive(true);
+                text2.SetActive(false);
+            }
+            if (gamemanger.GM.throwme == false)
+            {
+                normalui.SetActive(true);
+                text.SetActive(false);
+                text2.SetActive(false);
+            }
         }
         else
         {

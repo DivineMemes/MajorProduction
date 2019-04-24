@@ -70,6 +70,7 @@ public class throwobjacts : MonoBehaviour {
                 //gamemanger.GM.grab = true;
                 //normalui.SetActive(false);
                 //throwui.SetActive(true);
+                gamemanger.GM.throwme = true;
                 gamemanger.GM.thrownumber = 1;
                 timer = 1;
                 me.GetComponent<MeshRenderer>().enabled = false;
@@ -98,6 +99,7 @@ public class throwobjacts : MonoBehaviour {
                 //normalui.SetActive(true);
                 //throwui.SetActive(false);
                 //gamemanger.GM.grab = false;
+                gamemanger.GM.throwme = false;
                 throwme = true;
                 //StartCoroutine(cliderenble());
                 GetComponent<Rigidbody>().AddForce(playerCam.forward * throwforce);
@@ -109,6 +111,7 @@ public class throwobjacts : MonoBehaviour {
                 //throwui.SetActive(false);
                 GetComponent<Rigidbody>().isKinematic = false;
                 me.GetComponent<MeshRenderer>().enabled = true;
+                gamemanger.GM.throwme = false;
                 sound.PlayOneShot(dropsound);
                 transform.parent = null;
                 beingCarried = false;
@@ -152,9 +155,19 @@ public class throwobjacts : MonoBehaviour {
         }
         if(gamemanger.GM.grab == false)
         {
-            normalui.SetActive(true);
-            grabui.SetActive(false);
-            grabui2.SetActive(false);
+            if(gamemanger.GM.throwme == true)
+            {
+                throwui.SetActive(true);
+                grabui.SetActive(false);
+                grabui2.SetActive(false);
+            }
+            if (gamemanger.GM.throwme == false)
+            {
+                throwui.SetActive(false);
+                normalui.SetActive(true);
+                grabui.SetActive(false);
+                grabui2.SetActive(false);
+            }
         }
         //else
         //{
