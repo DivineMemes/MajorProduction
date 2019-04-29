@@ -9,6 +9,8 @@ public class gamemanger : MonoBehaviour {
     public bool win;
     public int once;
     public int thrownumber;
+    public bool stepover;
+    public bool throwme;
     //public GameObject grabui;
     //public GameObject normalui;
     //public GameObject hidui;
@@ -48,7 +50,10 @@ public class gamemanger : MonoBehaviour {
         //    normalui.SetActive(true);
         //    grabui.SetActive(false);
         //}
-       
+       if(pause == false)
+        {
+
+        }
         
         
     }
