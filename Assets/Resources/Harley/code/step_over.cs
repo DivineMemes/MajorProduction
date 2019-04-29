@@ -8,7 +8,7 @@ public class step_over : MonoBehaviour {
     public Transform move;
     //public Transform move2;
     public GameObject player;
-    public GameObject text;
+    public GameObject buttonpresstext;
     public GameObject text2;
     public int number;
     bool on;
@@ -44,6 +44,7 @@ public class step_over : MonoBehaviour {
             player.SetActive(false);
             yield return null;
         }
+        move = null;
         player.SetActive(true);
     }
 
@@ -86,7 +87,7 @@ public class step_over : MonoBehaviour {
             {
                 if (number == 0)
                 {
-                    text.SetActive(true);
+                    buttonpresstext.SetActive(true);
                 }
                 if (gamemanger.GM.throwme == true)
                 {
@@ -108,14 +109,14 @@ public class step_over : MonoBehaviour {
             {
                 if (gamemanger.GM.throwme == true)
                 {
-                    text.SetActive(false);
+                    buttonpresstext.SetActive(false);
                     throwui.SetActive(true);
                     text2.SetActive(false);
                 }
                 if (gamemanger.GM.throwme == false)
                 {
                     normalui.SetActive(true);
-                    text.SetActive(false);
+                    buttonpresstext.SetActive(false);
                     text2.SetActive(false);
                 }
             }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 17bc0ff37145ed741b05776be3a0e342
+guid: aa9fc54b2e39e674e894b99d1f79a829
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -52,7 +52,8 @@ ModelImporter:
     100092: J_R_hand
     100094: J_R_wrist
     100096: J_ROOT
-    100098: //RootNode
+    100098: player1
+    100100: //RootNode
     400000: J_L_arm_base
     400002: J_L_fing_index_1
     400004: J_L_fing_index_2
@@ -102,9 +103,13 @@ ModelImporter:
     400092: J_R_hand
     400094: J_R_wrist
     400096: J_ROOT
-    400098: //RootNode
+    400098: player1
+    400100: //RootNode
+    2100000: lambert4
+    4300000: player1
     7400000: player_run
     9500000: //RootNode
+    13700000: player1
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -137,7 +142,7 @@ ModelImporter:
       name: player_run
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 24
+      lastFrame: 18
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -172,7 +177,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
