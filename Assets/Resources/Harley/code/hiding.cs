@@ -20,6 +20,7 @@ public class hiding : MonoBehaviour {
     public GameObject hidui2;
     public int number;
     public GameObject normalui;
+    public GameObject throwui;
     public float time;
     public float i = 0.0f;
     public Transform hidingspot;
@@ -161,18 +162,38 @@ public class hiding : MonoBehaviour {
         }
         if(gamemanger.GM.hide == true)
         {
-            hidui.SetActive(true);
+            //hidui.SetActive(true);
             if (number == 0)
             {
                 hidui2.SetActive(true);
             }
-            normalui.SetActive(false);
+            if(gamemanger.GM.throwme == true)
+            {
+                normalui.SetActive(false);
+                throwui.SetActive(false);
+                hidui.SetActive(true);
+            }
+            if (gamemanger.GM.throwme == false)
+            {
+                normalui.SetActive(false);
+                hidui.SetActive(true);
+            }
         }
         if (gamemanger.GM.hide == false)
         {
             hidui.SetActive(false);
-            hidui2.SetActive(false);
-            normalui.SetActive(true);
+            if (gamemanger.GM.throwme == true)
+            {
+                throwui.SetActive(true);
+                hidui.SetActive(false);
+                hidui2.SetActive(false);
+            }
+            if (gamemanger.GM.throwme == false)
+            {
+                hidui2.SetActive(false);
+                normalui.SetActive(true);
+                hidui.SetActive(false);
+            }
         }
         else
         {
