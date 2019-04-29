@@ -44,6 +44,7 @@ public class step_over : MonoBehaviour {
             player.SetActive(false);
             yield return null;
         }
+        move = null;
         player.SetActive(true);
     }
 
