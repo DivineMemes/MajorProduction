@@ -11,8 +11,6 @@ public class StandardAIPatroling : MonoBehaviour
     public Animator cultist;
     public GameObject player;
     public Transform[] nodes;
-    private AudioSource source;
-    public AudioClip whispers;
     public float searchTimer;
     public float suspectTimer;
     int destinationPoint = 0;
