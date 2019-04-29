@@ -7,6 +7,7 @@ public class pause_menu : MonoBehaviour {
     public GameObject me;
     public ThirdPerson look;
     public Slider xlook;
+    public GameObject croshair;
     public Slider ylook;
     // Use this for initialization
     void Start () {
@@ -23,6 +24,7 @@ public class pause_menu : MonoBehaviour {
     public void game()
     {
         me.SetActive(false);
+        croshair.SetActive(true);
         gamemanger.GM.pause = false;
     }
     public void quit()
