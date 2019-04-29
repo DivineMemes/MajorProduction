@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5616da66124e1ba4086646eae6636977
+guid: 5e5c488256f8ebd4693739c7c0224f7b
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -52,7 +52,8 @@ ModelImporter:
     100092: J_R_hand
     100094: J_R_wrist
     100096: J_ROOT
-    100098: //RootNode
+    100098: player1
+    100100: //RootNode
     400000: J_L_arm_base
     400002: J_L_fing_index_1
     400004: J_L_fing_index_2
@@ -102,9 +103,13 @@ ModelImporter:
     400092: J_R_hand
     400094: J_R_wrist
     400096: J_ROOT
-    400098: //RootNode
+    400098: player1
+    400100: //RootNode
+    2100000: lambert2
+    4300000: player1
     7400000: player_walk
     9500000: //RootNode
+    13700000: player1
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -172,7 +177,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
