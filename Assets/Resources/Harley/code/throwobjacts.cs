@@ -168,6 +168,17 @@ public class throwobjacts : MonoBehaviour {
                 grabui.SetActive(false);
                 grabui2.SetActive(false);
             }
+            if(gamemanger.GM.hide == true)
+            {
+                throwui.SetActive(false);
+                normalui.SetActive(false);
+            }
+            if(gamemanger.GM.stepover == true)
+            {
+                throwui.SetActive(false);
+                normalui.SetActive(false);
+            }
+           
         }
         //else
         //{

@@ -107,7 +107,7 @@ public class controler : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            gamemanger.GM.pause = true;
+            gamemanger.GM.pause = !gamemanger.GM.pause;
             stop.SetActive(true);
             cross_hair.SetActive(false);
         }

@@ -60,8 +60,8 @@ public class step_over : MonoBehaviour {
             if (hit.collider.tag == "step_over")
             {
               move = hit.collider.GetComponent<Transform>().GetChild(0).GetComponent<Transform>();
-              //move2 = hit.collider.GetComponent<Transform>().GetChild(1).GetComponent<Transform>();
-               
+                //move2 = hit.collider.GetComponent<Transform>().GetChild(1).GetComponent<Transform>();
+                gamemanger.GM.stepover = true;
                 //print("hit player");
                 on = true;
                 if (Input.GetKeyDown(KeyCode.Space))
@@ -71,6 +71,7 @@ public class step_over : MonoBehaviour {
                     //step = true;
                     //StartCoroutine(Wait2());
                     StartCoroutine(DoStep());
+                    gamemanger.GM.stepover = false;
                 }
             }
         }
@@ -81,39 +82,48 @@ public class step_over : MonoBehaviour {
         }
         if(on == true)
         {
-            if (number == 0)
+            if (gamemanger.GM.stepover == true)
             {
-                text.SetActive(true);
+                if (number == 0)
+                {
+                    text.SetActive(true);
+                }
+                if (gamemanger.GM.throwme == true)
+                {
+                    throwui.SetActive(false);
+                    text2.SetActive(true);
+                }
+                if (gamemanger.GM.throwme == false)
+                {
+                    normalui.SetActive(false);
+                    text2.SetActive(true);
+                }
             }
-            if(gamemanger.GM.throwme == true)
-            {
-                throwui.SetActive(false);
-                text2.SetActive(true);
-            }
-            if (gamemanger.GM.throwme == false)
-            {
-                normalui.SetActive(false);
-                text2.SetActive(true);
-            }
+
         }
         if (on == false)
         {
-            if(gamemanger.GM.throwme == true)
+            gamemanger.GM.stepover = false;
+            if (gamemanger.GM.stepover == false)
             {
-                text.SetActive(false);
-                throwui.SetActive(true);
-                text2.SetActive(false);
-            }
-            if (gamemanger.GM.throwme == false)
-            {
-                normalui.SetActive(true);
-                text.SetActive(false);
-                text2.SetActive(false);
+                if (gamemanger.GM.throwme == true)
+                {
+                    text.SetActive(false);
+                    throwui.SetActive(true);
+                    text2.SetActive(false);
+                }
+                if (gamemanger.GM.throwme == false)
+                {
+                    normalui.SetActive(true);
+                    text.SetActive(false);
+                    text2.SetActive(false);
+                }
             }
         }
         else
         {
             on = false;
+            
         }
     }
 
