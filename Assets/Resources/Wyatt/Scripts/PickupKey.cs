@@ -29,12 +29,12 @@ public class PickupKey : MonoBehaviour
         {
             Pickup();
         }
-
     }
 
     void Pickup()
     {
-        KeyCount++;
+        gamemanger.GM.KeyCount++;
+       
         Destroy(gameObject);
     }
 }

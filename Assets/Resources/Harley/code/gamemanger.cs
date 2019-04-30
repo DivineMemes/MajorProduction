@@ -15,6 +15,7 @@ public class gamemanger : MonoBehaviour {
     //public GameObject normalui;
     //public GameObject hidui;
     public bool hide;
+    public int KeyCount;
     // Use this for initialization
     void Awake()
     {
@@ -50,9 +51,9 @@ public class gamemanger : MonoBehaviour {
         //    normalui.SetActive(true);
         //    grabui.SetActive(false);
         //}
-       if(pause == false)
+       if(KeyCount == 4)
         {
-
+            win = true;
         }
         
         
