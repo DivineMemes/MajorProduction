@@ -4,8 +4,8 @@ using UnityEngine;
 
 
 public class win : MonoBehaviour {
-    public float raylength = 10;
-    RaycastHit hit;
+   // public float raylength = 10;
+    //RaycastHit hit;
     // Use this for initialization
     void Start () {
 		
@@ -26,13 +26,8 @@ public class win : MonoBehaviour {
                
         //    }
         //}
+
    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "Player")
-        {
-            gamemanger.GM.win = true;
-        }
-    }
+    
 }
