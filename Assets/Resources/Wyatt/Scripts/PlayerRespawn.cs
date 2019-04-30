@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerRespawn : MonoBehaviour
 {
+    public Scene death;
     Scene current;
     Vector3 respawnPosition;
     public bool hasdied;
@@ -12,6 +13,7 @@ public class PlayerRespawn : MonoBehaviour
 
     void Start()
     {
+        death = SceneManager.GetSceneByBuildIndex(2);
         respawnPosition = gameObject.transform.position;
     }
 
@@ -40,8 +42,9 @@ public class PlayerRespawn : MonoBehaviour
         
         if(hasdied)
         {
-            Scene scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            SceneManager.LoadScene(2);
             hasdied = false;
         }
     }
