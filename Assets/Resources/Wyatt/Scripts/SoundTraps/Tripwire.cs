@@ -6,37 +6,23 @@ public class Tripwire : MonoBehaviour
 {
     //public Transform endOne;
     //public Transform endTwo;
+
     public SphereCollider soundCollider;
     public float killTime = .5f;
+
+
+    public AudioClip chimes;
+    AudioSource source;
+
     bool coroutineStarted;
     bool hasTriggered;
 
+
     void Start()
     {
+        source = gameObject.GetComponent<AudioSource>();
         hasTriggered = false;
     }
-
-    void Update()
-    {
-        //RaycastHit hit;
-        //if (Physics.Linecast(endOne.position, endTwo.position, out hit))
-        //{
-        //    if (hit.collider.tag == "Player"&&!hasTriggered)
-        //    {
-        //        SphereCollider spawnedCollider = Instantiate(soundCollider, hit.collider.transform.position, Quaternion.identity);
-        //        spawnedCollider.tag = "Sound";
-        //        spawnedCollider.radius = 25;
-        //        hasTriggered = true;
-        //        if (!coroutineStarted)
-        //        {
-        //            StartCoroutine(waitfordelete(spawnedCollider));
-        //        }
-                
-        //    }
-        //}
-        //Debug.DrawLine(endOne.position, endTwo.position, Color.black, 100, false);
-    }
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -46,6 +32,7 @@ public class Tripwire : MonoBehaviour
             spawnedCollider.tag = "Sound";
             spawnedCollider.radius = 25;
             hasTriggered = true;
+            source.PlayOneShot(chimes);
             if (!coroutineStarted)
             {
                 StartCoroutine(waitfordelete(spawnedCollider));

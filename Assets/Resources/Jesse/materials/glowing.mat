@@ -211,10 +211,10 @@ Material:
     - _ZTestGBuffer: 4
     - _ZTestModeDistortion: 8
     - _ZWrite: 1
-    - _fresnalpower: 2
-    - _glowspeed: 6
+    - _fresnalpower: 0.5
+    - _glowspeed: 1
     m_Colors:
-    - Color_6133E269: {r: 1, g: 1, b: 1, a: 0}
+    - Color_6133E269: {r: 1, g: 0, b: 0.8197484, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
