@@ -10,8 +10,12 @@ public class EnemySeek : MonoBehaviour
     public bool targetSpotted = false;
     public bool targetLost = false;
     public bool targetWasSpotted = false;
+    public bool sound;
 
-    
+
+    public AudioClip Spotted;
+    AudioSource source;
+
     public float viewRad;
     float s_ViewRad;//s_ == script value
     [Range(0,360)]
@@ -27,6 +31,7 @@ public class EnemySeek : MonoBehaviour
 
     private void Start()
     {
+        source = gameObject.GetComponent<AudioSource>();
         StartCoroutine(FindTargetDelayed(delay));
         //rb = GetComponent<Rigidbody>();
         velocity = Vector3.zero;
@@ -47,6 +52,11 @@ public class EnemySeek : MonoBehaviour
             if (visibleTargets[i]==target)
             {
                 targetSpotted = true;
+                if(!sound)
+                {
+                    source.PlayOneShot(Spotted);
+                    sound = true;
+                }
                 targetWasSpotted = true;
                 transform.LookAt(visibleTargets[i]);
             }
@@ -54,6 +64,7 @@ public class EnemySeek : MonoBehaviour
         if(visibleTargets.Count == 0)
         {
             targetSpotted = false;
+            sound = false;
         }
     }
     void FindVisibleTargets()
