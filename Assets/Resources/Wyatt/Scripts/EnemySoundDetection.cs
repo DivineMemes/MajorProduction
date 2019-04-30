@@ -64,7 +64,7 @@ public class EnemySoundDetection : MonoBehaviour
                 if(!heardSound && source.isPlaying == false)
                 {
                     source.loop = true;
-                    source.maxDistance = 5;
+                    source.maxDistance = 10;
                     source.PlayOneShot(whisper);
                 }
             }
