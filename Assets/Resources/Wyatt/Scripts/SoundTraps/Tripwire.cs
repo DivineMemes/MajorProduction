@@ -9,10 +9,10 @@ public class Tripwire : MonoBehaviour
 
     public SphereCollider soundCollider;
     public float killTime = .5f;
-
+    GameObject soundPos;
 
     public AudioClip chimes;
-    AudioSource source;
+    //AudioSource source;
 
     bool coroutineStarted;
     bool hasTriggered;
@@ -20,7 +20,7 @@ public class Tripwire : MonoBehaviour
 
     void Start()
     {
-        source = gameObject.GetComponent<AudioSource>();
+        //source = gameObject.GetComponent<AudioSource>();
         hasTriggered = false;
     }
 
@@ -28,11 +28,18 @@ public class Tripwire : MonoBehaviour
     {
         if(other.CompareTag("Player") && !hasTriggered)
         {
+            //source.PlayOneShot(chimes);
             SphereCollider spawnedCollider = Instantiate(soundCollider, other.transform.position, Quaternion.identity);
             spawnedCollider.tag = "Sound";
             spawnedCollider.radius = 25;
+            soundPos = new GameObject("soundActivater");
+            soundPos.AddComponent<AudioSource>();
+            soundPos.GetComponent<AudioSource>().clip = chimes;
+            soundPos.transform.position = gameObject.transform.position;
+            soundPos.AddComponent<KillMe>();
+            
+
             hasTriggered = true;
-            source.PlayOneShot(chimes);
             if (!coroutineStarted)
             {
                 StartCoroutine(waitfordelete(spawnedCollider));
