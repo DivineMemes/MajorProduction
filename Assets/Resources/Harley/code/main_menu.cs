@@ -10,6 +10,7 @@ public class main_menu : MonoBehaviour
         SceneManager.LoadScene(1);
         gamemanger.GM.once = 0;
         gamemanger.GM.KeyCount = 0;
+        gamemanger.GM.win = false;
         gamemanger.GM.thrownumber = 0;
     }
     public void settings()
