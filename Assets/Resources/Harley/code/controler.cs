@@ -23,7 +23,7 @@ public class controler : MonoBehaviour {
     public GameObject stop;
     public GameObject cross_hair;
     public float number = 0;
-    public Light myflaselight;
+    public GameObject myflaselight;
     public int nomore;
     public Vector3 velocity;
     public hiding mek;
@@ -133,11 +133,11 @@ public class controler : MonoBehaviour {
 
         if (light == true)
         {
-            myflaselight.enabled = true;
+            myflaselight.SetActive(true);
         }
         if (light == false)
         {
-            myflaselight.enabled = false;
+            myflaselight.SetActive(false);
         }
         if (vertical == 1)
         {
