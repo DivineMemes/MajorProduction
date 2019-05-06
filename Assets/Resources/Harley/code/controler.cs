@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class controler : MonoBehaviour {
     public float horizontal;
+    public GameObject player;
+    //public float jumphight;
+    
     public float vertical;
     public bool jump;
     public moiro play;
@@ -22,6 +25,8 @@ public class controler : MonoBehaviour {
     public float number = 0;
     public Light myflaselight;
     public int nomore;
+    public Vector3 velocity;
+    public hiding mek;
     // Use this for initialization
     void Start () {
     }
@@ -39,38 +44,50 @@ public class controler : MonoBehaviour {
             }
             return;
         }
-        if (Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
+        if (mek.isHiding == false)
         {
-            vertical = -1;
-            //me.clip = walk;
-            me.Play();
-            //sound.enabled = true;
-            noinput = false;
+            if (Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
+            {
+                vertical = -1;
+                //me.clip = walk;
+                me.Play();
+                //sound.enabled = true;
+                noinput = false;
+            }
         }
-        if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+        if (mek.isHiding == false)
         {
-            vertical = 1;
-            //me.clip = walk;
-            me.Play();
-         
-            //sound.enabled = true;
-            noinput = false;
+            if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+            {
+                vertical = 1;
+                //me.clip = walk;
+                me.Play();
+
+                //sound.enabled = true;
+                noinput = false;
+            }
         }
-        if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        if (mek.isHiding == false)
         {
-            horizontal = -1;
-       
-            //sound.enabled = true;
-            noinput = false;
+            if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+            {
+                horizontal = -1;
+
+                //sound.enabled = true;
+                noinput = false;
+            }
         }
-        if (Input.GetKey(KeyCode.D) && !Input.GetKeyDown(KeyCode.A))
+        if (mek.isHiding == false)
         {
-            horizontal = 1;
-        
-            //sound.enabled = true;
-            noinput = false;
+            if (Input.GetKey(KeyCode.D) && !Input.GetKeyDown(KeyCode.A))
+            {
+                horizontal = 1;
+
+                //sound.enabled = true;
+                noinput = false;
+            }
         }
-        if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+            if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
         {
             horizontal = 0;
         }
@@ -84,15 +101,17 @@ public class controler : MonoBehaviour {
            
             //sound.enabled = false;
         }
-        //if (play.grounded == true)
-        //{
-        //    if (Input.GetKeyDown(KeyCode.Space))
-        //    {
-        //        //transform.position += transform.up * play.jump * Time.deltaTime;
-        //        this.transform.Translate(Vector3.up * play.jump);
-        //        //play.rm.velocity = Vector3.up * play.jump;
-        //    }
-        //}
+        if (play.grounded == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+              
+                //player.transform.position.y = play.jump;
+                player.transform.position += transform.up * play.jump * Time.deltaTime;
+                //this.transform.Translate(velocity.y * play.jump);
+                //play.rm.velocity = Vector3.up * play.jump;
+            }
+        }
         if (Input.GetKey(KeyCode.LeftControl) && run == false)
         {
             crouch = true;

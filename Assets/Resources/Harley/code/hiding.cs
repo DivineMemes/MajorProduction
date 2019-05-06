@@ -135,6 +135,7 @@ public class hiding : MonoBehaviour {
             //{
             //    maincam.transform.forward = hidingspot.transform.forward;
             //}
+            
             if (Input.GetKeyDown(KeyCode.E))
             {
                 //mm.hid = false;

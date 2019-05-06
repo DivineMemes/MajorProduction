@@ -26,7 +26,7 @@ public class ThirdPerson : MonoBehaviour {
    // public Vector3 offset = new Vector3 (0,.5f,0);
 	// Use this for initialization
 	void Start () {
-        CamTransform = transform;
+        //CamTransform = transform;
 
         cam = Camera.main;
         Cursor.lockState = CursorLockMode.Locked;

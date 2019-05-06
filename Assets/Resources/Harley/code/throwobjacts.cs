@@ -145,13 +145,15 @@ public class throwobjacts : MonoBehaviour {
         }
         if(gamemanger.GM.grab == true)
         {
-            normalui.SetActive(false);
-
-            grabui.SetActive(true);
-            if (gamemanger.GM.thrownumber == 0)
-            {
-                grabui2.SetActive(true);
-            }
+         
+                normalui.SetActive(false);
+                throwui.SetActive(false);
+                grabui.SetActive(true);
+                if (gamemanger.GM.thrownumber == 0)
+                {
+                    grabui2.SetActive(true);
+                }
+       
         }
         if(gamemanger.GM.grab == false)
         {
