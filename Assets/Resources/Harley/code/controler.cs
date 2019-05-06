@@ -101,17 +101,17 @@ public class controler : MonoBehaviour {
            
             //sound.enabled = false;
         }
-        if (play.grounded == true)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
+        //if (play.grounded == true)
+        //{
+        //    if (Input.GetKeyDown(KeyCode.Space))
+        //    {
               
-                //player.transform.position.y = play.jump;
-                player.transform.position += transform.up * play.jump * Time.deltaTime;
-                //this.transform.Translate(velocity.y * play.jump);
-                //play.rm.velocity = Vector3.up * play.jump;
-            }
-        }
+        //        //player.transform.position.y = play.jump;
+        //        player.transform.position += transform.up * play.jump * Time.deltaTime;
+        //        //this.transform.Translate(velocity.y * play.jump);
+        //        //play.rm.velocity = Vector3.up * play.jump;
+        //    }
+        //}
         if (Input.GetKey(KeyCode.LeftControl) && run == false)
         {
             crouch = true;
