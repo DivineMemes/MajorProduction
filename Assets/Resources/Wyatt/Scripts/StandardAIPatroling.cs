@@ -9,6 +9,7 @@ public class StandardAIPatroling : MonoBehaviour
     EnemySoundDetection soundDetect;
     NavMeshAgent agent;
     public Animator cultist;
+    public AnimatorControllerParameter[] bools;
     public GameObject player;
     public Transform[] nodes;
     public float searchTimer;
@@ -47,17 +48,33 @@ public class StandardAIPatroling : MonoBehaviour
             }
         }
 
+        if (seeker.flashlightSeen)
+        {
+            foreach(AnimatorControllerParameter boolean in cultist.parameters)
+            {
+                cultist.SetBool(boolean.name, false);
+            }
+            cultist.SetBool("idle", true);
+            agent.isStopped = true;
+        }
+        else if(!seeker.flashlightSeen)
+        {
+            agent.isStopped = false;
+        }
         if(seeker.targetSpotted)
         {
             agent.destination = player.transform.position;
             agent.speed = 5;
             cultist.SetBool("run", true);
         }
+
         if (!seeker.targetSpotted)
         {
             agent.speed = 3;
         }
-        if(!seeker.targetSpotted && soundDetect.searchingSound)
+
+
+        if (!seeker.targetSpotted && soundDetect.searchingSound)
         {
             //StartCoroutine(HeardSomething());
             agent.destination = soundDetect.soundPos;

@@ -46,7 +46,11 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
+<<<<<<< HEAD
   spriteBorder: {x: 249, y: 268, z: 260, w: 268}
+=======
+  spriteBorder: {x: 310, y: 301, z: 327, w: 284}
+>>>>>>> jesse
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -119,7 +123,11 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
+<<<<<<< HEAD
     spriteID: 302c7a96cd90999429f61737e82ab776
+=======
+    spriteID: 59e6c8b3f3734e84a8f69e58c9e3d768
+>>>>>>> jesse
     vertices: []
     indices: 
     edges: []
