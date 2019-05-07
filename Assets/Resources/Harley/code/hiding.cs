@@ -12,7 +12,7 @@ public class hiding : MonoBehaviour {
     public bool isHiding = false;
     public float raylength = 10;
     RaycastHit hit;
-    public float turn;
+    public Quaternion turn;
     public bool guiShow = false;
     public moiro mm;
     public GameObject me;
@@ -41,7 +41,7 @@ public class hiding : MonoBehaviour {
             amount += Time.deltaTime;
             float perc = amount / duration;
             me.transform.position = Vector3.Lerp(start, end, perc);
-            mm.enabled=false;
+            mm.enabled = false;
             control.you.SetBool("walk", true);
             yield return null;
         }
@@ -64,6 +64,7 @@ public class hiding : MonoBehaviour {
            
             yield return null;
         }
+        
         isHiding = true;
         guiShow = false;
     }
