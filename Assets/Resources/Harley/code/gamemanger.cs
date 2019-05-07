@@ -11,6 +11,8 @@ public class gamemanger : MonoBehaviour {
     public int thrownumber;
     public bool stepover;
     public bool throwme;
+    public int onetime;
+    public bool sneak;
     //public GameObject grabui;
     //public GameObject normalui;
     //public GameObject hidui;
@@ -44,6 +46,14 @@ public class gamemanger : MonoBehaviour {
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+        }
+      if(sneak == true)
+        {
+            onetime = 1;
+        }
+      if(onetime == 1)
+        {
+            sneak = false;
         }
         //if (hide== false && grab == false)
         //{

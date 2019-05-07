@@ -13,7 +13,7 @@ public class Tripwire : MonoBehaviour
 
     public AudioClip chimes;
     //AudioSource source;
-
+    public controler control;
     bool coroutineStarted;
     bool hasTriggered;
 
@@ -28,6 +28,15 @@ public class Tripwire : MonoBehaviour
     {
         if(other.CompareTag("Player") && !hasTriggered)
         {
+            if(control.crouch == true)
+            {
+                return;
+            }
+            if (gamemanger.GM.onetime == 0)
+            {
+                gamemanger.GM.sneak = true;
+                control.sneak.SetActive(true);
+            }
             //source.PlayOneShot(chimes);
             SphereCollider spawnedCollider = Instantiate(soundCollider, other.transform.position, Quaternion.identity);
             spawnedCollider.tag = "Sound";
