@@ -29,6 +29,7 @@ public class hiding : MonoBehaviour {
     public ThirdPerson k;
     public Transform normelspot;
     public float duration = 3.0f;
+    public LayerMask hiding2;
     // Use this for initialization
     IEnumerator Wait2()
     {
@@ -103,10 +104,10 @@ public class hiding : MonoBehaviour {
 
         var fwd = transform.TransformDirection(Vector3.forward);
 
-       
-       
 
-        if (Physics.Raycast(transform.position,fwd,out hit, raylength))
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward ) * hit.distance, Color.blue);
+
+        if (Physics.Raycast(transform.position,fwd,out hit, raylength,hiding2))
         {
            
             if (hit.collider.tag == "Hide"&&isHiding == false)
