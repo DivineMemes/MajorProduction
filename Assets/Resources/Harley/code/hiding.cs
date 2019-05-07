@@ -64,7 +64,7 @@ public class hiding : MonoBehaviour {
            
             yield return null;
         }
-        
+        k.CurrentX = hidingspot.rotation.y;
         isHiding = true;
         guiShow = false;
     }

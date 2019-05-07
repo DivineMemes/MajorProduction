@@ -23,11 +23,12 @@ public class ThirdPerson : MonoBehaviour {
     public GameObject stop;
     public GameObject cross_hair;
     public float SensivityY = 1.0f;
+    public float turn;
    // public Vector3 offset = new Vector3 (0,.5f,0);
 	// Use this for initialization
 	void Start () {
         //CamTransform = transform;
-
+        CurrentX = turn;
         cam = Camera.main;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
