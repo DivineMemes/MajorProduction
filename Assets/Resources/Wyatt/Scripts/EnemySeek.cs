@@ -8,6 +8,7 @@ public class EnemySeek : MonoBehaviour
     public Transform Flashlight;
     Vector3 velocity;
 
+    public bool flashlightSeen = false;
     public bool targetSpotted = false;
     public bool targetLost = false;
     public bool targetWasSpotted = false;
@@ -63,12 +64,13 @@ public class EnemySeek : MonoBehaviour
 
             if (visibleTargets[i] == Flashlight && visibleTargets[i] != target)
             {
-                Debug.Log("I SEE YOU BITCH");
+                flashlightSeen = true;
             }
         }
         if(visibleTargets.Count == 0)
         {
             targetSpotted = false;
+            flashlightSeen = false;
             sound = false;
         }
     }
