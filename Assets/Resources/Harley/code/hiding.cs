@@ -18,27 +18,36 @@ public class hiding : MonoBehaviour {
     public GameObject me;
     public GameObject hidui;
     public GameObject hidui2;
+    public controler control;
     public int number;
     public GameObject normalui;
     public GameObject throwui;
     public float time;
     public float i = 0.0f;
     public Transform hidingspot;
+    public Transform front;
     public ThirdPerson k;
     public Transform normelspot;
     public float duration = 3.0f;
     // Use this for initialization
     IEnumerator Wait2()
     {
-        
-        yield return new WaitForSeconds(0.5f);
-        var rate = 8.0f / time;
-        i += Time.deltaTime * rate;
-        isHiding = true;
-        guiShow = false;
-        //time = 3;
+
+        Vector3 start = me.transform.position;
+        Vector3 end = front.position;
+        float amount = 0.0f;
+        while (amount < duration)
+        {
+            amount += Time.deltaTime;
+            float perc = amount / duration;
+            me.transform.position = Vector3.Lerp(start, end, perc);
+            mm.enabled=false;
+            control.you.SetBool("walk", true);
+            yield return null;
+        }
+        StartCoroutine(dohid());
     }
-    IEnumerator dohid()
+  IEnumerator dohid()
     {
         Vector3 start = lookat.transform.position;
         Vector3 end = hidingspot.position;
@@ -50,8 +59,8 @@ public class hiding : MonoBehaviour {
             float perc = amount / duration;
             lookat.transform.position = Vector3.Lerp(start, end, perc);
             me.SetActive(false);
-            mm.controller.you.SetBool("walk", false);
-            mm.controller.you.SetBool("run", false);
+            control.you.SetBool("walk", false);
+           control.you.SetBool("run", false);
            
             yield return null;
         }
@@ -70,13 +79,14 @@ public class hiding : MonoBehaviour {
             float perc = amount / duration;
             lookat.transform.position = Vector3.Lerp(start, end, perc);
             //me.SetActive(false);
-            mm.controller.you.SetBool("walk", false);
-            mm.controller.you.SetBool("run", false);
+            control.you.SetBool("walk", false);
+            control.you.SetBool("run", false);
             //isHiding = true;
             //guiShow = false;
             yield return null;
         }
         me.SetActive(true);
+        mm.enabled = true;
         isHiding = false;
     }
     void Start ()
@@ -103,7 +113,7 @@ public class hiding : MonoBehaviour {
                 
                 guiShow = true;
                 hidingspot = hit.collider.GetComponent<Transform>().GetChild(0).GetComponent<Transform>();
-     
+                front = hit.collider.GetComponent<Transform>().GetChild(1).GetComponent<Transform>();
 
                 //time = time -= Time.deltaTime;
                 if (Input.GetKeyDown(KeyCode.E))
@@ -118,7 +128,7 @@ public class hiding : MonoBehaviour {
                     //hands.enabled = false;
                     //hidingcam.enabled = true;
                     number += 1;
-                    StartCoroutine(dohid());
+                    StartCoroutine(Wait2());
 
 
 

@@ -12,6 +12,7 @@ public class main_menu : MonoBehaviour
         gamemanger.GM.KeyCount = 0;
         gamemanger.GM.win = false;
         gamemanger.GM.thrownumber = 0;
+        gamemanger.GM.onetime = 0;
         gamemanger.GM.throwme = false;
     }
     public void settings()
