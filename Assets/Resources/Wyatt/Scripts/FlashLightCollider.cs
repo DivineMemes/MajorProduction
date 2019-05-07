@@ -24,7 +24,7 @@ public class FlashLightCollider : MonoBehaviour
     {
 
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward * -1), out hit, Mathf.Infinity, layerMask))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward*-1), out hit, Mathf.Infinity, layerMask))
         {
             if(!collider.enabled)
             {
@@ -34,8 +34,8 @@ public class FlashLightCollider : MonoBehaviour
             scaleDir[collider.direction] = 1;
             originalHeight = hit.distance;
             collider.height = originalHeight*2;
-            collider.center = scaleDir * (originalHeight * -1); //negative number because forward of the parented flashlight gameobject is backwards
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward * -1) * hit.distance, Color.blue);
+            collider.center = scaleDir * (originalHeight*-1); //negative number because forward of the parented flashlight gameobject is backwards
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward*-1) * hit.distance, Color.blue);
             //Debug.Log(hit.collider.gameObject.name);
         }
         else
