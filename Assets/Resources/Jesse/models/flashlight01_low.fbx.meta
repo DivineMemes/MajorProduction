@@ -12,10 +12,13 @@ ModelImporter:
     2100000: mat_flashlight
     2300000: mesh_flashlight_low
     2300002: mesh_lense_low
+    2300004: //RootNode
     3300000: mesh_flashlight_low
     3300002: mesh_lense_low
+    3300004: //RootNode
     4300000: mesh_flashlight_low
     4300002: mesh_lense_low
+    4300004: mesh_flashlight_low1
   externalObjects:
   - first:
       type: UnityEngine:Material
