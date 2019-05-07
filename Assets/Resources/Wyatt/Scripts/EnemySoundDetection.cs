@@ -10,6 +10,7 @@ public class EnemySoundDetection : MonoBehaviour
     public Vector3 soundPos;
     public Vector3 soundPosTemp;
     public float radius;
+
     public bool heardSound = false;
     public bool searchingSound;
     public bool positionRecorded;
