@@ -27,6 +27,7 @@ public class controler : MonoBehaviour {
     public int nomore;
     public Vector3 velocity;
     public hiding mek;
+    public GameObject sneak;
     // Use this for initialization
     void Start () {
     }
@@ -114,6 +115,7 @@ public class controler : MonoBehaviour {
         //}
         if (Input.GetKey(KeyCode.LeftControl) && run == false)
         {
+            sneak.SetActive(false);
             crouch = true;
         }
         if (!Input.GetKey(KeyCode.LeftControl))
