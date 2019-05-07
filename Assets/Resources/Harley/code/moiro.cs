@@ -62,7 +62,6 @@ public class moiro : MonoBehaviour
     public Transform size;
     public Vector3 normelsize = new Vector3 (1,2,1);
     public Vector3 crouchsize = new Vector3 (1,1,1);
-    public Vector3 velocity2;
     // Use this for initialization
     void Start()
     {
