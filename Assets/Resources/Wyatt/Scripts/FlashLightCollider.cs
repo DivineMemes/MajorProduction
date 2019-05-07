@@ -7,10 +7,9 @@ public class FlashLightCollider : MonoBehaviour
 {
 
     CapsuleCollider collider;
-    float originalHeight;
-    bool colliding;
     bool start;
     int layerMask;
+    float originalHeight;
     void Start()
     {
         collider = gameObject.GetComponent<CapsuleCollider>();
@@ -37,20 +36,12 @@ public class FlashLightCollider : MonoBehaviour
             collider.height = originalHeight*2;
             collider.center = scaleDir * (originalHeight * -1); //negative number because forward of the parented flashlight gameobject is backwards
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward * -1) * hit.distance, Color.blue);
-            Debug.Log(hit.collider.gameObject.name);
+            //Debug.Log(hit.collider.gameObject.name);
         }
         else
         {
             collider.enabled = false;
             Debug.Log("nothing");
         }
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        colliding = true;
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        colliding = false;
     }
 }
