@@ -57,7 +57,10 @@ public class StandardAIPatroling : MonoBehaviour
             cultist.SetBool("idle", true);
             agent.isStopped = true;
         }
-
+        else if(!seeker.flashlightSeen)
+        {
+            agent.isStopped = false;
+        }
         if(seeker.targetSpotted)
         {
             agent.destination = player.transform.position;

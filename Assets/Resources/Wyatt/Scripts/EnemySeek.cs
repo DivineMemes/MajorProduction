@@ -67,6 +67,10 @@ public class EnemySeek : MonoBehaviour
                 flashlightSeen = true;
             }
         }
+        if(!visibleTargets.Contains(Flashlight))
+        {
+            flashlightSeen = false;
+        }
         if(visibleTargets.Count == 0)
         {
             targetSpotted = false;
