@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySeek : MonoBehaviour
 {
     public Transform target;
+    public Transform Flashlight;
     Vector3 velocity;
 
     public bool targetSpotted = false;
@@ -33,7 +34,6 @@ public class EnemySeek : MonoBehaviour
     {
         source = gameObject.GetComponent<AudioSource>();
         StartCoroutine(FindTargetDelayed(delay));
-        //rb = GetComponent<Rigidbody>();
         velocity = Vector3.zero;
     }
 
@@ -59,6 +59,11 @@ public class EnemySeek : MonoBehaviour
                 }
                 targetWasSpotted = true;
                 transform.LookAt(visibleTargets[i]);
+            }
+
+            if (visibleTargets[i] == Flashlight && visibleTargets[i] != target)
+            {
+                Debug.Log("I SEE YOU BITCH");
             }
         }
         if(visibleTargets.Count == 0)
