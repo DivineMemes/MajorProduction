@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class EnemySeek : MonoBehaviour
 {
     public Transform target;
@@ -82,9 +81,9 @@ public class EnemySeek : MonoBehaviour
     }
     void FindVisibleTargets()
     {
-        visibleTargets.Clear();
         Collider[] targetsInView = Physics.OverlapSphere(transform.position, s_ViewRad, targetMask);//create detection sphere
-        Collider[] flashlightInView = Physics.OverlapSphere(transform.position, flashLightRad, targetMask);
+        Collider[] flashlightInView = Physics.OverlapSphere(new Vector3(transform.position.x, transform.position.y+1, transform.position.z), flashLightRad, targetMask);
+        visibleTargets.Clear();
         for (int i = 0; i < targetsInView.Length; i++)
         {
             for(int j = 0; j < flashlightInView.Length; j++)
@@ -111,7 +110,7 @@ public class EnemySeek : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.black;
-        Gizmos.DrawSphere(transform.position, flashLightRad);
+        Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), flashLightRad);
     }
     public Vector3 DirectionFromAng(float angInDeg, bool angleIsGlobal)
     {

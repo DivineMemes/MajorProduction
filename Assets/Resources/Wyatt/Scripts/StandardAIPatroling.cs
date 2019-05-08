@@ -2,26 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
 public class StandardAIPatroling : MonoBehaviour
 {
     EnemySeek seeker;
     EnemySoundDetection soundDetect;
+
     NavMeshAgent agent;
+
     public Animator cultist;
     public AnimatorControllerParameter[] bools;
+
     public GameObject player;
+
     public Transform[] nodes;
     Transform playerLast;
+
     public float searchTimer;
     public float suspectTimer;
+
     int destinationPoint = 0;
+
     public bool seenFlashlight;
     bool coroutineStarted;
     bool targetSpotted;
     bool lookAtPlayer;
     bool playerTransformStored;
-    // Use this for initialization
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -39,7 +44,6 @@ public class StandardAIPatroling : MonoBehaviour
 
         destinationPoint = (destinationPoint + 1) % nodes.Length;
     }
-    // Update is called once per frame
     void Update()
     {
         if(!soundDetect.heardSound&&!seeker.targetSpotted)
@@ -54,22 +58,22 @@ public class StandardAIPatroling : MonoBehaviour
 
         if (seeker.flashlightSeen)
         {
-            foreach(AnimatorControllerParameter boolean in cultist.parameters)
-            {
-                cultist.SetBool(boolean.name, false);
-            }
-            agent.isStopped = true;
-            if(!seenFlashlight)
+            if (!seenFlashlight)
             {
                 StartCoroutine(AlertAnimation());
             }
             if(lookAtPlayer)
             {
                 transform.LookAt(player.transform);
+                agent.isStopped = false;
                 if(!playerTransformStored)
                 {
                     playerLast = player.transform;
                     playerTransformStored = true;
+                }
+                if(playerTransformStored)
+                {
+                    agent.destination = playerLast.position;
                 }
             }
             
@@ -121,9 +125,16 @@ public class StandardAIPatroling : MonoBehaviour
     }
     IEnumerator AlertAnimation()
     {
+        foreach (AnimatorControllerParameter boolean in cultist.parameters)
+        {
+            cultist.SetBool(boolean.name, false);
+        }
+        cultist.SetBool("idle", false);
+        cultist.SetBool("alert", true);
         seenFlashlight = true;
-        //cultist.SetBool("alert", true);
         yield return new WaitForSeconds(1.958f);
+        cultist.SetBool("alert", false);
+        cultist.SetBool("walk", true);
         lookAtPlayer = true;
         
     }
