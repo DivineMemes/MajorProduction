@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5e5c488256f8ebd4693739c7c0224f7b
+guid: d64f60d0a0af0234899d012bc81bc3e3
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -105,9 +105,9 @@ ModelImporter:
     400096: J_ROOT
     400098: player1
     400100: //RootNode
-    2100000: lambert2
+    2100000: lambert4
     4300000: player1
-    7400000: player_walk
+    7400000: player_run
     9500000: //RootNode
     13700000: player1
   externalObjects: {}
@@ -139,10 +139,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: player_walk
+      name: player_run
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 40
+      lastFrame: 19
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

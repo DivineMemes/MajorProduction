@@ -279,7 +279,7 @@ ModelImporter:
       name: cultist_walk
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 39
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

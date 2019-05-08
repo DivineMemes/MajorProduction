@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 355a264ac3caf1e4886765bb1a3a708f
+guid: f3bb57bbeb71baa468a74d9ae6ec8885
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -255,7 +255,7 @@ ModelImporter:
     4300000: CHARACTER
     4300002: cultistmask
     4300004: CULTIST_RIG_HAMMER:HAMMER
-    7400000: cultist_alert
+    7400000: cultist_investigate
     9500000: //RootNode
     13700000: CHARACTER
   externalObjects: {}
@@ -287,10 +287,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: cultist_alert
+      name: cultist_investigate
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 45
+      lastFrame: 100
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
