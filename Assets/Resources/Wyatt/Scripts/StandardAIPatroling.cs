@@ -12,11 +12,15 @@ public class StandardAIPatroling : MonoBehaviour
     public AnimatorControllerParameter[] bools;
     public GameObject player;
     public Transform[] nodes;
+    Transform playerLast;
     public float searchTimer;
     public float suspectTimer;
     int destinationPoint = 0;
+    public bool seenFlashlight;
     bool coroutineStarted;
     bool targetSpotted;
+    bool lookAtPlayer;
+    bool playerTransformStored;
     // Use this for initialization
     void Start()
     {
@@ -54,8 +58,21 @@ public class StandardAIPatroling : MonoBehaviour
             {
                 cultist.SetBool(boolean.name, false);
             }
-            cultist.SetBool("idle", true);
             agent.isStopped = true;
+            if(!seenFlashlight)
+            {
+                StartCoroutine(AlertAnimation());
+            }
+            if(lookAtPlayer)
+            {
+                transform.LookAt(player.transform);
+                if(!playerTransformStored)
+                {
+                    playerLast = player.transform;
+                    playerTransformStored = true;
+                }
+            }
+            
         }
         else if(!seeker.flashlightSeen)
         {
@@ -68,7 +85,7 @@ public class StandardAIPatroling : MonoBehaviour
             cultist.SetBool("run", true);
         }
 
-        if (!seeker.targetSpotted)
+        if(!seeker.targetSpotted)
         {
             agent.speed = 3;
         }
@@ -101,5 +118,13 @@ public class StandardAIPatroling : MonoBehaviour
     {
         //cultist.SetBool("surprised", true);
         yield return new WaitForSeconds(suspectTimer);
+    }
+    IEnumerator AlertAnimation()
+    {
+        seenFlashlight = true;
+        //cultist.SetBool("alert", true);
+        yield return new WaitForSeconds(1.958f);
+        lookAtPlayer = true;
+        
     }
 }
