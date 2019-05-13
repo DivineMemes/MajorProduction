@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class EnemySeek : MonoBehaviour
 {
     public Transform target;
@@ -10,7 +9,6 @@ public class EnemySeek : MonoBehaviour
 
     public bool flashlightSeen = false;
     public bool targetSpotted = false;
-    public bool targetLost = false;
     public bool targetWasSpotted = false;
     public bool sound;
 
@@ -18,10 +16,13 @@ public class EnemySeek : MonoBehaviour
     public AudioClip Spotted;
     AudioSource source;
 
-    public float viewRad;
+    public float viewRad; //enemies range of sight
     float s_ViewRad;//s_ == script value
-    [Range(0,360)]
-    public float viewAng;
+    [Range(0, 360)]
+
+    public float flashLightRad;
+
+    public float viewAng;//enemies line of sight
     public float delay;
     public LayerMask targetMask;
     public LayerMask Wall;
@@ -80,22 +81,36 @@ public class EnemySeek : MonoBehaviour
     }
     void FindVisibleTargets()
     {
+        Collider[] targetsInView = Physics.OverlapSphere(transform.position, s_ViewRad, targetMask);//create detection sphere
+        Collider[] flashlightInView = Physics.OverlapSphere(new Vector3(transform.position.x, transform.position.y+1, transform.position.z), flashLightRad, targetMask);
         visibleTargets.Clear();
-        Collider[] targetsInView = Physics.OverlapSphere(transform.position, s_ViewRad, targetMask);
-
-        for(int i = 0; i < targetsInView.Length; i++)
+        for (int i = 0; i < targetsInView.Length; i++)
         {
-            Transform target = targetsInView[i].transform;
-            Vector3 dirToTarget = (target.position - transform.position).normalized;
-            if(Vector3.Angle(transform.forward, dirToTarget) < viewAng /2)
+            for(int j = 0; j < flashlightInView.Length; j++)
             {
-                float distToTarget = Vector3.Distance(transform.position, target.position);
-                if(!Physics.Raycast(transform.position, dirToTarget, distToTarget, Wall))
+
+                if(flashlightInView[j].gameObject.CompareTag("flashlight"))
                 {
-                    visibleTargets.Add(target);
+                    visibleTargets.Add(flashlightInView[j].gameObject.transform);
+                }
+
+                Transform target = targetsInView[i].transform;
+                Vector3 dirToTarget = (target.position - transform.position).normalized;
+                if(Vector3.Angle(transform.forward, dirToTarget) < viewAng /2)
+                {
+                    float distToTarget = Vector3.Distance(transform.position, target.position);
+                    if(!Physics.Raycast(transform.position, dirToTarget, distToTarget, Wall))
+                    {
+                        visibleTargets.Add(target);
+                    }
                 }
             }
         }
+    }
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.black;
+        Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), flashLightRad);
     }
     public Vector3 DirectionFromAng(float angInDeg, bool angleIsGlobal)
     {
@@ -105,6 +120,8 @@ public class EnemySeek : MonoBehaviour
         }
         return new Vector3(Mathf.Sin(angInDeg * Mathf.Deg2Rad), 0, Mathf.Cos(angInDeg * Mathf.Deg2Rad)); 
     }
+
+
     IEnumerator FindTargetDelayed(float delay)
     {
         while (true)
@@ -113,4 +130,5 @@ public class EnemySeek : MonoBehaviour
             FindVisibleTargets();
         }
     }
+
 }

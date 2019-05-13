@@ -2,22 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
 public class StandardAIPatroling : MonoBehaviour
 {
     EnemySeek seeker;
     EnemySoundDetection soundDetect;
+
     NavMeshAgent agent;
+
     public Animator cultist;
     public AnimatorControllerParameter[] bools;
+
     public GameObject player;
+
     public Transform[] nodes;
+    Transform playerLast;
+
     public float searchTimer;
     public float suspectTimer;
+
     int destinationPoint = 0;
+
+    public bool seenFlashlight;
     bool coroutineStarted;
     bool targetSpotted;
-    // Use this for initialization
+    bool lookAtPlayer;
+    bool playerTransformStored;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -35,7 +44,6 @@ public class StandardAIPatroling : MonoBehaviour
 
         destinationPoint = (destinationPoint + 1) % nodes.Length;
     }
-    // Update is called once per frame
     void Update()
     {
         if(!soundDetect.heardSound&&!seeker.targetSpotted)
@@ -50,12 +58,25 @@ public class StandardAIPatroling : MonoBehaviour
 
         if (seeker.flashlightSeen)
         {
-            foreach(AnimatorControllerParameter boolean in cultist.parameters)
+            if (!seenFlashlight)
             {
-                cultist.SetBool(boolean.name, false);
+                StartCoroutine(AlertAnimation());
             }
-            cultist.SetBool("idle", true);
-            agent.isStopped = true;
+            if(lookAtPlayer)
+            {
+                transform.LookAt(player.transform);
+                agent.isStopped = false;
+                if(!playerTransformStored)
+                {
+                    playerLast = player.transform;
+                    playerTransformStored = true;
+                }
+                if(playerTransformStored)
+                {
+                    agent.destination = playerLast.position;
+                }
+            }
+            
         }
         else if(!seeker.flashlightSeen)
         {
@@ -68,7 +89,7 @@ public class StandardAIPatroling : MonoBehaviour
             cultist.SetBool("run", true);
         }
 
-        if (!seeker.targetSpotted)
+        if(!seeker.targetSpotted)
         {
             agent.speed = 3;
         }
@@ -101,5 +122,20 @@ public class StandardAIPatroling : MonoBehaviour
     {
         //cultist.SetBool("surprised", true);
         yield return new WaitForSeconds(suspectTimer);
+    }
+    IEnumerator AlertAnimation()
+    {
+        foreach (AnimatorControllerParameter boolean in cultist.parameters)
+        {
+            cultist.SetBool(boolean.name, false);
+        }
+        cultist.SetBool("idle", false);
+        cultist.SetBool("alert", true);
+        seenFlashlight = true;
+        yield return new WaitForSeconds(1.958f);
+        cultist.SetBool("alert", false);
+        cultist.SetBool("walk", true);
+        lookAtPlayer = true;
+        
     }
 }

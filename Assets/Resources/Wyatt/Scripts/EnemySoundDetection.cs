@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-
 public class EnemySoundDetection : MonoBehaviour
 {
     EnemySeek chasing;
