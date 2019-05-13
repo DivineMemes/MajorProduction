@@ -30,6 +30,7 @@ public class hiding : MonoBehaviour {
     public Transform normelspot;
     public float duration = 3.0f;
     public LayerMask hiding2;
+   // public AnimationCurve heightChange;
     // Use this for initialization
     IEnumerator Wait2()
     {
@@ -58,13 +59,16 @@ public class hiding : MonoBehaviour {
         {
             amount += Time.deltaTime;
             float perc = amount / duration;
-            lookat.transform.position = Vector3.Lerp(start, end, perc);
+            lookat.transform.position = Vector3.Lerp(start, end, perc) /*+ Vector3.down * heightChange.Evaluate(perc)*/;
             me.SetActive(false);
+            control.you.SetBool("hide_enter",true);
             control.you.SetBool("walk", false);
            control.you.SetBool("run", false);
            
             yield return null;
         }
+        
+        control.you.SetBool("hide_stay", true);
         k.CurrentX = hidingspot.rotation.y;
         isHiding = true;
         guiShow = false;
@@ -81,12 +85,17 @@ public class hiding : MonoBehaviour {
             float perc = amount / duration;
             lookat.transform.position = Vector3.Lerp(start, end, perc);
             //me.SetActive(false);
+            control.you.SetBool("hide_exit", true);
             control.you.SetBool("walk", false);
             control.you.SetBool("run", false);
             //isHiding = true;
             //guiShow = false;
             yield return null;
         }
+        control.you.SetBool("hide_enter", false);
+        control.you.SetBool("hide_stay", false);
+        control.you.SetBool("hide_exit", false);
+        control.you.SetBool("walk", true);
         me.SetActive(true);
         mm.enabled = true;
         isHiding = false;
