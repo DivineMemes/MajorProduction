@@ -3875,10 +3875,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  Flashlight: {fileID: 0}
+  flashlightSeen: 0
   targetSpotted: 0
-  targetLost: 0
   targetWasSpotted: 0
+  sound: 0
+  Spotted: {fileID: 0}
+  FlashlightViewRad: 0
   viewRad: 7
+  flashLightRad: 0
   viewAng: 75
   delay: 0
   targetMask:
