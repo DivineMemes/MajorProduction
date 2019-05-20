@@ -15,7 +15,9 @@ public class controler : MonoBehaviour {
     public bool downrun;
     public bool downcrouch;
     public AudioSource me;
+    public AudioSource me2;
     public AudioClip[] footsteps;
+    public AudioClip voice;
     public bool crouch;
     public Animator you;
     public bool run;
@@ -28,6 +30,10 @@ public class controler : MonoBehaviour {
     public Vector3 velocity;
     public hiding mek;
     public GameObject sneak;
+    public GameObject one;
+    public GameObject two;
+    public GameObject three;
+    public GameObject four;
     // Use this for initialization
     void Start () {
     }
@@ -44,6 +50,33 @@ public class controler : MonoBehaviour {
                 cross_hair.SetActive(true);
             }
             return;
+        }
+        if (gamemanger.GM.KeyCount == 0)
+        {
+            one.SetActive(false);
+            two.SetActive(false);
+            three.SetActive(false);
+            four.SetActive(false);
+        }
+        if (gamemanger.GM.KeyCount == 1)
+        {
+            one.SetActive(true);
+        }
+        if (gamemanger.GM.KeyCount == 2)
+        {
+            one.SetActive(false);
+            two.SetActive(true);
+        }
+        if (gamemanger.GM.KeyCount == 3)
+        {
+
+            two.SetActive(false);
+            three.SetActive(true);
+        }
+        if (gamemanger.GM.KeyCount == 4)
+        {
+            three.SetActive(false);
+            four.SetActive(true);
         }
         if (mek.isHiding == false)
         {
