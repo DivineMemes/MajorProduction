@@ -38,6 +38,8 @@ public class Tripwire : MonoBehaviour
             if (gamemanger.GM.onetime == 0)
             {
                 gamemanger.GM.sneak = true;
+                //control.me2.clip = control.voice;
+                control.me2.PlayOneShot(control.voice);
                 control.sneak.SetActive(true);
             }
             //source.PlayOneShot(chimes);
