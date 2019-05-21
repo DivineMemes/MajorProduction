@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - enemy
   - step_over
+  - flashlight
   layers:
   - Default
   - TransparentFX

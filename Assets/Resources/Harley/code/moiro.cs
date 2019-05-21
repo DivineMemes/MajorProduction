@@ -50,6 +50,9 @@ public class moiro : MonoBehaviour
     Transform cam;
     public Collider collider;
     public float jump;
+    public float crouchtimerest;
+    public float runtimerest;
+    public float normeltimerest;
     public float velocityrun = 8f;
     public AnimationCurve velocityCurve;
     public AnimationCurve jumpCurve;
@@ -418,6 +421,15 @@ public class moiro : MonoBehaviour
             {
 
                 pich = UnityEngine.Random.Range(1.0f,3.0f);
+                timereset = normeltimerest;
+                if (runisdown == true)
+                {
+                    timereset = runtimerest;
+                }
+                if(crouchisdown == true)
+                {
+                    timereset = crouchtimerest;
+                }
                 for (i = 0; i < controller.footsteps.Length; i++)
                 {
                     clip = controller.footsteps[i];
