@@ -41,7 +41,7 @@ public class FlashLightCollider : MonoBehaviour
         else
         {
             collider.enabled = false;
-            Debug.Log("nothing");
+           // Debug.Log("nothing");
         }
     }
 }

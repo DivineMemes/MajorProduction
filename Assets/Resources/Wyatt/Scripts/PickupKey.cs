@@ -5,11 +5,18 @@ using UnityEngine;
 public class PickupKey : MonoBehaviour
 {
     public Transform player;
+
+    public Component[] meshRends;
+
+    AudioSource source;
+
+    bool pickedUp;
     bool inRange;
+ 
     int KeyCount;//temporary counter just incase we decide to use a scripted player block
     void Start()
     {
-
+        source = gameObject.GetComponent<AudioSource>();
     }
 
 
@@ -25,7 +32,7 @@ public class PickupKey : MonoBehaviour
             inRange = false;
         }
 
-        if(inRange && Input.GetKeyDown(KeyCode.E))
+        if (inRange && Input.GetKeyDown(KeyCode.E))
         {
             Pickup();
         }
@@ -33,8 +40,27 @@ public class PickupKey : MonoBehaviour
 
     void Pickup()
     {
-        gamemanger.GM.KeyCount++;
-       
-        Destroy(gameObject);
+        if(!pickedUp)
+        {
+            gamemanger.GM.KeyCount++;
+            pickedUp = true;
+            meshRends = gameObject.GetComponentsInChildren<MeshRenderer>();
+            foreach(MeshRenderer rend in meshRends)
+            {
+                rend.enabled = false;
+            }
+            StartCoroutine(fadeVolume());
+        }
+        //source.volume = Mathf.Lerp(0, source.volume, Time.deltaTime);
+    }
+    IEnumerator fadeVolume()
+    {
+        while(source.volume > .007)
+        {
+            source.volume = Mathf.Lerp(source.volume, 0, Time.deltaTime);
+            yield return null;
+        }
+        StopCoroutine(fadeVolume());
+        gameObject.SetActive(false);
     }
 }
